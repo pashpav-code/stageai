@@ -272,7 +272,7 @@ flowchart LR
 
 - Stage AI — understanding brief §3.11–3.12  
 - StageAI Roadmap — blocks `[finance-first POV]`  
-- Vuzix illustration — plain language glossary.md#словарь-для-нетехнических-читателей)  
+- Vuzix illustration — глоссарий
 - ESC Financial Literacy 101
 
 ---
