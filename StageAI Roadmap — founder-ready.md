@@ -17,21 +17,29 @@ PMF есть. Узкое место — **execution**: повторяемый ou
           + Connect Test        2 segments            + Cold Calls
 
 
-                20                    8                    15
-          anchor accounts        meetings booked       meetings booked
+                30-40                 100-150              200-300
+              companies             companies            companies
 
 
-                26                    2                    8
-          connects @ 40%         active deals (SQO)    active deals total
+               100-150               600-800             1200-1500
+              contacts              contacts             contacts
+
+
+                 —                    8                    15
+              no pitch           meetings booked       meetings booked
+
+
+                 —                    2                     8
+              no pitch           active deals (SQO)    active deals total
                                  (this month)          (cumulative)
 
 
-                 —                  €80k                €320k
+                 —                  $80k                $320k
               no pitch              pipeline           pipeline
                                   (2 × $40k ARR)      (8 × $40k ARR)
 ```
 
-**Cumulative за 3 месяца: 23 meetings · 8 SQO · €320k pipeline @ avg $40k ARR · SQO conversion ~30%**
+**Cumulative за 3 месяца: 23 meetings · 8 SQO · $320k pipeline @ avg $40k ARR · SQO conversion ~30%**
 
 ---
 
@@ -50,7 +58,7 @@ gantt
   W1 ICP + LI map                 :2026-06-01, 7d
   W2 Personas + research v0       :2026-06-08, 7d
   W3 Connect wave 1               :2026-06-15, 7d
-  W4 Connect wave 2 (50-80 c.)    :2026-06-22, 7d
+  W4 Connect wave 2 (100-150 c.)  :2026-06-22, 7d
 
   section M2 (29 jun-2 aug · 5w)
   W5 Anchor outreach POV          :2026-06-29, 7d
@@ -234,14 +242,14 @@ Output: Slack ping + auto-enrich контекста.
 Pre  (май)       Email infra: домены + 4–6 inbox + warmup ≥3 нед
 W1   1–7 июн     ICP v0.1 · LI account map · KPI 90d · pipeline access
 W2   8–14 июн    ICP v0.2 + 3 personas · research pipeline v0 · визуалы baseline
-W3   15–21 июн   Connect wave 1: 20 co · battle cards draft · daily Slack basic
-W4   22–28 июн   Connect wave 2: → 50–80 contacts · research pipeline v1
+W3   15–21 июн   Connect wave 1: ~15–20 co · battle cards draft · daily Slack basic
+W4   22–28 июн   Connect wave 2: → 30–40 co · 100–150 contacts · research pipeline v1
 ```
 
 **Итог месяца:**
-- 20 anchor accounts · 3 personas v1 · **~26 connects @ 40%**
+- 30–40 companies · 3 personas v1 · **~40–60 connects @ 40%**
 - 4 новых визуала · battle cards draft · daily Slack · research pipeline v1
-- **Meetings: 0** (no pitch) · **Pipeline: €0**
+- **Meetings: 0** (no pitch) · **Pipeline: $0**
 
 ---
 
@@ -257,9 +265,9 @@ W9   27 июл – 2 авг   Test analysis (4 weeks) · cold calls start (execs
 ```
 
 **Итог месяца:**
-- 20 POV packs · 2 сегмента в работе · playbook v1.0
+- 100–150 companies · 600–800 contacts · POV-led outreach
 - Полный battle cards pack · call analysis · Hermes scheduled
-- **Meetings: 8 · SQO: 2 · Pipeline: €80k** (2 × $40k ARR)
+- **Meetings: 8 · SQO: 2 · Pipeline: $80k** (2 × $40k ARR)
 
 ---
 
@@ -274,21 +282,20 @@ W13  24–30 авг        Final scale week · final report · scale/kill matrix
 ```
 
 **Итог месяца:**
-- 80–100 companies · 400–500 contacts · 4-week scale test complete
+- 200–300 companies · 1200–1500 contacts · 4-week scale test complete
 - Business case calculators per deal · automation roadmap Q3
-- **Meetings: 15 · SQO: +6 (8 total) · Pipeline: €320k** (8 × $40k ARR)
+- **Meetings: 15 · SQO: +6 (8 total) · Pipeline: $320k** (8 × $40k ARR)
 
 ---
 
 ## 📊 Funnel @ 40 / 30 / 30
 
 ```
-W3–4    Connect test       50–80 contacts → ~26 accepts (40%)         ─ M1
-W5–9    Targeted (seg.1+2) ~80 messaged  → 24 replies → 8 meetings   ─ M2
-W10–13  Scale test         400 contacts  → 160 connects → 48 replies
-                                        → 15 meetings → 6 new SQO    ─ M3
+W3–4    Connect test       30–40 co · 100–150 contacts → ~40–60 accepts (40%)  ─ M1
+W5–9    Targeted (seg.1+2) 100–150 co · 600–800 contacts → 8 meetings          ─ M2
+W10–13  Scale test         200–300 co · 1200–1500 contacts → 15 meetings · +6 SQO ─ M3
 
-3-month cumulative: 23 meetings · 8 SQO · €320k pipeline @ $40k ARR
+3-month cumulative: 23 meetings · 8 SQO · $320k pipeline @ $40k ARR
 ```
 
 **Сценарии (для capacity planning M3):**

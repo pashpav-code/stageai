@@ -8,9 +8,9 @@
 |---|---|---|---|---|
 | **Pre-project** | до W1 | май | Email domains + warmup 3–4 нед · LI account map | — |
 | **M1 Foundation** | 1–2 | 1–14 июн | ICP · 3 personas · pipeline takeover · research stack | — |
-| **M1 Connect test** | 3–4 | 15–28 июн | 20 co · 50–80 contacts · **no pitch** | 26 connects |
-| **M2 Targeted (5w)** | 5–9 | 29 июн – 2 авг | POV-led seg.1 · seg.2 @ W7 · **cold calls W9** | **8 mtgs · 2 SQO · €80k** |
-| **M3 Scale + close (4w)** | 10–13 | 3 – 30 авг | 80-100 co · 400-500 contacts · BC calc · close | **15 mtgs · 8 SQO total · €320k** |
+| **M1 Connect test** | 3–4 | 15–28 июн | 30–40 co · 100–150 contacts · **no pitch** | ~40–60 connects @ 40% |
+| **M2 Targeted (5w)** | 5–9 | 29 июн – 2 авг | 100–150 co · 600–800 contacts · POV-led · **cold calls W9** | **8 mtgs · 2 SQO · $80k** |
+| **M3 Scale + close (4w)** | 10–13 | 3 – 30 авг | 200–300 co · 1200–1500 contacts · BC calc · close | **15 mtgs · 8 SQO total · $320k** |
 
 **Параллельно всегда:**
 - **Pipeline** (с W2) — подхват тёплых, снимаем нагрузку с фаундера
@@ -118,7 +118,7 @@
 
 ## W3 · 15–21 июн · Connect Test (wave 1) — no pitch
 
-- [ ] **20 компаний Tier 1–2** (10 W1 + 10 W3 или один гипотезный slice — зафиксировать)
+- [ ] **30–40 компаний Tier 1–2** (connect-тест W3–4)
 - [ ] **25–40 connection requests** распределить на 3 LI акк.
 - [ ] Account context stub × 20 (domain, hypothesis, signals, POV tier)
 - [ ] Engagement: 2–3 likes/comments в день на их посты
@@ -137,7 +137,7 @@
 
 ## W4 · 22–28 июн · Connect Test (wave 2) + baseline
 
-- [ ] **+25–40 connects → итого 50–80 контактов** на 20 компаниях
+- [ ] **Connect wave 2 → итого 100–150 контактов** на 30–40 компаниях
 - [ ] Measure connect rate by segment (W1 vs W3, title band)
 - [ ] **Без pitch DMs**
 - [ ] Deep research на top accepts (для W5)
@@ -152,7 +152,7 @@
 - [ ] WhyzerAI integration в pipeline (public co. → deep finance research)
 - [ ] n8n: auto-log connects / replies в CRM / Supabase
 
-**Deliverables W4:** connect baseline report (target **~26 @ 40%**) · ICP v0.3 · shortlist ~40 connected · **research pipeline v1** · 2 визуала + discovery card
+**Deliverables W4:** connect baseline report (target **~40–60 @ 40%**) · ICP v0.3 · shortlist connected · **research pipeline v1** · 2 визуала + discovery card
 
 ---
 
@@ -196,7 +196,7 @@
 ## W7 · 13–19 июл · Launch seg.2 (comparison)
 
 - [ ] Define seg.2 hypothesis (другой ICP slice — e.g. Series B voice-only vs W3 OEM)
-- [ ] Build **~20 co + 50–80 контактов** (warmup готов)
+- [ ] Build **30–40 co + 100–150 контактов** (warmup готов)
 - [ ] Launch seg.2 || seg.1 nurture
 - [ ] Weekly review: seg.1 vs seg.2 early metrics
 
@@ -242,7 +242,7 @@
 - [ ] Call analysis tunes для cold calls (новые insight templates)
 - [ ] Hermes monitoring: первый pass insights → Slack
 
-**M2 goal:** **8 meetings · 2 SQO · €80k pipeline** (cumulative с W5)
+**M2 goal:** **8 meetings · 2 SQO · $80k pipeline** (cumulative с W5)
 **Deliverables W9:** M2 test report (seg.1 vs seg.2 · what worked) · call log v1 · scale plan для M3
 
 ---
@@ -297,7 +297,7 @@
 
 ## W13 · 24–30 авг · M3 final week + Q3 plan
 
-- [ ] **Last cohort 20 companies** → **80–100 co total · 400–500 contacts cumulative**
+- [ ] **Scale cohort** → **200–300 co · 1200–1500 contacts** за 4 недели M3
 - [ ] Final metrics vs targets (meetings · SQO · pipeline)
 - [ ] **Scale / kill matrix** per segment, persona, channel, volume
 - [ ] 30–90 day roadmap v2 + offer scope
@@ -306,7 +306,7 @@
 **AI / automation:**
 - [ ] **Automation roadmap для Q3:** что dial up · что новое (multi-channel orchestration · автокасания · POV auto-draft)
 
-**M3 goal:** **15 meetings · 8 SQO total · €320k pipeline** (cumulative M2+M3)
+**M3 goal:** **15 meetings · 8 SQO total · $320k pipeline** (cumulative M2+M3)
 **Deliverables W13:** final 13-week report · scale/kill matrix · 30–90d roadmap + KPI · **automation roadmap Q3**
 
 ---
@@ -315,26 +315,26 @@
 
 ### M1 · Connect test (W3–4 · 15–28 июн)
 
-- Connection requests: 50–80 (mid 65)
-- **Connect rate: 40% → 26 accepts**
+- Connection requests: **100–150** on **30–40 companies**
+- **Connect rate: 40% → ~40–60 accepts**
 - Meetings / SQO: 0 (no pitch)
 
 ### M2 · Targeted seg.1+2 (W5–9 · 29 июн – 2 авг)
 
-- Messaged: ~80 (40 seg.1 + 40 seg.2)
-- Reply rate: 30% → 24 replies
-- **Meetings: 8 · SQO: 2 (≈ 30%) · Pipeline: €80k** @ avg $40k ARR
+- Outreach: **100–150 companies · 600–800 contacts**
+- Reply rate: 30% (target mid-funnel)
+- **Meetings: 8 · SQO: 2 (≈ 30%) · Pipeline: $80k** @ avg $40k ARR
 
 ### M3 · Scale + close (W10–13 · 3 – 30 авг)
 
-- Contacts: 400–500 (20–25 co/нед × 4 нед · 5 contacts each)
-- Connect rate: 40% → 160 connects
-- Reply rate: 30% (of messaged) → 48 replies
-- **Meetings: 15 · New SQO: +6 (8 total cumulative) · Pipeline: €320k**
+- Outreach: **200–300 companies · 1200–1500 contacts**
+- Connect rate: 40% → 480–600 connects (capacity check)
+- Reply rate: 30% → 144–180 replies (upper bound)
+- **Meetings: 15 · New SQO: +6 (8 total cumulative) · Pipeline: $320k**
 
 ### Cumulative 13 weeks
 
-- **23 meetings · 8 SQO · €320k pipeline** @ avg $40k ARR · ~30% SQO conversion
+- **23 meetings · 8 SQO · $320k pipeline** @ avg $40k ARR · ~30% SQO conversion
 
 ### Capacity
 
