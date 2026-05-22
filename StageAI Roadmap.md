@@ -202,9 +202,9 @@
 
 **AI / automation:**
 - [ ] **Research pipeline v1.5:** signals expansion · auto-tag по новым гипотезам seg.2
-- [ ] **Hermes draft:** sources defined (news · IR · hires · launches · social) · output format
+- [ ] **Scheduled agents:** sources defined (news · IR · hires · launches · social) · output format
 
-**Deliverables W7:** seg.2 cohort + sequences · comparative dashboard · research pipeline v1.5 · Hermes draft
+**Deliverables W7:** seg.2 cohort + sequences · comparative dashboard · research pipeline v1.5 · Scheduled agents
 
 ---
 
