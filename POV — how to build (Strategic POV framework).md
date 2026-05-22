@@ -1,15 +1,10 @@
 # POV — how to build (Strategic POV framework)
 
-**Для:** TheStage AI GTM · Voitech / Digital Hunch  
-**Канонический источник методологии:** [Strategic POV Development](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md) (Jamal Reimer & Ron Masi — ESC & Whyzer)  
-**StageAI-контекст:** [Understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) (§3.11–3.12) · [Finance-first POV (VUZI / S7)](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) · [Roadmap](StageAI%20Roadmap.md)  
-**Дата:** 2026-05-22
-
 ---
 
 ## 1. Зачем отдельный процесс POV
 
-Из [ESC framework](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md): плохой POV = потеря сделки, champion «уходит в rogue», год задержки.
+Из ESC framework: плохой POV = потеря сделки, champion «уходит в rogue», год задержки.
 
 **Для TheStage:** без POV outbound смешивает **4 продуктовых слоя**, обещает on-device на Snapdragon, или продаёт tiers ML-команде CEO/CFO — и сделка разваливается.
 
@@ -61,7 +56,7 @@ Research/hypothesis    Consensus drafts V1–V3       Exec engagement
 | **10-K / 10-Q / earnings** | Going concern, AI in MD&A, cloud spend signals, OEM strategy |
 | **The Street / IR** | Analyst questions on AI, margin, partnerships |
 | **LinkedIn / podcasts** | CEO/CFO language (not only eng blog) |
-| **Product / CES** | Where inference runs (cloud vs on-glass) — [brief §3.12.2](Stage%20AI%20%E2%80%94%20understanding%20brief.md#3122-где-наибольшие-savings-пример-vuzix--не-везде) |
+| **Product / CES** | Where inference runs (cloud vs on-glass) — brief §3.12.2 |
 | **Walk the building** (internal) | Confirm S-segment, motion A vs B, prod vs roadmap |
 
 **Не заменять:** business acumen одним LLM-summary — сверять гипотезу с **architecture fit** (S1–S7).
@@ -72,12 +67,12 @@ Research/hypothesis    Consensus drafts V1–V3       Exec engagement
 
 ### 4.3 Map initiatives → executive objectives (value pyramid)
 
-Используйте три столпа ESC — [framework § Mapping initiatives](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md#mapping-initiatives-to-objectives):
+Используйте три столпа ESC — framework § Mapping initiatives:
 
 | Executive objective | TheStage initiative examples |
 |---------------------|------------------------------|
 | **Decrease cost** | Cloud inference COGS ↓; fewer GPU-hours per OEM pilot; R&D time on tiers |
-| **Increase revenue** | OEM wins with AI appendix; faster SKU with AI spec; services/licensing |
+| **Increase revenue** | OEM wins with priced AI unit economics; faster SKU with AI spec; services/licensing |
 | **Manage risk** | Honest architecture slide; phased PoC; no over-promise on SDK |
 
 **Value pyramid (заполнить per account):**
@@ -104,7 +99,7 @@ Goal (from 10-K / CEO): e.g. "OEM smart glasses growth without margin collapse"
 | Audience | Today | Tomorrow (with TheStage) |
 |----------|-------|---------------------------|
 | **ML / platform** | Manual quant, slow tiers, cloud bill | Reproducible tiers S/M/L; benchmark in weeks |
-| **VP BD / OEM** | AI slideware in RFP | Latency + **$/1k sessions** in appendix |
+| **VP BD / OEM** | AI slideware in partner decks | Latency + **$/1k sessions** в P&L / business case |
 | **CFO** | Unmodeled AI variable cost | PoC $ in → GPU $ out; directional ROI |
 | **CEO** | AI demo without IR metric | One metric on reference design / partnership |
 
@@ -129,7 +124,7 @@ Goal (from 10-K / CEO): e.g. "OEM smart glasses growth without margin collapse"
 
 #### Strategic Soundbite (CEO / strategy — Nasralla format)
 
-> Because **[massive shift — e.g. every OEM expects AI in glasses]**, now is the time to **[publish unit-economic AI in reference designs]**. When you do, **[OEM win-rate, partnership credibility, one IR-grade metric]**. If you do not, **[cloud COGS per pilot, AI remains demo not P&L]**.
+> Because **[massive shift — e.g. every OEM expects AI in glasses]**, now is the time to **[publish unit-economic AI in reference designs]**. When you do, **[OEM win-rate, partnership credibility, measurable $/1k sessions]**. If you do not, **[cloud COGS per pilot, AI remains demo not P&L]**.
 
 #### MUD statement (CFO — Meaningful, Unique, Defensible)
 
@@ -145,7 +140,7 @@ Goal (from 10-K / CEO): e.g. "OEM smart glasses growth without margin collapse"
 
 - Не pitch solo exec meeting без internal champion.  
 - Вы можете быть в комнате; **они ведут** слайды POV.  
-- Technical appendix — **после** strategic buy-in или отдельная сессия с ML.
+- Technical deep-dive — **после** strategic buy-in или отдельная сессия с ML.
 
 ### 6.3 POV ≠ business case
 
@@ -159,7 +154,7 @@ Goal (from 10-K / CEO): e.g. "OEM smart glasses growth without margin collapse"
 
 ## 7. POV document template (TheStage)
 
-Use for any account; for **S7/public OEM** copy finance sections from [finance-first POV](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md).
+Use for any account; for **S7/public OEM** copy finance sections from finance-first POV.
 
 ```markdown
 # POV — [Company] ([TICKER])
@@ -200,7 +195,7 @@ Scope | metric | timeline
 - ...
 ```
 
-**Filled example (S7 / public OEM):** [Vuzix — POV and business case (illustration)](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) — MDP, O→I→I, Soundbite, MUD, metrics registry, layered unit economics (`12k × $5`), business case, Stage 1–3 checklist.
+**Filled example (S7 / public OEM):** Vuzix — POV and business case (illustration)) — MDP, O→I→I, Soundbite, MUD, metrics registry, layered unit economics (`12k × $5`), business case, Stage 1–3 checklist.
 
 ---
 
@@ -208,7 +203,7 @@ Scope | metric | timeline
 
 | Account type | Primary doc |
 |--------------|-------------|
-| **S7 / public OEM** (VUZI-class) | [Finance-first POV](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) + this framework |
+| **S7 / public OEM** (VUZI-class) | Finance-first POV) + this framework |
 | **W1 voice @ MAU** (Praktika-class) | This framework; lead **eng + product**; CFO later |
 | **W4 B2B voice** (Phonic-class) | MUD on $/minute; security row |
 | **Motion A providers** | Unique insight = day-zero optimize; different soundbite |
@@ -219,16 +214,8 @@ Scope | metric | timeline
 
 1. **Keep it simple** — industry shift on AI unit economics; ask their view; have an opinion.  
 2. **Consensus** — business acumen + OK to be wrong; never skip ML on S7 accounts.  
-3. **Transfer ownership** — «their OEM metric», «their benchmark appendix» — anchor all follow-up.
+3. **Transfer ownership** — «their OEM metric», «their measured unit economics» — anchor all follow-up.
 
-**Blend with business case:** POV wins the narrative; **PoC SOW** carries POI metrics ([Roadmap](StageAI%20Roadmap.md) week 2–4).
+**Blend with business case:** POV wins the narrative; **PoC SOW** carries POI metrics (Roadmap week 2–4).
 
 ---
-
-## 10. Related reading
-
-- [Strategic POV Development (full ESC deck)](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md)  
-- Nate Nasralla — *Selling With*; PoV + business case blend (cited in ESC)  
-- [Stage AI — understanding brief §3.12](Stage%20AI%20%E2%80%94%20understanding%20brief.md#312-finance-first-outbound-s7--public-oem--не-только-ml)  
-- [Vuzix — POV and business case (illustration)](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) — filled template + numbers  
-- [ICP stories](ICP%20use%20cases%20%E2%80%94%20Reddit-style%20stories.md) — technical pain color, not POV substitute

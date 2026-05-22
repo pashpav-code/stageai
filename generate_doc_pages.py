@@ -7,6 +7,7 @@ BACK_HREF = "StageAI GTM Strategy — founder report.html"
 
 FILES = [
     "StageAI Roadmap.md",
+    "StageAI Roadmap — founder-ready.md",
     "POV — how to build (Strategic POV framework).md",
     "GTM — finance-first motion (strategy & prep).md",
     "Vuzix — POV and business case (illustration).md",
@@ -189,7 +190,7 @@ body {
 
 TEMPLATE = """\
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

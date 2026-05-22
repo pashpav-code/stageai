@@ -1,10 +1,5 @@
 # ML workflow: классика vs TheStage AI (wearable / voice)
 
-**Аудитория:** ML-команда (wearable, on-device voice)  
-**Формат:** Mermaid — рендерится в GitHub, Cursor, Notion, [mermaid.live](https://mermaid.live)
-
-**Как читать:** §1 — два столбца **рядом** (одна строка = один этап); §2–3 — полный путь сверху вниз; §4 — паттерны runtime + **только** клиенты из наших notes; §5–6 — таблица и легенда.
-
 ---
 
 ## 1. Два процесса рядом (overview) — side by side
@@ -316,4 +311,4 @@ flowchart TB
 | Edge-box | Jetson / промышленный hub (product matrix) |
 | Cloud-first | Capture на device; модели на NVIDIA (Praktika, Phonic, Recraft) |
 
-**Источник по клиентам:** [Stage AI — understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) §3.8–3.9, реестр §2–3.
+**Источник по клиентам:** Stage AI — understanding brief §3.8–3.9, реестр §2–3.

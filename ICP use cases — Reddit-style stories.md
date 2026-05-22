@@ -1,9 +1,5 @@
 # ICP use cases — истории в стиле Reddit
 
-**Зачем:** показать TheStage AI, что мы понимаем **живых** клиентов, не абстрактный «enterprise AI».  
-**Формат:** как пост на r/LocalLLaMA / r/MachineLearning — кто мы, что строим, боль, что пробовали, куда смотрим.  
-**Связано:** [Stage AI — understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) (главный документ; здесь — развёрнутые «голоса» ICP)
-
 ---
 
 ## Что нашли на Reddit и рядом (релевантные треды)
@@ -12,12 +8,12 @@
 
 | Тема | Где обсуждают | Ссылка |
 |------|----------------|--------|
-| GGUF / quantize / свой стек | r/LocalLLaMA | [Quick Start Guide To Converting Your Own GGUFs](https://old.reddit.com/r/LocalLLaMA/comments/18av9aw/quick_start_guide_to_converting_your_own_ggufs/) |
-| Core ML / ONNX export — боль | HN (те же инженеры) | [ONNX → CoreML feasibility](https://news.ycombinator.com/item?id=37082447) |
-| llama.cpp на Android — OOM, battery, OEM | DEV | [P2P inference on Android phones — what we learned](https://dev.to/vishal_sharma_nataris/we-built-a-p2p-ai-inference-network-that-runs-on-android-phones-heres-what-we-learned-3lhb) |
-| INT8 на разных телефонах — quality drift | разбор Reddit ML | [Same INT8 ONNX, accuracy drift across Snapdragon tiers](https://insights.marvin-42.com/articles/reddit-ml-report-same-int8-onnx-model-showed-major-accuracy-drift-across-snapdragon-tiers) |
-| Бюджетный Android — RAM, thermal | блог | [LLM on a $150 Android phone](https://www.runanywhere.ai/blog/on-device-llm-android) |
-| Smart glasses + local inference | новости / OSS | [Brilliant Labs Halo + on-device AI](https://techday.co.nz/story/privacy-first-ai-smart-glasses-run-models-on-device) (упоминают **TheStage AI** как партнёра) |
+| GGUF / quantize / свой стек | r/LocalLLaMA | Quick Start Guide To Converting Your Own GGUFs |
+| Core ML / ONNX export — боль | HN (те же инженеры) | ONNX → CoreML feasibility |
+| llama.cpp на Android — OOM, battery, OEM | DEV | P2P inference on Android phones — what we learned |
+| INT8 на разных телефонах — quality drift | разбор Reddit ML | Same INT8 ONNX, accuracy drift across Snapdragon tiers |
+| Бюджетный Android — RAM, thermal | блог | LLM on a $150 Android phone |
+| Smart glasses + local inference | новости / OSS | Brilliant Labs Halo + on-device AI (упоминают **TheStage AI** как партнёра) |
 
 **Повторяющиеся мотивы из комьюнити:** OOM, thermal throttle, «export занял вечность», cloud bill растёт с MAU, на каждом Snapdragon своя accuracy.
 
@@ -81,7 +77,7 @@
 
 *Профиль: wearable startup, **Brilliant Labs**-adjacent; в индустрии уже есть связка **Brilliant Labs + TheStage** для on-device Halo.*
 
-> **⚠️ Шаблон, не verified architecture Brilliant.** Публично (TechDay Mar 2026): **гибрид** — vision on glasses + значимый compute на **paired smartphone** (TheStage на phone); на Halo также **Alif NPU** on-glass. См. [understanding brief §3.8–5.2](Stage%20AI%20%E2%80%94%20understanding%20brief.md).
+> **⚠️ Шаблон, не verified architecture Brilliant.** Публично (TechDay Mar 2026): **гибрид** — vision on glasses + значимый compute на **paired smartphone** (TheStage на phone); на Halo также **Alif NPU** on-glass. См. understanding brief §3.8–5.2.
 
 ---
 
@@ -215,7 +211,7 @@ Self-hosted Whisper on GPU; пробовали API; смотрим **on-device**
 
 > **Title:** Anyone shipped STT → small LLM → TTS fully on-device for iOS (phone as hub for wearable)?
 >
-> **Body:** We're a 12-person team, glasses + phone architecture. Cloud bill and latency killing us. Tried llama.cpp but OOM on mid Android and thermal throttling after 90s ([similar thread vibes](https://dev.to/vishal_sharma_nataris/we-built-a-p2p-ai-inference-network-that-runs-on-android-phones-heres-what-we-learned-3lhb)). Looking at pre-compiled stacks (TheStage Elastic, etc.) vs rolling our own Core ML export ([HN pain](https://news.ycombinator.com/item?id=37082447)). For those who shipped: did you tier models S/M/L? How bad was LoRA recompile?
+> **Body:** We're a 12-person team, glasses + phone architecture. Cloud bill and latency killing us. Tried llama.cpp but OOM on mid Android and thermal throttling after 90s (similar thread vibes). Looking at pre-compiled stacks (TheStage Elastic, etc.) vs rolling our own Core ML export (HN pain). For those who shipped: did you tier models S/M/L? How bad was LoRA recompile?
 >
 > *Not asking for vendor ads — want war stories.*
 

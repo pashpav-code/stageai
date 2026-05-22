@@ -1,15 +1,5 @@
 # Vuzix (VUZI) — POV and business case (illustration)
 
-**Для:** TheStage AI GTM · обучение полному флоу POV → business case → цифры  
-**Тикер:** NASDAQ VUZI · **S-сегмент:** S7 → W3 (wearable + voice, cloud-first)  
-**Методология:** [MDS Mega Deal Premise](../../gtm_stuff/ESC%20&%20Whyzer/MDS%20Session%204%20Mega%20Deal%20Premise.md) · [Strategic POV Development](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md) · [Financial Literacy 101](../../gtm_stuff/ESC%20&%20Whyzer/Financial%20Literacy%20101.md)  
-**StageAI:** [POV — how to build](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) · [Finance-first playbook](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) · [Understanding brief §3.12](Stage%20AI%20%E2%80%94%20understanding%20brief.md#312-finance-first-outbound-s7--public-oem--не-только-ml)  
-**Дата:** 2026-05-22
-
-> **Disclaimer:** все цифры — **illustration / hypothesis** для GTM-обучения и mock exec narrative. **Не** использовать в публичных claims, IR materials или контракте без Phase 0 PoC и согласования с Vuzix. Revenue/loss figures — порядок величины из публичных IR и internal executive research (May 2026).
-
----
-
 ## Словарь для нетехнических читателей
 
 Если вы не из ML/железа — начните с этой таблицы. Технические детали остаются ниже для инженеров и для mock exec.
@@ -46,7 +36,7 @@
 
 **Одна фраза про Vuzix:** продаём не «прошивку очков», а **измеримую экономику облачного AI** для OEM-партнёров и пилотов — пока голос на чипе в дужке остаётся как есть.
 
-**GTM-стратегия этого motion (landmarks, сигналы, чеклисты):** [GTM — finance-first motion (strategy & prep)](GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).md).
+**GTM-стратегия этого motion (landmarks, сигналы, чеклисты):** GTM — finance-first motion (strategy & prep)).
 
 ---
 
@@ -112,7 +102,7 @@ flowchart LR
 
 ## Part 1 — Mega Deal Premise (MDP)
 
-*Ref:* [MDS Session 4 — Mega Deal Premise](../../gtm_stuff/ESC%20&%20Whyzer/MDS%20Session%204%20Mega%20Deal%20Premise.md)
+*Ref:* MDS Session 4 — Mega Deal Premise
 
 ### 1.1 Three components
 
@@ -120,7 +110,7 @@ flowchart LR
 |-----------|-------------------|
 | **Unique insight** | Everyone sees «AI glasses» in CES decks — but **if you look deeper**, Vuzix and OEM partners are scaling **cloud-backed AI** (voice, vision, contextual assistants) **without a published unit-economic spec**. Each new reference design risks **linear growth in inference COGS**, not gross margin. |
 | **Core imperative** | Make **OEM + software ecosystem** partnerships **monetizable and defensible** while **reducing cash burn** — AI must show up in **RFPs and earnings** as **measurable** (latency, $/session), not demo-only. |
-| **Distinctive value (TheStage)** | Only path that **optimizes your existing NVIDIA cloud inference** and gives you an **OEM appendix** ($/1k sessions, p95) **without** asking you to rip out Qualcomm on-glass or rebuild embedded Speech SDK. |
+| **Distinctive value (TheStage)** | Only path that **optimizes your existing NVIDIA cloud inference** and delivers **measurable unit economics** ($/1k sessions, $/device/year, p95) **without** asking you to rip out Qualcomm on-glass or rebuild embedded Speech SDK. |
 
 ### 1.2 UVP talk track (5 steps)
 
@@ -148,7 +138,7 @@ Core imperative: OEM ecosystem + AI monetization without burning cash
 
 ## Part 2 — Strategic POV
 
-*Ref:* [Strategic POV Development](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md) · [Financial Literacy — O→I→I](../../gtm_stuff/ESC%20&%20Whyzer/Financial%20Literacy%20101.md)
+*Ref:* Strategic POV Development · Financial Literacy — O→I→I
 
 ### 2.1 Observation → Implication → Insight
 
@@ -172,9 +162,9 @@ Core imperative: OEM ecosystem + AI monetization without burning cash
 
 | Role | Today | Tomorrow (with TheStage) |
 |------|-------|----------------------------|
-| **CEO** | AI in press; **no** IR-grade AI metric | **One metric** on ref design / partnership decks |
+| **CEO** | AI in press; **no** measurable P&L metric | **One metric** on ref design / partnership ($/1k sessions) |
 | **CFO** | Cloud AI cost **opaque** per SKU | **$/device/year** model; pilot COGS forecastable |
-| **VP BD / OEM** | AI claims in RFP **without** numbers | **Appendix:** p95 + $/1k sessions |
+| **VP BD / OEM** | AI claims **without** unit economics | **Business case:** p95 + $/1k sessions |
 | **VP Eng / ML** | Manual quant / duplicate stacks | **Tiers S/M/L**; 2–3 week deploy cycle on cloud model |
 | **Partner (Ramblr-class)** | Shared cloud bill | Lower **$/inference** on joint pipeline |
 
@@ -207,7 +197,7 @@ Core imperative: OEM ecosystem + AI monetization without burning cash
 
 | Metric | How TheStage enables | Notes |
 |--------|---------------------|-------|
-| **OEM design-win rate** (proxy) | RFP appendix with measurable AI | Qualitative unless Vuzix shares win/loss |
+| **OEM design-win rate** (proxy) | Business case with measurable AI economics | Qualitative unless Vuzix shares win/loss |
 | **Time-to-SKU (AI block)** | Weeks → days on cloud model deploy | ~1.5 FTE-months × 2 SKUs illustration |
 | **AI services / licensing attach** | Enables **pricing** AI, not automatic revenue | Do not book as TheStage revenue |
 | **Partnership credibility** | Diligence-ready benchmark pack | Quanta/Garmin-class narratives |
@@ -402,7 +392,7 @@ Book as **productivity**, not cash COGS — CFO may discount.
 
 ## Part 6 — End-to-end sales flow
 
-*Ref:* [POV framework §5.3](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md#53-consensus-checklist)
+*Ref:* POV framework §5.3.md#53-consensus-checklist)
 
 ### Stage 1 — Hypothesis (TheStage + research)
 
@@ -428,7 +418,7 @@ Book as **productivity**, not cash COGS — CFO may discount.
 3. One slide: **12,000 × $5 = $60,000/yr** + footnotes (Part 4.3)  
 4. Architecture honesty slide (30 sec)  
 5. Phase 0 ask: $40k, 6 weeks  
-6. ML appendix optional second meeting  
+6. ML deep-dive optional second meeting  
 
 **Dual deliverables post-PoC:**
 
@@ -483,14 +473,6 @@ Book as **productivity**, not cash COGS — CFO may discount.
 
 | Doc | Role |
 |-----|------|
-| [MDS Mega Deal Premise](../../gtm_stuff/ESC%20&%20Whyzer/MDS%20Session%204%20Mega%20Deal%20Premise.md) | MDP methodology |
-| [Strategic POV Development](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md) | 3 stages, MUD, soundbite |
-| [Financial Literacy 101](../../gtm_stuff/ESC%20&%20Whyzer/Financial%20Literacy%20101.md) | O→I→I, public co metrics |
-| [POV — how to build](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) | Generic template |
-| [Finance-first playbook](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) | S7 / public OEM |
-| [Understanding brief §3.12](Stage%20AI%20%E2%80%94%20understanding%20brief.md#312-finance-first-outbound-s7--public-oem--не-только-ml) | ICP context |
-| [GTM — finance-first motion](GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).md) | Landmarks, targeting, literacy |
-
----
-
-*Illustration complete — use for mock exec rehearsal and GTM training; refresh all $ after any real Vuzix discovery or PoC.*
+| MDS Mega Deal Premise | MDP methodology |
+| Strategic POV Development | 3 stages, MUD, soundbite |
+| Financial Literacy 101 | O→I→I, public co metrics |

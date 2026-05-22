@@ -1,9 +1,5 @@
 # StageAI · Operational Roadmap (13 weeks)
 
-**Founder-ready:** [StageAI Roadmap — founder-ready](StageAI%20Roadmap%20%E2%80%94%20founder-ready.md) — vision · 3 мес · метрики · capacity · бюджет EUR.
-**Структура sprint/deliverables:** [Outbound GTM Execution Proposal for Sprites](Outbound%20GTM%20Execution%20Proposal%20for%20Sprites.md).
-**Контекст:** [Understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) · [POV framework](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) · [GTM finance-first](GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).md).
-
 ---
 
 ## Снимок 13 недель (1 июн – 30 авг 2026)
@@ -17,7 +13,7 @@
 | **M3 Scale + close (4w)** | 10–13 | 3 – 30 авг | 80-100 co · 400-500 contacts · BC calc · close | **15 mtgs · 8 SQO total · €320k** |
 
 **Параллельно всегда:**
-- **Pipeline** (с W2) — подхват тёплых, snimaем нагрузку с фаундера
+- **Pipeline** (с W2) — подхват тёплых, снимаем нагрузку с фаундера
 - **Infra** (email с Pre-W1) — домены, inbox, warmup
 - **Sales enablement** (с W2) — визуалы, battle cards, POV templates
 - **AI / Automation** (с W2) — research pipeline · call analysis · Slack reports · Hermes · business case calc
@@ -30,11 +26,11 @@
 
 | Артефакт | Файл |
 |---|---|
-| POV framework | [POV — how to build](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) |
-| Finance-first playbook | [POV — finance-first outbound](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) |
-| GTM W3 motion | [GTM — finance-first motion](GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).md) |
-| VUZI illustration | [Vuzix illustration](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) |
-| ICP S/P/L/W | [Understanding brief §3.11–3.12](Stage%20AI%20%E2%80%94%20understanding%20brief.md) |
+| POV framework | POV — how to build) |
+| Finance-first playbook | POV — finance-first outbound) |
+| GTM W3 motion | GTM — finance-first motion) |
+| VUZI illustration | Vuzix illustration) |
+| ICP S/P/L/W | Understanding brief §3.11–3.12 |
 
 ### P0 execution (до / на W1)
 
@@ -367,7 +363,7 @@ ml_signoff, exec_sponsor, notes
 
 ## Tools & ops (EUR)
 
-См. [founder-ready · Tools & бюджет](StageAI%20Roadmap%20%E2%80%94%20founder-ready.md#-tools--бюджет-eur--мес).
+См. founder-ready · Tools & бюджет.
 
 **Stack:** n8n workflows (Feasible / Sprites patterns) · GetSales · Prospeo / Wiza · **WhyzerAI** (public co. research) · Tavily · OpenRouter · Supabase · Railway.
 **Не в scope M1–M2:** Clay (опционально позже) · ABM ads · Aerosend (если GetSales email хватит).

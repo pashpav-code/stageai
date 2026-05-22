@@ -1,14 +1,5 @@
 # POV — finance-first outbound (enterprise wearables & distressed public)
 
-**Для:** GTM TheStage AI · Voitech / Digital Hunch  
-**Методология POV:** [POV — how to build (Strategic POV framework)](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) ← канон [ESC & Whyzer Strategic POV Development](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md)  
-**Связь:** [Understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) (§3.11–3.12) · [Roadmap](StageAI%20Roadmap.md)  
-**Шаблон-аккаунт:** Vuzix (NASDAQ: VUZI) — **S7 → W3**  
-**Дата:** 2026-05-22
-
-> **Этот файл** = StageAI playbook для **S7 / public OEM**. Общий процесс (3 stages, consensus, MUD, soundbite): **[POV framework doc](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md)**.  
-> **Стратегия motion (landmarks, метрики, сигналы, literacy):** [GTM — finance-first motion (strategy & prep)](GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).md).
-
 ---
 
 ## 0. POV process (ESC three stages) — finance-first track
@@ -19,7 +10,7 @@
 | **2. Consensus** | Champion + ML + CFO align on V1→V3 | Dual deliverable plan; architecture honesty |
 | **3. Executive** | **Champion presents** MUD + soundbite | CEO/CFO meeting; you support |
 
-**Pillars:** Consensus · Collaboration · Ownership ([ESC](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md)).
+**Pillars:** Consensus · Collaboration · Ownership (ESC).
 
 ---
 
@@ -31,7 +22,7 @@
 | Убытки, OpEx cuts, restructuring | Покупатель ≠ только VP Engineering — нужны **CFO / CEO / BD** |
 | AI в CES/IR, но выручка от hardware | AI = **variable COGS** и **R&D drag**, не feature slide |
 | **S7** (Snapdragon on-glass) | On-device SDK TheStage ❌ — честный вход через **cloud optimize** (S1) |
-| OEM / Quanta / Garmin-class partnerships | Продаём **OEM appendix с метриками**, не «заменим Qualcomm» |
+| OEM / Quanta / Garmin-class partnerships | Продаём **измеримую unit economics** ($/1k sessions), не «заменим Qualcomm» |
 
 **Не использовать как lead:** здоровые Series B voice apps без давления margin (там hybrid **W1** — MAU + latency, не going concern).
 
@@ -53,7 +44,7 @@
 |---------------|------------|
 | Going concern, OpEx cuts | AI must **lower burn per shipped unit**, not add a cost center |
 | Differentiation vs Meta / Apple | **Usable AI** with published **$ / 1k voice sessions** and latency SLO |
-| OEM / strategic partnerships | **Benchmark pack** для RFP — AI as spec, not slideware |
+| OEM / strategic partnerships | **Business case** с $/1k sessions — AI as economics, not slideware |
 | Software & services ecosystem | TheStage = **inference layer** (Elastic + ANNA + deploy), not another app store |
 | Supply chain / inventory | Лёгкий акцент: fewer deployment variants (secondary) |
 
@@ -85,7 +76,7 @@
 
 ## 5. POV document structure (deliverable)
 
-Aligns with [POV framework §7](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md#7-pov-document-template-thestage) and ESC Situation → Insight flow.
+Aligns with POV framework §7.md#7-pov-document-template-thestage) and ESC Situation → Insight flow.
 
 | Блок | Содержание | ESC / Stage |
 |------|------------|-------------|
@@ -117,14 +108,14 @@ Aligns with [POV framework §7](POV%20%E2%80%94%20how%20to%20build%20(Strategic%
 - [ ] SKU map: which products have **voice / translate / vision AI** (CES, product pages)  
 - [ ] **Where inference runs**: cloud vs on-device SoC (e.g. Snapdragon AR1) vs phone companion  
 - [ ] Cloud provider signals (AWS, Nebius, Azure) — job posts, engineering blogs  
-- [ ] Assign **S-segment** ([brief §3.11](Stage%20AI%20%E2%80%94%20understanding%20brief.md#311-icp-четыре-уровня-s--p--l--w))  
+- [ ] Assign **S-segment** (brief §3.11)  
 - [ ] **Buyer map**: CEO, CFO, VP BD/OEM, VP Eng, ML lead (if any)  
 
 ### 6.3 TheStage internal prep
 
 - [ ] **One layer** for first meeting: **A (Optimize)** on NVIDIA cloud  
 - [ ] Pick **one model** for PoC story (e.g. Whisper tier, small LLM) — match their demo stack  
-- [ ] **Prod vs roadmap** checklist signed ([Roadmap](StageAI%20Roadmap.md) неделя 2)  
+- [ ] **Prod vs roadmap** checklist signed (Roadmap неделя 2)  
 - [ ] **Pricing narrative** one slide: not $20/mo SaaS lead — per-GPU / PoC / enterprise  
 - [ ] Legal: what case studies can be named (Brilliant, Praktika, etc.)  
 
@@ -155,16 +146,16 @@ Aligns with [POV framework §7](POV%20%E2%80%94%20how%20to%20build%20(Strategic%
 | Customer challenge | Problem (P&L) | TheStage wedge | Layer |
 |--------------------|---------------|----------------|-------|
 | Financial sustainability | Revenue ≪ burn; AI adds variable cost | Optimize cloud inference; OEM $/session spec | **A** |
-| Competitive pressure | Need differentiated **measurable** AI | Benchmark pack for RFP | **A** + proof |
+| Competitive pressure | Need differentiated **measurable** AI | Business case with $/1k sessions | **A** + proof |
 | Supply chain | Secondary | Fewer model deployment variants | **A** (light) |
 
 ---
 
 ## 9. Worked example — Vuzix (VUZI)
 
-**Полная версия (MDP + POV + business case + unit economics):** [Vuzix — POV and business case (illustration)](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) — Parts 0–6, metrics registry, `12k × $5` scenarios, 100k footnote, mock exec flow.
+**Полная версия (MDP + POV + business case + unit economics):** Vuzix — POV and business case (illustration)) — Parts 0–6, metrics registry, `12k × $5` scenarios, 100k footnote, mock exec flow.
 
-**Sources:** Executive research summary (May 2026); public CES/IR; [understanding brief §3.10](Stage%20AI%20%E2%80%94%20understanding%20brief.md#310-prospect-map-кому-питчить-on-device-vs-cloud-не-клиенты).
+**Sources:** Executive research summary (May 2026); public CES/IR; understanding brief §3.10.
 
 ### Customer snapshot
 
@@ -270,7 +261,7 @@ TheStage **не** сокращает $8M OpEx, payroll или BOM очков. Sa
 |---------|------|----------|
 | **CEO** | Strategic AI metric; partnership credibility | 1-pager for IR/partners |
 | **CFO** | $/1k sessions; pilot ROI | Finance memo |
-| **VP BD/OEM** | RFP-grade AI spec | Benchmark sheet |
+| **VP BD/OEM** | Unit economics in partner deals | Benchmark sheet ($/1k sessions) |
 | **ML / platform** | Performance; deploy time | Tech report (tiers, tps, ttft) |
 
 ### 12.3 Потоки (3-thread model)
@@ -292,7 +283,7 @@ TheStage **не** сокращает $8M OpEx, payroll или BOM очков. Sa
 
 | Don't | Do |
 |-------|-----|
-| CEO email leads with tier S/M/L | Exec = $/session; tiers in appendix |
+| CEO email leads with tier S/M/L | Exec = $/session; ML tiers — отдельная встреча |
 | Bypass ML after exec yes | CEO intro → VP Eng same week |
 | Promise CFO «−$8M OpEx» | Variable inference + OEM pilot COGS only |
 | Different promises to exec vs eng | Single PoC scope doc |
@@ -325,4 +316,4 @@ Ask TheStage on kickoff: **«На OEM deals economic buyer — CEO, CFO, or VP E
 | 3 | Outbound architecture · playbooks (**CFO + technical** discovery) · CRM `buyer_motion` |
 | 4 | Sales deck slide: «P&L AI vs demo AI» · dual PoC deliverables (finance + tech) |
 
-См. [StageAI Roadmap](StageAI%20Roadmap.md) — блоки **`[finance-first POV]`**.
+См. StageAI Roadmap — блоки **`[finance-first POV]`**.

@@ -1,9 +1,8 @@
 # TheStage AI · GTM Roadmap
-
 **Voitech × Digital Hunch · 1 июн – 30 авг 2026 · 13 weeks**
 
 PMF есть. Узкое место — **execution**: повторяемый outbound с **единым контекстом аккаунта**.
-Операционка по неделям: [StageAI Roadmap](StageAI%20Roadmap.md).
+Операционка по неделям: StageAI Roadmap.
 
 ---
 
@@ -97,21 +96,21 @@ gantt
 
 ### ML / VP Engineering
 
-> «Срежем export hell — tiers S/M/L/XL под ваши SLO. Вместо месяцев ручной PTQ — недели до v1.»
+> «Ручная оптимизация моделей под устройства — 2–6 недель на модель. У нас это дни. Один toolchain для iOS, NVIDIA, Jetson вместо трёх отдельных.»
 
-Lead-метрики: **ttft · tps · max_memory_mb · weeks to v1**
+Lead-метрики: **weeks to production · accuracy at smaller model size · memory footprint**
 
 ### Product / Growth
 
-> «Пользователь не слышит тишину после фразы. Local STT убирает cloud RTT. Работает офлайн.»
+> «Voice с задержкой 1–2 секунды убивает retention. Локальный inference срезает её до 300ms. Плюс работает офлайн — критично для language-learning и mobile в плохой связи.»
 
-Lead-метрики: **p95 latency · offline survival · time-to-market**
+Lead-метрики: **p95 latency · offline session completion · session drop-off rate**
 
 ### CFO / CEO / BD
 
-> «AI в каждом RFP должен иметь $/1k sessions. Иначе это demo, а не SKU. Мы сокращаем эту строчку.»
+> «Cloud inference растёт быстрее выручки — на 1M+ активных пользователей съедает маржу. Срезаем variable inference cost на 30–50% через оптимизацию на NVIDIA. Прямая экономия в P&L, не demo.»
 
-Lead-метрики: **$/device/year · variable COGS (inference) · OEM design-win rate**
+Lead-метрики: **monthly cloud bill · cost per active user · % savings vs baseline**
 
 ---
 
@@ -145,9 +144,9 @@ Lead-метрики: **$/device/year · variable COGS (inference) · OEM design-
 
 Публичные компании с устройствами и AI. Под давлением инвесторов. Часто тратят на AI больше чем зарабатывают.
 
-**Заход:** finance report → earnings call → CES claims → конкретный разрыв («AI в каждом устройстве» без $/device)
+**Заход:** finance report → earnings call → CES claims → cloud inference cost растёт быстрее выручки, в P&L нет измеримой строки variable COGS ($/1k sessions, $/device/year)
 **Канал:** founder-led LinkedIn · cold calls на CFO/CEO/BD
-**Сделка:** крупнее · цикл длиннее · prestige logo для Series A narrative
+**Сделка:** крупнее · цикл длиннее · измеримое снижение variable cloud COGS, защищаемое на earnings
 
 ### Motion 2 · Series A–B voice / glasses startups (W1)
 
@@ -284,7 +283,7 @@ W13  24–30 авг        Final scale week · final report · scale/kill matrix
 ## 📊 Funnel @ 40 / 30 / 30
 
 ```
-W3–4    Connect test       65 contacts   → 26 connects (40%)         ─ M1
+W3–4    Connect test       50–80 contacts → ~26 accepts (40%)         ─ M1
 W5–9    Targeted (seg.1+2) ~80 messaged  → 24 replies → 8 meetings   ─ M2
 W10–13  Scale test         400 contacts  → 160 connects → 48 replies
                                         → 15 meetings → 6 new SQO    ─ M3
@@ -406,11 +405,11 @@ Voitech analytics          custom    TOFU/BOFU · CRM pull
 ## 🗂️ Документы
 
 - **Этот файл** — фаундер: стратегия + 3 мес + цифры
-- [StageAI Roadmap](StageAI%20Roadmap.md) — команда: операционка W0–W13
-- [Outbound proposal Sprites](Outbound%20GTM%20Execution%20Proposal%20for%20Sprites.md) — референс структуры
-- [GTM Framework PDF](TheStageAI_GTM_Framework.pdf) — DH маркетинг
-- [Understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) — продукт · ICP
+- StageAI Roadmap — команда: операционка W0–W13
+- Outbound proposal Sprites — референс структуры
+- GTM Framework PDF — DH маркетинг
+- Understanding brief — продукт · ICP
 
 ---
 
-*v.4 · founder-ready · 1 июн – 30 авг 2026 · 13-week · big-numbers + Gantt*
+*v.5 · sync с founder report v.6 · 1 июн – 30 авг 2026 · 13-week · big-numbers + Gantt*

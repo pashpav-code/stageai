@@ -1,17 +1,11 @@
 # GTM — finance-first motion (strategy & prep)
 
-**Для:** StageAI outbound · Voitech / Digital Hunch  
-**Motion:** продажа **экономики облачного AI** + **OEM-спецификации** (не «compile в очки»)  
-**ICP:** **S7 → W3** (wearables + voice, cloud path) · **публичные** или под IR-давлением OEM  
-**Связанные документы:** [POV finance-first playbook](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) · [POV framework](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) · [Vuzix illustration](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) · [Understanding brief §3.11–3.12](Stage%20AI%20%E2%80%94%20understanding%20brief.md#312-finance-first-outbound-s7--public-oem--не-только-ml) · [Financial Literacy 101](../../gtm_stuff/ESC%20&%20Whyzer/Financial%20Literacy%20101.md)  
-**Дата:** 2026-05-22
-
 ---
 
 ## 0. Что такое finance-first motion (одним абзацем)
 
 **Technical-first:** первый разговор с VP Engineering — tiers, latency, export.  
-**Finance-first:** первый разговор с **CFO / CEO / VP BD** — «сколько стоит AI на устройство», «сколько съедают пилоты в облаке», «что положить в RFP партнёру».
+**Finance-first:** первый разговор с **CFO / CEO / VP BD** — «сколько стоит AI в P&L: $/1k sessions, $/device/year, pilot cloud burn».
 
 TheStage в этом motion = **Layer A (Optimize):** дешевле и предсказуемее **облачный** inference на NVIDIA, плюс **одностраничник для OEM** (задержка + $/1000 сессий). **Не** обещаем замену чипа в дужке очков в Phase 1.
 
@@ -25,7 +19,7 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 
 | Приоритет | Компания | Тикер / тип | Почему landmark | Первый угол |
 |-----------|----------|-------------|-----------------|-------------|
-| **Anchor** | **Vuzix** | NASDAQ VUZI | Публичный microcap, OEM + CES AI story, illustration готов | Cloud COGS + OEM appendix |
+| **Anchor** | **Vuzix** | NASDAQ VUZI | Публичный microcap, OEM + CES AI story, illustration готов | Cloud COGS · $/1k sessions |
 | **P1** | **RealWear** | Private | Industrial voice, S7 on-glass → cloud NVIDIA | То же, без IR |
 | **P1** | **DigiLens (ARGO)** | Private | AR + voice, enterprise | Cloud + OEM |
 | **P2** | **ThirdEye** | Private | Enterprise AR glasses | Cloud pilots |
@@ -51,8 +45,8 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 | **Architecture 1-pager** | Где AI: on-glass vs cloud vs partner — честно «$0 / primary» |
 | **10-K / IR scan** | Revenue, loss, going concern, AI в shareholder letter |
 | **POV draft** | Soundbite + MUD (hypothesis) |
-| **Discovery script** | 4 вопроса §11.4 [finance-first POV](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) |
-| **Account illustration** | Для VUZI — [full doc](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md); для остальных — копировать структуру после discovery |
+| **Discovery script** | 4 вопроса §11.4 finance-first POV) |
+| **Account illustration** | Для VUZI — full doc); для остальных — копировать структуру после discovery |
 
 **CRM:** `landmark: W3` · `buyer_motion: hybrid` · `segment: S7`.
 
@@ -76,10 +70,10 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 
 | Метрика | Простыми словами | Роль |
 |---------|------------------|------|
-| **OEM design-win / RFP win** | Выиграли ли **лицензию дизайна** | TheStage даёт **приложение с цифрами** |
+| **OEM design-win rate** | Выиграли ли **лицензию дизайна** | TheStage даёт **измеримую unit economics** ($/1k sessions) |
 | **Time-to-SKU (AI block)** | Как быстро **вышла новая модель** с AI | Меньше месяцев ML на quant |
-| **Partnership diligence** | Партнёр (Quanta-class) **проверяет AI** | Benchmark pack |
-| **IR-grade AI metric** | Одна цифра для **инвесторов** | Не demo, а $/1k sessions |
+| **Partnership diligence** | Партнёр (Quanta-class) **проверяет AI** | PoC benchmark + $/device/year |
+| **Variable COGS trend** | Cloud inference в P&L | Не demo, а $/1k sessions на earnings |
 
 ### 2.3 Tier 3 — enabling (ML-only в первом касании)
 
@@ -95,7 +89,7 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 - Срез **OpEx / payroll** ($8M programs)  
 - **Gross margin %** без allocation AI в COGS  
 - **Замена Snapdragon / on-glass SDK** *(пока — Qualcomm поддержка разработана, но не в публичном релизе; не обещать до анонса)*  
-- **$500k/год** без определения N (см. [Vuzix §4.3](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md#43-layer-2--scenario-table-n--deviceyear))  
+- **$500k/год** без определения N (см. Vuzix §4.3.md#43-layer-2--scenario-table-n--deviceyear))  
 - **2–4×** без PoC на **их** модели  
 
 ---
@@ -140,7 +134,7 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 | New **OEM program** or SKU | Press, jobs | PoC «one cloud model» |
 | **Hiring ML / cloud inference** | LinkedIn | Technical thread |
 | **Earnings in 4–8 weeks** | Calendar | CEO soundbite before call |
-| **RFP / pilot** language in BD posts | Jobs | VP BD hook — appendix |
+| **RFP / pilot** language in BD posts | Jobs | VP BD hook — $/1k sessions в business case |
 | Competitor **AI glasses** launch | News | Crowd step in MDP |
 
 ### 3.5 Clay / Apollo / SN — поля для списка
@@ -187,7 +181,7 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 | 7 | Есть **RFP/SLO** требования от OEM? | Что в контракт | p95 + $/1k |
 | 8 | План **новых SKU** с AI в 12 мес? | Growth N | Scenario table |
 
-**4 discovery questions (краткий набор):** см. [finance-first POV §11.4](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md).
+**4 discovery questions (краткий набор):** см. finance-first POV §11.4).
 
 ### 4.3 Про финансовую модель клиента (CFO literacy)
 
@@ -226,12 +220,12 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 
 | # | Deliverable | Статус / ссылка |
 |---|-------------|-----------------|
-| 1 | Finance-first **playbook** | ✅ [POV finance-first](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) |
-| 2 | POV **framework** (3 stages, MUD) | ✅ [how to build](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) |
-| 3 | **Account illustration** VUZI | ✅ [Vuzix doc](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) |
+| 1 | Finance-first **playbook** | ✅ POV finance-first) |
+| 2 | POV **framework** (3 stages, MUD) | ✅ how to build) |
+| 3 | **Account illustration** VUZI | ✅ Vuzix doc) |
 | 4 | **This doc** — landmarks, metrics, signals, literacy | ✅ |
 | 5 | Messaging matrix **finance row** | 🔲 Roadmap w2 |
-| 6 | **Research checklist** per account (10-K, arch map) | 🔲 [POV §6](POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).md) |
+| 6 | **Research checklist** per account (10-K, arch map) | 🔲 POV §6) |
 | 7 | Pilot list 50–100 с тегом `finance_first` | 🔲 Roadmap w3 |
 | 8 | Slide «P&L AI vs demo AI» | 🔲 Roadmap w4 |
 | 9 | Dual PoC template: **finance memo** + **tech report** | 🔲 Roadmap w4 |
@@ -276,10 +270,10 @@ flowchart LR
 
 ## 7. Related reading
 
-- [Stage AI — understanding brief §3.11–3.12](Stage%20AI%20%E2%80%94%20understanding%20brief.md)  
-- [StageAI Roadmap](StageAI%20Roadmap.md) — blocks `[finance-first POV]`  
-- [Vuzix illustration — plain language glossary](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md#словарь-для-нетехнических-читателей)  
-- [ESC Financial Literacy 101](../../gtm_stuff/ESC%20&%20Whyzer/Financial%20Literacy%20101.md)
+- Stage AI — understanding brief §3.11–3.12  
+- StageAI Roadmap — blocks `[finance-first POV]`  
+- Vuzix illustration — plain language glossary.md#словарь-для-нетехнических-читателей)  
+- ESC Financial Literacy 101
 
 ---
 
