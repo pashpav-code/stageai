@@ -366,10 +366,10 @@ ml_signoff, exec_sponsor, notes
 
 См. founder report · Tools & бюджет.
 
-**Stack:** n8n workflows (Feasible / Sprites patterns) · GetSales · Prospeo / Wiza · **WhyzerAI** (public co. research) · Tavily · OpenRouter · Supabase · Railway.
+**Stack:** n8n workflows (Feasible / Sprites patterns) · GetSales · Prospeo / Wiza · **WhyzerAI** (public co. research) · Tavily · OpenRouter · **Claude** · Supabase · Railway.
 **Не в scope M1–M2:** Clay (опционально позже) · ABM ads · Aerosend (если GetSales email хватит).
 
-**Total ~€490–580/мес** (без Cursor/Claude) + домены у заказчика.
+**Total ~€540–630/мес** (ориентир ~€540; без Cursor) + домены у заказчика.
 
 ---
 
