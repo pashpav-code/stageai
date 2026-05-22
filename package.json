@@ -1,0 +1,13 @@
+{
+  "name": "stageai-report",
+  "version": "1.0.0",
+  "description": "TheStage AI GTM Strategy report",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Static files — no build step'"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
