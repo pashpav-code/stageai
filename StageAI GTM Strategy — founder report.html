@@ -572,17 +572,29 @@
   .funnel-cum {
     background: var(--accent);
     color: white;
-    padding: 16px 22px;
+    padding: 18px 24px;
     border-radius: 8px;
     margin-top: 20px;
-    font-size: 15px;
-    font-weight: 600;
     text-align: center;
   }
-  .funnel-cum .big {
-    font-size: 24px;
+  .funnel-cum .fc-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+  .funnel-cum .fc-stats {
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+  .funnel-cum .fc-sub {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-top: 6px;
   }
 
   /* ─── 2-column ─── */
@@ -1183,8 +1195,9 @@
       <span class="motion-tag">Сценарий 2 · Engineering-led</span>
       <h4>Series A–D voice / glasses стартапы</h4>
       <p>AI-тьюторы · компаньоны · голосовые ассистенты · smart glasses с iOS-приложением.</p>
-      <div class="row"><strong>Заход:</strong> технический proof · давление активных пользователей · engineering-led</div>
-      <div class="row"><strong>Сделка:</strong> быстрее · revenue momentum</div>
+      <div class="row"><strong>Заход:</strong> engineer замечает рост inference latency или cloud costs при масштабировании → показываем конкретный benchmark на их стеке (iOS CoreML / NVIDIA) → engineer становится внутренним champion и сам продаёт идею product и CEO</div>
+      <div class="row"><strong>Триггеры:</strong> latency жалобы от пользователей · cloud bill растёт быстрее выручки · ML-вакансии на "оптимизацию моделей для device"</div>
+      <div class="row"><strong>Сделка:</strong> быстрее · revenue momentum · engineer-led закрытие</div>
     </div>
   </div>
 </section>
@@ -1234,7 +1247,9 @@
   </div>
 
   <div class="funnel-cum">
-    Суммарно за 13 недель: <span class="big">23 встречи · 8 активных сделок · €320k пайплайн</span> · средний ARR $40k
+    <div class="fc-label">Суммарно за 13 недель</div>
+    <div class="fc-stats">23 встречи · 8 активных сделок · €320k outbound pipeline</div>
+    <div class="fc-sub">средний чек $40k ARR · outbound only</div>
   </div>
 </section>
 

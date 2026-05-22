@@ -208,7 +208,7 @@ TEMPLATE = """\
 
 <div class="content" id="content"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4/marked.min.js"></script>
 {mermaid_include}
 <script>
 {mermaid_setup}
@@ -229,7 +229,7 @@ document.getElementById('content').innerHTML = marked.parse(md);
 </html>
 """
 
-MERMAID_INCLUDE = '<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>'
+MERMAID_INCLUDE = '<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>'
 MERMAID_SETUP = """mermaid.initialize({
   startOnLoad: false,
   theme: 'base',
