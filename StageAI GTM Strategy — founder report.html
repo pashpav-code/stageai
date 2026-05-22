@@ -278,6 +278,9 @@
     border-radius: 8px;
     padding: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   .month-card .m-label {
     font-size: 11px;
@@ -294,11 +297,20 @@
   .month-card .m-title {
     font-size: 14.5px;
     font-weight: 600;
-    margin: 10px 0 16px 0;
+    margin: 10px 0 0 0;
     color: var(--ink-2);
     line-height: 1.35;
+    min-height: 4.4em;
   }
-  .month-card .m-metric { margin-top: 14px; }
+  .month-card .m-metric {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
   .month-card .m-num {
     font-size: 28px;
     font-weight: 700;
@@ -321,6 +333,10 @@
     border-top: 1px solid var(--line);
   }
   .month-card .m-row .m-num { font-size: 22px; }
+  .month-card .m-footer {
+    margin-top: auto;
+    padding-top: 16px;
+  }
 
   /* ─── Timeline (CSS Gantt) ─── */
   .gantt {
@@ -951,12 +967,14 @@
       <div class="m-title">Foundation + Connect-тест + передача управления пайплайном</div>
       <div class="m-metric">
         <div class="m-num">40%</div>
-        <div class="m-sub">connect rate (метрика валидации)<br>30–40 компаний · 100–150 connect-заявок · ~40–60 accepts @ 40% · без питча</div>
+        <div class="m-sub">connect rate · метрика валидации · без питча</div>
       </div>
+      <div class="m-footer">
       <div class="parallel-label">Параллельно · Pipeline + Inbound</div>
       <div class="m-row" style="border-top: none; margin-top: 8px; padding-top: 0;">
         <div><div class="m-num">15</div><div class="m-sub">тёплых сделок передано фаундером</div></div>
         <div><div class="m-num">5+</div><div class="m-sub">discovery-звонков провёл Paul</div></div>
+      </div>
       </div>
     </div>
 
@@ -967,31 +985,35 @@
       <div class="m-title">Целевой outreach · 2 сегмента · cold calls стартуют в Week 9</div>
       <div class="m-metric">
         <div class="m-num">8</div>
-        <div class="m-sub">встреч забронировано (outbound)</div>
+        <div class="m-sub">встреч назначено (outbound)</div>
       </div>
+      <div class="m-footer">
       <div class="m-row">
         <div><div class="m-num">2</div><div class="m-sub">активные сделки (sales-qualified)</div></div>
         <div><div class="m-num pipe">$80k</div><div class="m-sub">outbound пайплайн · 2 × $40k</div></div>
         <div><div class="m-num">~30%</div><div class="m-sub">встреча → активная сделка</div></div>
       </div>
-      <div class="month-side-note">+ параллельная работа с pipeline и inbound (ведёт Paul, конверсии идут)</div>
+      <div class="month-side-note">+ параллельная работа с pipeline и inbound</div>
+      </div>
     </div>
 
     <!-- Month 3 -->
     <div class="month-card">
       <div class="m-label">Месяц 3</div>
       <div class="m-date">3 – 30 авг · 4 недели</div>
-      <div class="m-title">Тест масштаба + cold calls + поддержка закрытия</div>
+      <div class="m-title">Масштабирование + cold calls + поддержка закрытия</div>
       <div class="m-metric">
         <div class="m-num">15</div>
-        <div class="m-sub">встреч забронировано (outbound)</div>
+        <div class="m-sub">встреч назначено (outbound)</div>
       </div>
+      <div class="m-footer">
       <div class="m-row">
         <div><div class="m-num">8</div><div class="m-sub">активных сделок (суммарно, outbound)</div></div>
         <div><div class="m-num pipe">$320k</div><div class="m-sub">outbound пайплайн · 8 × $40k</div></div>
         <div><div class="m-num">~30%</div><div class="m-sub">встреча → активная сделка</div></div>
       </div>
       <div class="month-side-note">+ поддержка закрытия ранних сделок · подготовка POC для 2–3 возможностей</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1030,7 +1052,7 @@
     <div class="g-spacer" style="grid-column: 3 / 5;"></div>
     <div class="g-bar m1" style="grid-column: 5 / 7;">Connect</div>
     <div class="g-bar m2" style="grid-column: 7 / 12;">Targeted · 2 сегмента (A/B) · S3 founder-led</div>
-    <div class="g-bar m3" style="grid-column: 12 / 16;">Тест масштаба + закрытие</div>
+    <div class="g-bar m3" style="grid-column: 12 / 16;">Масштабирование + закрытие</div>
 
     <!-- Cold calls -->
     <div class="g-label">Cold calls</div>
@@ -1081,7 +1103,7 @@
     <span class="lg-pre">До проекта (май)</span>
     <span class="lg-m1">Месяц 1 · Foundation</span>
     <span class="lg-m2">Месяц 2 · Целевой outreach</span>
-    <span class="lg-m3">Месяц 3 · Тест масштаба</span>
+    <span class="lg-m3">Месяц 3 · Масштабирование</span>
     <span class="lg-cold">Cold calls</span>
     <span class="lg-always">Постоянные треки</span>
   </div>
@@ -1212,8 +1234,8 @@
 
 <!-- ═══════════════════ FUNNEL ═══════════════════ -->
 <section id="funnel">
-  <h2><span class="icon">📈</span> Математика воронки · 40 / 30 / 30</h2>
-  <p class="section-sub">Целевые коэффициенты конверсии: <strong>40%</strong> — принятие LinkedIn connect-заявок · <strong>30%</strong> — reply rate после входящего сообщения · <strong>~30%</strong> — reply → встреча · <strong>30%</strong> — встреча → активная сделка (sales-qualified). <em>M1 — только connect; M2 — POV messaging без connect-стадии; M3 — scale connect → reply → meeting → SQO.</em></p>
+  <h2><span class="icon">📈</span> Математика воронки · 40 / 20 / 20 / 30</h2>
+  <p class="section-sub">Целевые коэффициенты: <strong>40%</strong> — accept connect · <strong>20%</strong> — connect → reply · <strong>20%</strong> — reply → meeting (planning) · <strong>~30%</strong> — встреча → активная сделка (SQO). У шага «встречи» ниже — <strong>фактический %</strong> от предыдущего шага при фиксированных целях (8 / 15 встреч).</p>
 
   <div class="funnel-row">
     <div class="stage">Месяц 1 · Connect-тест<span class="week">Weeks 3–4 · 15-28 июня</span></div>
@@ -1229,26 +1251,26 @@
   <div class="funnel-row">
     <div class="stage">Месяц 2 · Целевой<span class="week">Weeks 5–9 · 29 июня – 2 авг</span></div>
     <div class="funnel-cascade">
-      <span class="step">100–150 компаний · 600–800 контактов</span>
+      <span class="step">80–120 компаний · 400–600 контактов</span>
       <span class="arrow">→</span>
-      <span class="step">24 ответа (30%)</span>
+      <span class="step">80–120 ответов (20%)</span>
       <span class="arrow">→</span>
-      <span class="step">8 встреч (30%)</span>
+      <span class="step">8 встреч (~7–10% от ответа)</span>
       <span class="arrow">→</span>
       <span class="step final">2 активные сделки · $80k</span>
     </div>
   </div>
 
   <div class="funnel-row">
-    <div class="stage">Месяц 3 · Тест масштаба<span class="week">Weeks 10–13 · 3-30 авг</span></div>
+    <div class="stage">Месяц 3 · Масштабирование<span class="week">Weeks 10–13 · 3-30 авг</span></div>
     <div class="funnel-cascade">
       <span class="step">200–300 компаний · 1200–1500 контактов</span>
       <span class="arrow">→</span>
       <span class="step">480–600 приняли (40%)</span>
       <span class="arrow">→</span>
-      <span class="step">144–180 ответов (30%)</span>
+      <span class="step">96–120 ответов (20%)</span>
       <span class="arrow">→</span>
-      <span class="step">15 встреч</span>
+      <span class="step">15 встреч (~13–16% от ответа)</span>
       <span class="arrow">→</span>
       <span class="step final">+6 активных → 8 всего · $320k</span>
     </div>
@@ -1447,9 +1469,9 @@
     <div class="plan-row"><div class="pw">Week 7<span class="dt">13–19 июл</span></div><div class="pd"><strong>Запуск второго сегмента для сравнения</strong> · research pipeline v1.5 · Hermes черновик.</div></div>
     <div class="plan-row"><div class="pw">Week 8<span class="dt">20–26 июл</span></div><div class="pd">Playbook v1.0 · Hermes запущен · скрипт звонков v1 · шаблон business case калькулятора v0.</div></div>
     <div class="plan-row"><div class="pw">Week 9<span class="dt">27 июл – 2 авг</span></div><div class="pd"><strong>Закрытие Месяца 2 · анализ теста + старт cold calls</strong> · дашборд активности продаж запущен.</div></div>
-    <div class="plan-row"><div class="pw">Week 10<span class="dt">3–9 авг</span></div><div class="pd"><strong>Месяц 3 · Неделя масштаба 1:</strong> 20–25 компаний · cold calls в полную силу · business case калькулятор v1 на сделку.</div></div>
-    <div class="plan-row"><div class="pw">Week 11<span class="dt">10–16 авг</span></div><div class="pd"><strong>Неделя масштаба 2:</strong> 20–25 компаний · ревью середины месяца · Hermes анализ signal-to-conversion.</div></div>
-    <div class="plan-row"><div class="pw">Week 12<span class="dt">17–23 авг</span></div><div class="pd"><strong>Неделя масштаба 3 + поддержка закрытия:</strong> предложения proof-of-concept (2–3) · sales deck v0.2.</div></div>
+    <div class="plan-row"><div class="pw">Week 10<span class="dt">3–9 авг</span></div><div class="pd"><strong>Месяц 3 · Неделя 1 масштабирования:</strong> 20–25 компаний · cold calls в полную силу · business case калькулятор v1 на сделку.</div></div>
+    <div class="plan-row"><div class="pw">Week 11<span class="dt">10–16 авг</span></div><div class="pd"><strong>Неделя 2 масштабирования:</strong> 20–25 компаний · ревью середины месяца · Hermes анализ signal-to-conversion.</div></div>
+    <div class="plan-row"><div class="pw">Week 12<span class="dt">17–23 авг</span></div><div class="pd"><strong>Неделя 3 масштабирования + поддержка закрытия:</strong> предложения proof-of-concept (2–3) · sales deck v0.2.</div></div>
     <div class="plan-row"><div class="pw">Week 13<span class="dt">24–30 авг</span></div><div class="pd"><strong>Финальная неделя:</strong> матрица масштаб/стоп · роадмап на 30–90 дней v2 · роадмап автоматизации для Q3.</div></div>
   </div>
 </section>

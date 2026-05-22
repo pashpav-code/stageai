@@ -9,7 +9,7 @@
 | **Pre-project** | до W1 | май | Email domains + warmup 3–4 нед · LI account map | — |
 | **M1 Foundation** | 1–2 | 1–14 июн | ICP · 3 personas · pipeline takeover · research stack | — |
 | **M1 Connect test** | 3–4 | 15–28 июн | 30–40 co · 100–150 contacts · **no pitch** | ~40–60 connects @ 40% |
-| **M2 Targeted (5w)** | 5–9 | 29 июн – 2 авг | 100–150 co · 600–800 contacts · POV-led · **cold calls W9** | **8 mtgs · 2 SQO · $80k** |
+| **M2 Targeted (5w)** | 5–9 | 29 июн – 2 авг | 80–120 co · 400–600 contacts · POV-led · **cold calls W9** | **8 mtgs · 2 SQO · $80k** |
 | **M3 Scale + close (4w)** | 10–13 | 3 – 30 авг | 200–300 co · 1200–1500 contacts · BC calc · close | **15 mtgs · 8 SQO total · $320k** |
 
 **Параллельно всегда:**
@@ -321,16 +321,16 @@
 
 ### M2 · Targeted seg.1+2 (W5–9 · 29 июн – 2 авг)
 
-- Outreach: **100–150 companies · 600–800 contacts**
-- Reply rate: 30% (target mid-funnel)
-- **Meetings: 8 · SQO: 2 (≈ 30%) · Pipeline: $80k** @ avg $40k ARR
+- Outreach: **80–120 companies · 400–600 contacts**
+- Reply rate: 20% → 80–120 replies
+- **Meetings: 8 (~7–10% reply → meeting) · SQO: 2 (≈ 30%) · Pipeline: $80k** @ avg $40k ARR
 
 ### M3 · Scale + close (W10–13 · 3 – 30 авг)
 
 - Outreach: **200–300 companies · 1200–1500 contacts**
-- Connect rate: 40% → 480–600 connects (capacity check)
-- Reply rate: 30% → 144–180 replies (upper bound)
-- **Meetings: 15 · New SQO: +6 (8 total cumulative) · Pipeline: $320k**
+- Connect rate: 40% → 480–600 connects
+- Reply rate: 20% → 96–120 replies
+- **Meetings: 15 (~13–16% reply → meeting) · New SQO: +6 (8 total cumulative) · Pipeline: $320k**
 
 ### Cumulative 13 weeks
 
