@@ -322,8 +322,8 @@
 ### M2 · Targeted seg.1+2 (W5–9 · 29 июн – 2 авг)
 
 - Outreach: **80–120 companies · 400–600 contacts**
-- Reply rate: 20% → 80–120 replies
-- **Meetings: 8 (~7–10% reply → meeting) · SQO: 2 (≈ 30%) · Pipeline: $80k** @ avg $40k ARR
+- Reply rate: **~15%** (M2 ramp; target **20%** from M3) → **60–90 replies**
+- **Meetings: 8 (~9–13% reply → meeting) · SQO: 2 (≈ 30%) · Pipeline: $80k** @ avg $40k ARR
 
 ### M3 · Scale + close (W10–13 · 3 – 30 авг)
 
