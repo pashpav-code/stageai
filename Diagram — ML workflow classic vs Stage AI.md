@@ -208,13 +208,13 @@ flowchart TB
 
 | Паттерн | Где inference | Железо | TheStage сегодня | Кто так делает (наши данные) |
 |---------|---------------|--------|------------------|------------------------------|
-| **A. On-glass** | STT/LLM в дужке | Snapdragon / Android SoC, NPU on-glass (OEM) | ❌ нет self-serve QNN/SDK | **Brilliant Labs** — on-glass NPU (Alif) + **не** документированный compile TheStage на Qualcomm; типовой industry gap |
+| **A. On-glass** | STT/LLM в дужке | Snapdragon / Android SoC, NPU on-glass (OEM) | ⚠️ **Qualcomm поддержка разработана, не в публичном релизе** | **Brilliant Labs** — on-glass NPU (Alif); Qualcomm/QNN compile в разработке у TheStage (не анонс — не обещать клиентам) |
 | **B. Phone hub** | STT/LLM на paired phone | Apple Silicon (compile path) | ✅ tiers S–M, Apple compile | **Brilliant Labs** — TheStage на **paired smartphone** (press); **Praktika** — приложение на телефоне, migration on-device |
 | **C. Edge-box** | Hub в кейсе / на линии | Jetson (NVIDIA) | ✅ export path в маркетинге | Product matrix; **именованного paying только-Jetson** в notes нет |
 | **D. Cloud-first** | Очки/апп = capture; AI в облаке | NVIDIA GPU | ✅ Elastic + Qlip + ANNA | **Praktika** (сейчас cloud → device); **Phonic**; **Recraft**; **Nebius** — infra/канал, не wearable app |
 | **E. Split wake** | Wake/VAD на device, тяжёлое — hub/cloud | MCU + BLE | ⚠️ wake — vendor; STT/LLM — TheStage на B или D | Типовый mass-market glasses; **Brilliant**-class hybrid |
 
-**Публичные кейсы (не все wearable):** SaladCloud, Wallarm — cloud optimize; Huawei P50/P60 — **кастомный** on-device Snapdragon (R&D), не self-serve SDK для glasses.
+**Публичные кейсы (не все wearable):** SaladCloud, Wallarm — cloud optimize; Huawei P50/P60 — **кастомный** on-device Snapdragon (R&D). **Qualcomm/QNN поддержка разработана TheStage** — не в публичном релизе, не обещать клиентам до анонса.
 
 ```mermaid
 flowchart TB
@@ -230,7 +230,7 @@ flowchart TB
   subgraph WEAR["👓 Wearable"]
     direction LR
     MIC["🎙 Микрофон"]
-    P_A["A · On-glass\nSoC / NPU в дужке\n❌ нет TheStage self-serve SDK"]:::gap
+    P_A["A · On-glass\nSoC / NPU в дужке\n⚠️ Qualcomm в разработке\n(не в публичном релизе)"]:::gap
     P_E["E · Wake / VAD only\nMCU → BLE offload"]:::glass
     MIC --> P_A
     MIC --> P_E
@@ -285,7 +285,7 @@ flowchart TB
   linkStyle 8,9,11,12,13,14,15,16,17,18,19 stroke:#7f8c8d,stroke-width:2px,stroke-dasharray:6 4,fill:none
 ```
 
-**На звонке:** спросить prospect — **A / B / C / D** в roadmap. On-glass Qualcomm **вне** стандартного продукта; для wearables с AI сегодня чаще **B + D** (Brilliant, Praktika).
+**На звонке:** спросить prospect — **A / B / C / D** в roadmap. On-glass Qualcomm — поддержка **в разработке** (не в публичном релизе), **не обещать**; питч S7-аккаунтам: «cloud сейчас + on-device unlock скоро». Для wearables сегодня чаще **B + D** (Brilliant, Praktika).
 
 ---
 
@@ -312,7 +312,7 @@ flowchart TB
 | tps / ttft | Скорость генерации / задержка до первого токена |
 | OOM | Не хватило памяти на устройстве |
 | Phone hub | Paired smartphone — compute (Brilliant, Praktika) |
-| On-glass | Inference на SoC в очках — обычно **без** TheStage self-serve SDK |
+| On-glass | Inference на SoC в очках — Qualcomm/QNN поддержка **в разработке** (не в публичном релизе), **не обещать** |
 | Edge-box | Jetson / промышленный hub (product matrix) |
 | Cloud-first | Capture на device; модели на NVIDIA (Praktika, Phonic, Recraft) |
 

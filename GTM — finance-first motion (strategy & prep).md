@@ -94,7 +94,7 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 
 - Срез **OpEx / payroll** ($8M programs)  
 - **Gross margin %** без allocation AI в COGS  
-- **Замена Snapdragon / on-glass SDK**  
+- **Замена Snapdragon / on-glass SDK** *(пока — Qualcomm поддержка разработана, но не в публичном релизе; не обещать до анонса)*  
 - **$500k/год** без определения N (см. [Vuzix §4.3](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md#43-layer-2--scenario-table-n--deviceyear))  
 - **2–4×** без PoC на **их** модели  
 
@@ -117,8 +117,8 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 |--------|---------------|-------------------|----------------------|
 | **Partner cloud AI** (Ramblr-class PR) | Press, partner pages | ✅ Primary savings | — |
 | **NVIDIA / GPU cloud** в job posts | LinkedIn, careers | ✅ Layer A fit | Only on-device, no cloud |
-| **Snapdragon on-glass AI** | CES, spec sheets | ✅ Story, но **не** our Phase 1 | Don't sell compile |
-| **100% on-device, no cloud** | Architecture interview | R&D only / wait | Lead with on-device SDK |
+| **Snapdragon on-glass AI** | CES, spec sheets | ✅ **Сильная история** — Qualcomm поддержка в разработке | Не продавать on-device compile до публичного релиза; питч: «cloud сейчас + on-device unlock скоро» |
+| **100% on-device, no cloud** | Architecture interview | ⚠️ R&D / early — Qualcomm в разработке | Не обещать; «скоро сможем» — только если ТМ разрешает |
 | **iPhone companion app** | SKU docs | Phase 2 (S4) | Don't mix in CFO mail |
 
 **Правило 60 сек:** если **нет** облачного AI сейчас и **нет** в roadmap на 12 мес → **не** finance-first lead.
@@ -169,7 +169,7 @@ TheStage в этом motion = **Layer A (Optimize):** дешевле и пред
 | Вопрос | Зачем | Ответ для motion |
 |--------|-------|------------------|
 | Что продаём в Phase 0–1? | Scope PoC | **Layer A only:** benchmark + optimize **1–2 cloud models** on **NVIDIA** |
-| Что **не** продаём? | Avoid disappointment | On-glass Snapdragon compile; full orchestration STT→LLM→TTS on glasses; OpEx cut |
+| Что **не** продаём? | Avoid disappointment | On-glass Snapdragon compile (**пока** — в разработке, не в релизе; не обещать до анонса); full orchestration STT→LLM→TTS on glasses; OpEx cut |
 | Что доказываем в PoC? | PoI | **$/session**, **p95**, **optimization %** — not margin % |
 | Что после PoC? | Phase 1 | Production optimize + optional OEM PDF |
 | Кто внутри TheStage на сделке? | Delivery | ML + один **finance memo** writer |
