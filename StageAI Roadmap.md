@@ -363,7 +363,7 @@ ml_signoff, exec_sponsor, notes
 
 ## Tools & ops (EUR)
 
-См. founder-ready · Tools & бюджет.
+См. founder report · Tools & бюджет.
 
 **Stack:** n8n workflows (Feasible / Sprites patterns) · GetSales · Prospeo / Wiza · **WhyzerAI** (public co. research) · Tavily · OpenRouter · Supabase · Railway.
 **Не в scope M1–M2:** Clay (опционально позже) · ABM ads · Aerosend (если GetSales email хватит).
@@ -416,4 +416,4 @@ ml_signoff, exec_sponsor, notes
 
 ---
 
-*v.3 · operational · W0–W13 · 1 июн – 30 авг 2026 · sync с founder-ready*
+*v.3 · operational · W0–W13 · 1 июн – 30 авг 2026*

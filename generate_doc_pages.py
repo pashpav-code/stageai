@@ -7,7 +7,6 @@ BACK_HREF = "StageAI GTM Strategy — founder report.html"
 
 FILES = [
     "StageAI Roadmap.md",
-    "StageAI Roadmap — founder-ready.md",
     "POV — how to build (Strategic POV framework).md",
     "GTM — finance-first motion (strategy & prep).md",
     "Vuzix — POV and business case (illustration).md",
