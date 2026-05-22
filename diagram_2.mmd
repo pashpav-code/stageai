@@ -1,0 +1,33 @@
+flowchart TB
+  classDef io      fill:#eaf4fb,stroke:#2980b9,stroke-width:2px,color:#1a5276
+  classDef step    fill:#f4f6f7,stroke:#7f8c8d,stroke-width:2px,color:#2c3e50
+  classDef pain    fill:#fde8e8,stroke:#e74c3c,stroke-width:3px,color:#922b21,font-weight:bold
+  classDef decide  fill:#fef9e7,stroke:#f39c12,stroke-width:2px,color:#7d6608
+  classDef out_bad fill:#fde8e8,stroke:#c0392b,stroke-width:2px,color:#7b241c
+
+  IN(["▶ ВХОД\nVoice assistant · wearable + hub / cloud"]):::io
+
+  IN --> TRAIN["① Обучение\nfine-tune / LoRA · cloud GPU\n⏱ дни–недели"]:::step
+
+  TRAIN --> QUANT["② Сжатие  ⚠️ БОЛЬ\nPTQ · GPTQ · AWQ · SmoothQuant\nсвои скрипты · ручной перебор\n⏱ 2–6 нед экспериментов"]:::pain
+
+  QUANT --> EXPORT["③ Export  ⚠️ БОЛЬ\nCore ML · ONNX · ExecuTorch\nотдельный toolchain per backend\n⏱ 1–3 нед"]:::pain
+
+  EXPORT --> PROFILE["④ Валидация  ⚠️ БОЛЬ\np95 latency · OOM · battery drain\nна каждом целевом девайсе вручную\n⏱ 1–2 нед"]:::pain
+
+  PROFILE --> FIX{"Влезает?\nSLO OK?"}:::decide
+  FIX -->|"🔄 Нет — повтор цикла\n(часто 2–5 итераций)"| QUANT
+  FIX -->|"✅ Да"| WIRE["⑤ Pipeline\nSTT lib + LLM runtime + TTS\nсвой orchestration\n⏱ 1–3 нед"]:::step
+
+  WIRE --> PROD["⑥ Продакшен"]:::step
+  PROD --> CLOUD["Путь A ☁️  Cloud API\nOpenAI · Deepgram · Whisper API\n⚠️ ongoing $ · чужие SLO · vendor lock"]:::out_bad
+  PROD --> LOCAL["Путь B 📱  On-device\nтолько если цикл ②→④ сошёлся"]:::step
+
+  CLOUD --> OUT(["◀ ВЫХОД\nProd: STT→LLM→TTS · SLO зафиксированы\nили зависимость от API-vendor"]):::io
+  LOCAL --> OUT
+
+  UPDATE(["↻ Новый LoRA / model v2\n→ весь цикл ②→④ заново"]) -.->|"полный повтор"| QUANT
+
+  linkStyle default stroke:#2c3e50,stroke-width:3px,fill:none
+  linkStyle 5 stroke:#e74c3c,stroke-width:4px,fill:none
+  linkStyle 12 stroke:#95a5a6,stroke-width:2px,stroke-dasharray:6 4,fill:none

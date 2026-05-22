@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POV — finance-first outbound (enterprise wearables)</title>
+<style>
+
+:root {
+  --bg: #fafaf9;
+  --ink: #1a1a1a;
+  --ink-2: #374151;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #1e40af;
+  --accent-bg: #eff6ff;
+  --code-bg: #f3f4f6;
+  --warn: #d97706;
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+.topbar {
+  background: var(--accent);
+  color: white;
+  padding: 11px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.topbar a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.topbar a:hover { color: white; }
+.topbar .sep { color: rgba(255,255,255,0.3); }
+.topbar .doc-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 48px 28px 96px;
+}
+.content h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.content h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 44px 0 12px;
+  color: var(--ink);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+}
+.content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 30px 0 8px;
+  color: var(--ink);
+}
+.content h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 20px 0 6px;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.content p { margin: 0 0 14px; color: var(--ink-2); }
+.content ul, .content ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: var(--ink-2);
+}
+.content li { margin: 6px 0; }
+.content strong { color: var(--ink); font-weight: 700; }
+.content em { font-style: italic; color: var(--ink-2); }
+.content a { color: var(--accent); }
+.content hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 36px 0;
+}
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 16px 0;
+  padding: 10px 16px;
+  background: var(--accent-bg);
+  border-radius: 0 6px 6px 0;
+  color: var(--ink-2);
+  font-style: italic;
+}
+.content blockquote p { margin: 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  color: #be185d;
+}
+.content pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 18px 22px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 16px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.content pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13.5px;
+}
+.content th {
+  background: var(--accent);
+  color: white;
+  padding: 9px 13px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.content td {
+  padding: 8px 13px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  vertical-align: top;
+}
+.content tr:nth-child(even) td { background: var(--accent-bg); }
+.content .mermaid {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+@media (max-width: 600px) {
+  .content { padding: 24px 16px 60px; }
+  .topbar { padding: 10px 14px; }
+  .content h1 { font-size: 20px; }
+  .content h2 { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="StageAI GTM Strategy — founder report.html">← Назад</a>
+  <span class="sep">|</span>
+  <span class="doc-title">POV — finance-first outbound (enterprise wearables)</span>
+</div>
+
+<div class="content" id="content"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+
+const md = "# POV \u2014 finance-first outbound (enterprise wearables & distressed public)\n\n**\u0414\u043b\u044f:** GTM TheStage AI \u00b7 Voitech / Digital Hunch  \n**\u041c\u0435\u0442\u043e\u0434\u043e\u043b\u043e\u0433\u0438\u044f POV:** [POV \u2014 how to build (Strategic POV framework)](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md) \u2190 \u043a\u0430\u043d\u043e\u043d [ESC & Whyzer Strategic POV Development](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md)  \n**\u0421\u0432\u044f\u0437\u044c:** [Understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) (\u00a73.11\u20133.12) \u00b7 [Roadmap](StageAI%20Roadmap.md)  \n**\u0428\u0430\u0431\u043b\u043e\u043d-\u0430\u043a\u043a\u0430\u0443\u043d\u0442:** Vuzix (NASDAQ: VUZI) \u2014 **S7 \u2192 W3**  \n**\u0414\u0430\u0442\u0430:** 2026-05-22\n\n> **\u042d\u0442\u043e\u0442 \u0444\u0430\u0439\u043b** = StageAI playbook \u0434\u043b\u044f **S7 / public OEM**. \u041e\u0431\u0449\u0438\u0439 \u043f\u0440\u043e\u0446\u0435\u0441\u0441 (3 stages, consensus, MUD, soundbite): **[POV framework doc](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md)**.  \n> **\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f motion (landmarks, \u043c\u0435\u0442\u0440\u0438\u043a\u0438, \u0441\u0438\u0433\u043d\u0430\u043b\u044b, literacy):** [GTM \u2014 finance-first motion (strategy & prep)](GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).md).\n\n---\n\n## 0. POV process (ESC three stages) \u2014 finance-first track\n\n| Stage | Focus | TheStage output |\n|-------|--------|-----------------|\n| **1. Hypothesis** | 10-K, earnings, architecture | S7 map, savings zones, initial hypothesis |\n| **2. Consensus** | Champion + ML + CFO align on V1\u2192V3 | Dual deliverable plan; architecture honesty |\n| **3. Executive** | **Champion presents** MUD + soundbite | CEO/CFO meeting; you support |\n\n**Pillars:** Consensus \u00b7 Collaboration \u00b7 Ownership ([ESC](../../gtm_stuff/ESC%20&%20Whyzer/Strategic%20POV%20Development.md)).\n\n---\n\n## 1. \u041a\u043e\u0433\u0434\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c finance-first POV\n\n| \u0421\u0438\u0433\u043d\u0430\u043b \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430 | \u041f\u043e\u0447\u0435\u043c\u0443 \u043d\u0435 \u00ab\u0442\u043e\u043b\u044c\u043a\u043e ML\u00bb |\n|-----------------|------------------------|\n| \u041f\u0443\u0431\u043b\u0438\u0447\u043d\u0430\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f, micro/small cap | IR narrative: **unit economics**, going concern, OEM win-rate |\n| \u0423\u0431\u044b\u0442\u043a\u0438, OpEx cuts, restructuring | \u041f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044c \u2260 \u0442\u043e\u043b\u044c\u043a\u043e VP Engineering \u2014 \u043d\u0443\u0436\u043d\u044b **CFO / CEO / BD** |\n| AI \u0432 CES/IR, \u043d\u043e \u0432\u044b\u0440\u0443\u0447\u043a\u0430 \u043e\u0442 hardware | AI = **variable COGS** \u0438 **R&D drag**, \u043d\u0435 feature slide |\n| **S7** (Snapdragon on-glass) | On-device SDK TheStage \u274c \u2014 \u0447\u0435\u0441\u0442\u043d\u044b\u0439 \u0432\u0445\u043e\u0434 \u0447\u0435\u0440\u0435\u0437 **cloud optimize** (S1) |\n| OEM / Quanta / Garmin-class partnerships | \u041f\u0440\u043e\u0434\u0430\u0451\u043c **OEM appendix \u0441 \u043c\u0435\u0442\u0440\u0438\u043a\u0430\u043c\u0438**, \u043d\u0435 \u00ab\u0437\u0430\u043c\u0435\u043d\u0438\u043c Qualcomm\u00bb |\n\n**\u041d\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043a\u0430\u043a lead:** \u0437\u0434\u043e\u0440\u043e\u0432\u044b\u0435 Series B voice apps \u0431\u0435\u0437 \u0434\u0430\u0432\u043b\u0435\u043d\u0438\u044f margin (\u0442\u0430\u043c hybrid **W1** \u2014 MAU + latency, \u043d\u0435 going concern).\n\n---\n\n## 2. One-line POV (\u043f\u0435\u0440\u0435\u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0439)\n\n> **TheStage helps wearable OEMs ship credible on-glass AI (voice, vision, translation) without linear growth in cloud inference COGS** \u2014 by optimizing models on **NVIDIA** (cloud / edge) today, and on **Apple companion / Jetson** only where architecture allows \u2014 so AI becomes a **margin story**, not only a demo story.\n\n**\u0421\u0443\u0436\u0435\u043d\u0438\u0435 \u0434\u043b\u044f S7/OEM:**\n\n> **We don\u2019t replace Qualcomm on the glasses; we make the cloud and companion paths you already depend on cheap enough to put AI in every reference design.**\n\n---\n\n## 3. Larger narrative (\u0434\u043b\u044f CEO / CFO / IR)\n\n| \u0418\u0445 \u043c\u0430\u043a\u0440\u043e-\u044f\u0437\u044b\u043a | \u0412\u0430\u0448 thread |\n|---------------|------------|\n| Going concern, OpEx cuts | AI must **lower burn per shipped unit**, not add a cost center |\n| Differentiation vs Meta / Apple | **Usable AI** with published **$ / 1k voice sessions** and latency SLO |\n| OEM / strategic partnerships | **Benchmark pack** \u0434\u043b\u044f RFP \u2014 AI as spec, not slideware |\n| Software & services ecosystem | TheStage = **inference layer** (Elastic + ANNA + deploy), not another app store |\n| Supply chain / inventory | \u041b\u0451\u0433\u043a\u0438\u0439 \u0430\u043a\u0446\u0435\u043d\u0442: fewer deployment variants (secondary) |\n\n**Spine:** *Profitable AI for wearable OEMs = optimized inference economics, not more features.*\n\n---\n\n## 4. \u0410\u043a\u0446\u0435\u043d\u0442\u044b vs \u0430\u043d\u0442\u0438-\u0430\u043a\u0446\u0435\u043d\u0442\u044b\n\n### \u0414\u0435\u043b\u0430\u0442\u044c \u0430\u043a\u0446\u0435\u043d\u0442\n\n1. **Variable cost** \u2014 $/inference, $/1k voice minutes, GPU-hours per OEM pilot  \n2. **OEM enablement** \u2014 win design with **measurable AI SLOs**  \n3. **Time-to-SKU** \u2014 fewer ML engineers per OEM variant (R&D efficiency, not \u00abcut payroll\u00bb)  \n4. **Voice + wearables** \u2014 aligns with TheStage founder narrative  \n5. **Phased PoC** \u2014 one cloud model, 2\u20133 weeks, investor-mentionable directional metrics  \n6. **Architecture honesty** \u2014 Snapdragon on-glass acknowledged; wedge = cloud (+ phone path if verified)\n\n### \u041d\u0435 \u0432\u0435\u0441\u0442\u0438 \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440\n\n- \u00ab\u0421\u043e\u043a\u0440\u0430\u0442\u0438\u043c \u0432\u0430\u0448 $8M OpEx\u00bb (\u043d\u0435\u043f\u0440\u0430\u0432\u0434\u043e\u043f\u043e\u0434\u043e\u0431\u043d\u043e)  \n- Full on-device orchestration **as shipped today**  \n- \u0417\u0430\u043c\u0435\u043d\u0430 Snapdragon / \u0438\u0445 voice stack  \n- Platform GPU rental as **lead** (sounds like more OpEx)  \n- Consumer Brilliant / iPhone-hub story as primary archetype  \n- Big-bang migration\n\n---\n\n## 5. POV document structure (deliverable)\n\nAligns with [POV framework \u00a77](POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).md#7-pov-document-template-thestage) and ESC Situation \u2192 Insight flow.\n\n| \u0411\u043b\u043e\u043a | \u0421\u043e\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435 | ESC / Stage |\n|------|------------|-------------|\n| **Strategic Soundbite** | 1 paragraph (CEO) | Stage 3 opener |\n| **MUD** | 1 paragraph (CFO) | Meaningful \u00b7 Unique \u00b7 Defensible |\n| **A. Situation** | \u0440\u044b\u043d\u043e\u043a, IR, AI story | Stage 1 research |\n| **B. Complication** | Demo AI \u2260 P&L AI | Unique insight |\n| **C. Insight** | Unit economics = OEM spec | Value pyramid wedge |\n| **D. Recommendation** | Phase 0 \u2192 1 \u2192 2 | Business case precursor |\n| **E. Proof / PoI path** | SaladCloud; PoC metrics | Not silver bullet |\n| **F. Ask** | 30 min; champion names exec | Ownership transfer |\n| **By audience** | Today \u2192 Tomorrow table | Consensus (Stage 2) |\n\n---\n\n## 6. Research & prep checklist (\u0434\u043e \u043f\u0435\u0440\u0432\u043e\u0433\u043e \u043a\u0430\u0441\u0430\u043d\u0438\u044f)\n\n### 6.1 Finance & IR (\u043d\u0435 \u0434\u0435\u043b\u0435\u0433\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u0442\u0435\u0445\u043d\u0430\u0440\u044f\u043c)\n\n- [ ] \u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 **10-K / 10-Q**: revenue, gross margin, OpEx, cash runway, going-concern language  \n- [ ] **Earnings call** summary: analyst questions (AI, partnerships, cost cuts)  \n- [ ] **Stock pressure**: YTD, guidance cuts, restructuring announcements  \n- [ ] **Revenue mix**: hardware vs software/services vs licensing (waveguide IP)  \n- [ ] **Partnership bets** named on calls (e.g. Quanta, Garmin) \u2014 what AI means for those SKUs  \n- [ ] **Impairments / inventory** \u2014 avoid claiming supply-chain fix; note only if relevant to R&D waste  \n\n### 6.2 Product & technographic (\u0434\u043b\u044f credibility)\n\n- [ ] SKU map: which products have **voice / translate / vision AI** (CES, product pages)  \n- [ ] **Where inference runs**: cloud vs on-device SoC (e.g. Snapdragon AR1) vs phone companion  \n- [ ] Cloud provider signals (AWS, Nebius, Azure) \u2014 job posts, engineering blogs  \n- [ ] Assign **S-segment** ([brief \u00a73.11](Stage%20AI%20%E2%80%94%20understanding%20brief.md#311-icp-\u0447\u0435\u0442\u044b\u0440\u0435-\u0443\u0440\u043e\u0432\u043d\u044f-s--p--l--w))  \n- [ ] **Buyer map**: CEO, CFO, VP BD/OEM, VP Eng, ML lead (if any)  \n\n### 6.3 TheStage internal prep\n\n- [ ] **One layer** for first meeting: **A (Optimize)** on NVIDIA cloud  \n- [ ] Pick **one model** for PoC story (e.g. Whisper tier, small LLM) \u2014 match their demo stack  \n- [ ] **Prod vs roadmap** checklist signed ([Roadmap](StageAI%20Roadmap.md) \u043d\u0435\u0434\u0435\u043b\u044f 2)  \n- [ ] **Pricing narrative** one slide: not $20/mo SaaS lead \u2014 per-GPU / PoC / enterprise  \n- [ ] Legal: what case studies can be named (Brilliant, Praktika, etc.)  \n\n### 6.4 Messaging matrix (finance row)\n\n| Persona | Lead metric | Lead fear | CTA |\n|---------|-------------|-----------|-----|\n| **CFO** | $/1k inference sessions; margin per OEM pilot | Variable COGS of AI pilots | 30 min + benchmark scope |\n| **CEO** | OEM win-rate; AI in partnership decks | \u00abAI without P&L\u00bb | Executive brief 1-pager |\n| **VP BD / OEM** | Latency + $ spec sheet for RFP | Losing design to Meta/XR | Joint benchmark for reference design |\n| **VP Eng / ML** | tps, ttft, tier S/M/L | Export hell, duplicate stacks | Technical PoC scope doc |\n\n---\n\n## 7. Discovery questions (first call)\n\n1. Where does **inference run today** for voice/translate \u2014 cloud, on-glass SoC, phone?  \n2. Order of magnitude: **monthly cloud inference spend** vs optics R&D?  \n3. Is AI **revenue** (license/services) or **cost center** to win hardware?  \n4. Which **SKU** is the partnership bet (12 months)?  \n5. Who owns ML \u2014 internal, ODM, third-party ASR/LLM?  \n6. What metric would **CFO accept** on a pilot success memo? ($/session, p95 latency, both?)  \n\n---\n\n## 8. Challenge \u2192 wedge map (template)\n\n| Customer challenge | Problem (P&L) | TheStage wedge | Layer |\n|--------------------|---------------|----------------|-------|\n| Financial sustainability | Revenue \u226a burn; AI adds variable cost | Optimize cloud inference; OEM $/session spec | **A** |\n| Competitive pressure | Need differentiated **measurable** AI | Benchmark pack for RFP | **A** + proof |\n| Supply chain | Secondary | Fewer model deployment variants | **A** (light) |\n\n---\n\n## 9. Worked example \u2014 Vuzix (VUZI)\n\n**\u041f\u043e\u043b\u043d\u0430\u044f \u0432\u0435\u0440\u0441\u0438\u044f (MDP + POV + business case + unit economics):** [Vuzix \u2014 POV and business case (illustration)](Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).md) \u2014 Parts 0\u20136, metrics registry, `12k \u00d7 $5` scenarios, 100k footnote, mock exec flow.\n\n**Sources:** Executive research summary (May 2026); public CES/IR; [understanding brief \u00a73.10](Stage%20AI%20%E2%80%94%20understanding%20brief.md#310-prospect-map-\u043a\u043e\u043c\u0443-\u043f\u0438\u0442\u0447\u0438\u0442\u044c-on-device-vs-cloud-\u043d\u0435-\u043a\u043b\u0438\u0435\u043d\u0442\u044b).\n\n### Customer snapshot\n\n- AR / smart glasses OEM; waveguide + microLED; **~100\u2013150 FTE**; NASDAQ microcap  \n- **S7 \u2192 W3**; Ultralite / LX1 with **Snapdragon AR1**, voice & translation in positioning  \n- Financial stress: large net losses, going-concern narrative, OpEx reduction (~$8M target), payroll plans  \n- Strategy: OEM reference designs, partnerships (Quanta, Garmin mentioned), verticals (healthcare, security, defense)\n\n### POV (finance-first)\n\n**Situation:** Vuzix sells **partnership and optics** while the street asks when **AI revenue beats AI burn**.\n\n**Complication:** CES AI story (voice on AR1) risks **cloud COGS per OEM pilot** without a published unit-economic spec \u2014 pilots don\u2019t convert to licensed SKUs.\n\n**Insight:** Reference-design winners will publish **AI SLOs + $/1k sessions** like FOV and battery \u2014 inference must be engineered, not demo-wrapped.\n\n**Recommendation:**\n\n| Phase | Action | Owner |\n|-------|--------|-------|\n| **0** (2\u20133 wk) | Baseline $ + p95 on **one** cloud voice model they use in demos | Eng + Voitech |\n| **1** | Elastic/ANNA path; OEM benchmark sheet | Eng |\n| **2** | Companion iOS or Jetson **only** if SKU architecture confirms | Product |\n\n**Do not promise:** Snapdragon on-glass compile; OpEx reduction of $8M; replacing Qualcomm stack.\n\n### Sample outreach (email)\n\n> Vuzix is positioning Ultralite and LX1 around **voice AI and translation** while investors focus on the balance sheet. We often see OEM programs where **cloud inference cost per device** isn\u2019t modeled before AI becomes a standard reference-design feature \u2014 so pilots don\u2019t scale to licensed SKUs.  \n>  \n> TheStage optimizes **voice and multimodal inference on NVIDIA** (Elastic + ANNA) so you can publish **latency and $/1k sessions** OEMs can underwrite \u2014 without claiming to replace your on-glass Snapdragon stack.  \n>  \n> Worth 30 minutes to benchmark **one** model you\u2019re already running in cloud for OEM demos?\n\n### Multi-threading\n\n| Thread | Hook |\n|--------|------|\n| **CFO / finance** | Variable COGS of AI pilots; directional $/1k sessions |\n| **CEO** | AI that survives earnings narrative \u2014 metric, not demo |\n| **BD / OEM** | Appendix for Quanta/Garmin-class designs |\n| **Engineering** | Tier S/M/L, 2\u20133 week PoC \u2014 **after** exec sponsor |\n\n---\n\n## 11. Vuzix: \u0433\u0434\u0435 \u043d\u0430\u0438\u0431\u043e\u043b\u044c\u0448\u0438\u0435 benefits & cost savings\n\nTheStage **\u043d\u0435** \u0441\u043e\u043a\u0440\u0430\u0449\u0430\u0435\u0442 $8M OpEx, payroll \u0438\u043b\u0438 BOM \u043e\u0447\u043a\u043e\u0432. Savings \u2014 **variable inference** \u0438 **OEM economics**.\n\n### 11.1 \u041a\u0430\u0440\u0442\u0430 \u0441\u0442\u0435\u043a\u0430 vs fit\n\n| \u0421\u043b\u043e\u0439 | \u041f\u0440\u0438\u043c\u0435\u0440 (Vuzix) | TheStage fit | Savings potential |\n|------|----------------|--------------|-------------------|\n| M400 industrial | Embedded Speech SDK (local Android) | \u274c | ~0 |\n| Ultralite / LX1 | AI on **Snapdragon AR1** on-glass | \u274c self-serve | ~0 today |\n| Partner cloud AI (e.g. Ramblr) | Video + contextual guidance on GPU | \u2705 **S1** | **High** |\n| OEM reference designs | AI in Quanta/Garmin-class decks | \u2705 **S1** + spec | **High** (strategic) |\n| Internal R&D / CES demos | GPU cloud benchmarks | \u2705 Elastic/ANNA | Medium |\n| iPhone companion | Not confirmed primary | \u26a0\ufe0f S4 | Medium if exists |\n| Defense / Jetson edge | Vertical from IR | \u26a0\ufe0f S5 | Niche |\n\n### 11.2 \u0422\u043e\u043f \u0437\u043e\u043d savings (\u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442)\n\n| # | \u0417\u043e\u043d\u0430 | \u0424\u043e\u0440\u043c\u0443\u043b\u0430 / \u043b\u043e\u0433\u0438\u043a\u0430 | \u041f\u0440\u043e\u0434\u0443\u043a\u0442 TheStage |\n|---|------|------------------|------------------|\n| **1** | **Cloud inference** (partners, enterprise backends) | `cloud_spend \u00d7 (1 - 1/N)` \u043f\u0440\u0438 N\u00d7 throughput (PoC) | Elastic + ANNA + Qlip |\n| **2** | **OEM pilots** | \u041c\u0435\u043d\u044c\u0448\u0435 cloud **subsidy** per trial; faster SKU | Benchmark + tiers |\n| **3** | **R&D GPU** | Fewer GPU-hours per iteration | Platform + Elastic |\n\n### 11.3 \u0413\u0434\u0435 savings \u2248 0 (\u0433\u043e\u0432\u043e\u0440\u0438\u0442\u044c \u0447\u0435\u0441\u0442\u043d\u043e)\n\n- On-glass **Qualcomm / AR1** compile  \n- Legacy **embedded wake-word** stack \u043d\u0430 industrial SKU  \n- Waveguide manufacturing, inventory, headcount restructuring  \n\n### 11.4 Discovery (\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u043e \u0446\u0438\u0444\u0440\u044b)\n\n1. Monthly **cloud/GPU** spend on AI?  \n2. Ultralite: inference **only on-glass** or **backend** too?  \n3. OEM pilot: who pays inference \u2014 Vuzix, OEM, end customer?  \n4. Most expensive workload: STT / LLM / vision / translation?  \n\n**Deprioritize account** if: all new AI is on-device only, zero cloud bill, no near-term cloud roadmap.\n\n---\n\n## 12. Executive vs ML: \u0434\u0432\u0443\u0445\u0443\u0440\u043e\u0432\u043d\u0435\u0432\u0430\u044f \u043f\u0440\u043e\u0434\u0430\u0436\u0430\n\n### 12.1 \u041a\u043e\u0433\u0434\u0430 \u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c CEO / CFO\n\n| \u0421\u0438\u0433\u043d\u0430\u043b | Exec involvement |\n|--------|----------------|\n| Public micro/small cap + going-concern language | **Plan for** CEO/CFO sponsor |\n| AI prominent in IR, hardware revenue | CEO (story) + CFO (COGS) |\n| OEM licensing / partnerships | + VP BD |\n| Small PoC, eng culture | Often **eng-led** only |\n\n**Vs W1 (Praktika-like):** ML/product first; CFO joins at scale \u2014 different playbook.\n\n### 12.2 Value by persona (\u043e\u0434\u0438\u043d PoC, \u0434\u0432\u0430 deliverable)\n\n| \u041f\u0435\u0440\u0441\u043e\u043d\u0430 | Lead | Artifact |\n|---------|------|----------|\n| **CEO** | Strategic AI metric; partnership credibility | 1-pager for IR/partners |\n| **CFO** | $/1k sessions; pilot ROI | Finance memo |\n| **VP BD/OEM** | RFP-grade AI spec | Benchmark sheet |\n| **ML / platform** | Performance; deploy time | Tech report (tiers, tps, ttft) |\n\n### 12.3 \u041f\u043e\u0442\u043e\u043a\u0438 (3-thread model)\n\n```\n[1] Executive \u2014 CEO/CFO/BD\n    Hook: P&L AI vs demo AI \u00b7 OEM unit economics\n    Out: 20 min \u00b7 Phase 0 scope ($)\n\n[2] Technical \u2014 VP Eng / ML\n    Hook: 1 model \u00b7 2\u20133 week benchmark\n    Out: tech report \u00b7 tier recommendation\n\n[3] Sponsor sync\n    Exec sees finance slide \u00b7 Eng confirms feasibility \u2192 Phase 1\n```\n\n### 12.4 \u041e\u0448\u0438\u0431\u043a\u0438\n\n| Don't | Do |\n|-------|-----|\n| CEO email leads with tier S/M/L | Exec = $/session; tiers in appendix |\n| Bypass ML after exec yes | CEO intro \u2192 VP Eng same week |\n| Promise CFO \u00ab\u2212$8M OpEx\u00bb | Variable inference + OEM pilot COGS only |\n| Different promises to exec vs eng | Single PoC scope doc |\n\n### 12.5 CRM\n\nTag deals: `buyer_motion: exec-led | eng-led | hybrid`\n\nAsk TheStage on kickoff: **\u00ab\u041d\u0430 OEM deals economic buyer \u2014 CEO, CFO, or VP Eng?\u00bb**\n\n---\n\n## 13. Reuse for similar accounts\n\n| Ticker / company | S / W | Finance-first angle |\n|----------------|-------|---------------------|\n| **VUZI** Vuzix | S7, W3 | Cloud voice COGS + OEM spec sheet |\n| **KOPN** Kopin | S5 | Edge/OEM display customers\u2019 inference (indirect) |\n| **CHGG** Chegg/Busuu | S2\u2192S3, W1 | MAU \u00d7 cloud \u2192 device (different distress story) |\n| **CRNC** Cerence | S1, W4 | Automotive voice COGS at OEM scale |\n| RealWear, Vuzix-class private | S7, W3 | Same playbook as VUZI |\n\n---\n\n## 14. Related deliverables (Roadmap)\n\n| \u041d\u0435\u0434\u0435\u043b\u044f | Deliverable |\n|--------|-------------|\n| 2 | Unit economics template \u00b7 messaging matrix **finance row** \u00b7 prod vs roadmap |\n| 3 | Outbound architecture \u00b7 playbooks (**CFO + technical** discovery) \u00b7 CRM `buyer_motion` |\n| 4 | Sales deck slide: \u00abP&L AI vs demo AI\u00bb \u00b7 dual PoC deliverables (finance + tech) |\n\n\u0421\u043c. [StageAI Roadmap](StageAI%20Roadmap.md) \u2014 \u0431\u043b\u043e\u043a\u0438 **`[finance-first POV]`**.\n";
+const renderer = new marked.Renderer();
+let mc = 0;
+renderer.code = function(code, lang) {
+  if (lang === 'mermaid') {
+    return '<div class="mermaid" id="m' + (++mc) + '">' + code + '</div>';
+  }
+  return '<pre><code>' + code.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</code></pre>';
+};
+marked.use({ renderer });
+document.getElementById('content').innerHTML = marked.parse(md);
+
+</script>
+</body>
+</html>

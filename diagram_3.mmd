@@ -1,0 +1,44 @@
+flowchart TB
+  classDef io       fill:#eaf4fb,stroke:#2980b9,stroke-width:2px,color:#1a5276
+  classDef step     fill:#d5f5e3,stroke:#1e8449,stroke-width:2px,color:#145a32
+  classDef elastic  fill:#d6eaf8,stroke:#2471a3,stroke-width:2px,color:#1a5276,font-weight:bold
+  classDef qlip     fill:#e8d5f5,stroke:#7d3c98,stroke-width:2px,color:#4a235a,font-weight:bold
+  classDef compile  fill:#cce5ff,stroke:#0066cc,stroke-width:3px,color:#003366,font-weight:bold
+  classDef decide   fill:#fef9e7,stroke:#f39c12,stroke-width:2px,color:#7d6608
+  classDef platform fill:#f0f3f4,stroke:#7f8c8d,stroke-width:2px,color:#2c3e50,font-style:italic
+  classDef prod_ok  fill:#d5f5e3,stroke:#1e8449,stroke-width:2px,color:#145a32,font-weight:bold
+
+  IN(["▶ ВХОД\nVoice assistant · wearable + hub / cloud"]):::io
+
+  IN --> TRAIN["① Обучение\nfine-tune / LoRA · ваши веса\n⏱ дни–недели (без изменений)"]:::step
+
+  TRAIN --> CHOICE{"② Путь сжатия?"}:::decide
+
+  CHOICE -->|"⚡ Быстрый старт\n(готовые модели)"| ELASTIC["②a Elastic Models\nWhisper · LLM tiers S–M–L–XL\nHF-style API · предобученные\n⏱ часы–дни"]:::elastic
+  CHOICE -->|"🎯 Своя модель\n(максимальный контроль)"| QLIP["②b Qlip + ANNA\nPareto-поиск · constraint size/MACs\nкалибровка на Platform GPU\n⏱ дни"]:::qlip
+
+  ELASTIC --> TIER["③ Tier Select + Compile\nS · M · L · XL\n→ Apple Silicon · NVIDIA · Jetson\n⏱ часы–дни"]:::compile
+  QLIP    --> TIER
+
+  TIER --> BENCH["④ Валидация\nbenchmark scripts\ntps · ttft · max_memory_mb\n⏱ часы–1–2 дня"]:::step
+
+  BENCH --> FIX{"Влезает?\nSLO OK?"}:::decide
+  FIX -->|"↻ Подкрутить tier\n(без re-quant)"| TIER
+  FIX -->|"✅ Да"| DEPLOY["⑤a Deploy artifact\ncompiled model → iOS / Android / hub\n+ SDK integration\n⏱ дни–1 нед"]:::step
+
+  DEPLOY --> ORCH["⑤b Pipeline wiring\nSTT → LLM → TTS\nваш orchestration layer\n⏱ 1–3 нед"]:::step
+
+  ORCH --> PROD["⑥ Продакшен"]:::step
+  PROD --> LOCAL["Путь A 📱  On-device / Phone hub\nваш artifact · ваши SLO · ваш cost ✔"]:::prod_ok
+  PROD --> HYBRID["Путь B ☁️  Гибрид\nсложные запросы → cloud NVIDIA\nваш control plane ✔"]:::step
+
+  LOCAL  --> OUT(["◀ ВЫХОД\nArtifact на device + ваша orchestration\nSLO ваши · cloud — опционально"]):::io
+  HYBRID --> OUT
+
+  PLATFORM["TheStage Cloud / CLI\n🖥 GPU для ANNA (②b)\n📊 benchmark scripts (④)"]:::platform -.->|"GPU compute"| QLIP
+  PLATFORM -.->|"benchmark"| BENCH
+
+  LORA(["↻ Новый LoRA / model v2\n→ tier re-pick + recompile\n(не повторяет весь ②)"]) -.->|"быстрее классики"| TIER
+
+  linkStyle default stroke:#2c3e50,stroke-width:3px,fill:none
+  linkStyle 16,17,18 stroke:#7f8c8d,stroke-width:2px,stroke-dasharray:6 4,fill:none

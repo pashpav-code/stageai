@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheStage AI · GTM Strategy · Founder Report</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --surface-2: #f9fafb;
+    --ink: #1a1a1a;
+    --ink-2: #374151;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --line-2: #d1d5db;
+    --accent: #1e40af;
+    --accent-bg: #eff6ff;
+    --accent-2: #2563eb;
+    --success: #047857;
+    --success-bg: #f0fdf4;
+    --danger: #b91c1c;
+    --danger-bg: #fef2f2;
+    --warn: #b45309;
+    --warn-bg: #fffbeb;
+    --purple: #6d28d9;
+    --purple-bg: #f5f3ff;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+    padding: 48px 20px 64px;
+  }
+  .container { max-width: 920px; margin: 0 auto; }
+  a { color: var(--accent); }
+
+  /* ─── Mission panel ─── */
+  .mission-panel {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fde68a;
+    border-left: 4px solid var(--warn);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin-bottom: 24px;
+  }
+  .mp-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--warn);
+    margin-bottom: 10px;
+  }
+  .mp-body {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .mp-body strong { color: var(--ink); font-weight: 700; }
+  .mp-scope {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    padding-top: 12px;
+    border-top: 1px dashed rgba(180, 83, 9, 0.35);
+  }
+  .mp-scope strong { color: var(--warn); text-transform: uppercase; letter-spacing: 1px; font-size: 11px; }
+
+  /* Parallel track label inside month card */
+  .parallel-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .month-side-note {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-style: italic;
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    background: linear-gradient(180deg, #ffffff 0%, var(--accent-bg) 100%);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 36px 36px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+  }
+  .hero .subtitle {
+    color: var(--ink-2);
+    font-size: 16px;
+    margin: 0;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .hero-stat .n {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.8px;
+  }
+  .hero-stat .l {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+  .hero-stat .metric-name {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .metrics-group {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px 24px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .mg-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .invest-bar {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .ib-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .ib-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .ib-num .kpi {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .ib-sub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ─── Nav ─── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+  }
+  .toc a {
+    text-decoration: none;
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+  .toc a:hover { color: var(--accent); }
+
+  /* ─── Sections ─── */
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    scroll-margin-top: 20px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .icon {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: var(--accent-bg);
+    color: var(--accent);
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin: 0 0 22px 0;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+  }
+
+  /* ─── Month metrics (big numbers) ─── */
+  .months {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .month-card {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+  }
+  .month-card .m-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  .month-card .m-date {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .month-card .m-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    margin: 10px 0 16px 0;
+    color: var(--ink-2);
+    line-height: 1.35;
+  }
+  .month-card .m-metric { margin-top: 14px; }
+  .month-card .m-num {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.6px;
+  }
+  .month-card .m-num.pipe { color: var(--success); }
+  .month-card .m-sub {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+  .month-card .m-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .month-card .m-row .m-num { font-size: 22px; }
+
+  /* ─── Timeline (CSS Gantt) ─── */
+  .gantt {
+    display: grid;
+    grid-template-columns: 140px repeat(14, 1fr);
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 11.5px;
+  }
+  .g-row { display: contents; }
+  .g-label {
+    grid-column: 1;
+    padding: 8px 10px 8px 0;
+    font-weight: 600;
+    color: var(--ink-2);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  .g-head {
+    text-align: center;
+    padding: 6px 2px;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 10.5px;
+    border-bottom: 1px solid var(--line);
+  }
+  .g-bar {
+    background: var(--accent);
+    color: white;
+    padding: 6px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .g-bar.pre { background: var(--muted); }
+  .g-bar.m1  { background: var(--accent-2); }
+  .g-bar.m2  { background: var(--warn); }
+  .g-bar.m3  { background: var(--success); }
+  .g-bar.always { background: var(--purple); opacity: 0.85; }
+  .g-bar.cold { background: var(--danger); }
+  .g-spacer { background: transparent; }
+  .gantt-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+  .gantt-legend span::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .lg-pre::before    { background: var(--muted); }
+  .lg-m1::before     { background: var(--accent-2); }
+  .lg-m2::before     { background: var(--warn); }
+  .lg-m3::before     { background: var(--success); }
+  .lg-always::before { background: var(--purple); }
+  .lg-cold::before   { background: var(--danger); }
+
+  /* ─── Pillar / card grids ─── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .pillar {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .pillar .ic { font-size: 18px; margin-bottom: 6px; }
+  .pillar h4 {
+    font-size: 13.5px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+  }
+  .pillar p {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ─── Narratives ─── */
+  .narratives { display: grid; gap: 14px; margin-top: 6px; }
+  .narr {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 22px;
+    background: var(--surface-2);
+  }
+  .narr.ml      { border-left: 4px solid var(--purple); }
+  .narr.product { border-left: 4px solid var(--accent); }
+  .narr.cfo     { border-left: 4px solid var(--success); }
+  .narr-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .narr-name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+  }
+  .narr-quote {
+    font-size: 15.5px;
+    font-style: italic;
+    color: var(--ink);
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+  }
+  .narr-metrics {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .narr-metrics strong { color: var(--ink-2); }
+
+  /* ─── Segments ─── */
+  .segments {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 6px;
+  }
+  .seg {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .seg-num {
+    display: inline-block;
+    background: var(--ink);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+  .seg h4 {
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 8px 0 12px 0;
+    line-height: 1.3;
+  }
+  .seg .label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 10px;
+  }
+  .seg .v { font-size: 12.5px; color: var(--ink-2); margin-top: 3px; line-height: 1.4; }
+  .seg .examples {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* ─── Motions ─── */
+  .motions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 6px; }
+  .motion {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px;
+    background: var(--surface-2);
+  }
+  .motion.m1 { border-top: 4px solid var(--success); }
+  .motion.m2 { border-top: 4px solid var(--accent); }
+  .motion-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  .motion.m1 .motion-tag { background: var(--success-bg); color: var(--success); }
+  .motion.m2 .motion-tag { background: var(--accent-bg); color: var(--accent); }
+  .motion h4 { font-size: 15px; font-weight: 700; margin: 0 0 10px 0; }
+  .motion p { font-size: 13.5px; margin: 0 0 10px 0; color: var(--ink-2); line-height: 1.5; }
+  .motion .row { font-size: 12.5px; margin: 6px 0; }
+  .motion .row strong { color: var(--ink); }
+
+  /* ─── Funnel ─── */
+  .funnel-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .funnel-row:last-child { border-bottom: none; }
+  .funnel-row .stage {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+  }
+  .funnel-row .stage .week {
+    display: block;
+    color: var(--accent);
+    font-size: 11px;
+    margin-top: 2px;
+  }
+  .funnel-cascade {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .funnel-cascade .step {
+    background: var(--accent-bg);
+    color: var(--accent);
+    padding: 6px 11px;
+    border-radius: 4px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .funnel-cascade .step.final { background: var(--success-bg); color: var(--success); }
+  .funnel-cascade .arrow { color: var(--muted); font-size: 14px; }
+  .funnel-cum {
+    background: var(--accent);
+    color: white;
+    padding: 16px 22px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .funnel-cum .big {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  /* ─── 2-column ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .two-col .col {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 22px;
+  }
+  .two-col h4 { font-size: 14px; margin: 0 0 10px 0; }
+  .two-col ul { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.65; }
+  .two-col li { margin: 4px 0; color: var(--ink-2); }
+  .two-col li strong { color: var(--ink); }
+  .cap-bar {
+    display: grid;
+    grid-template-columns: 1fr 90px 60px;
+    gap: 10px;
+    font-size: 12px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--line);
+    align-items: center;
+  }
+  .cap-bar:last-child { border-bottom: none; }
+  .cap-bar .label { color: var(--ink-2); }
+  .cap-bar .vol { color: var(--muted); text-align: right; }
+  .cap-bar .inbox {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+
+  /* ─── Enablement ─── */
+  .enab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 6px; }
+  .enab-block h4 { font-size: 14px; margin: 0 0 10px 0; }
+  .enab-list { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  .enab-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .enab-list li:last-child { border-bottom: none; }
+  .check { color: var(--success); font-weight: 700; }
+  .plus  { color: var(--accent); font-weight: 700; }
+
+  /* ─── Automation ─── */
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .auto-card {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 16px;
+    border-top: 3px solid var(--purple);
+  }
+  .auto-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+  .auto-card h4 { font-size: 13.5px; margin: 4px 0 6px 0; }
+  .auto-card p { font-size: 12px; color: var(--muted); margin: 0 0 8px 0; line-height: 1.45; }
+  .auto-card .when {
+    display: inline-block;
+    background: var(--purple-bg);
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  /* ─── Tools ─── */
+  .tools {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 6px 14px;
+    font-size: 13px;
+  }
+  .tools .t-name { color: var(--ink-2); padding: 7px 0; border-bottom: 1px dashed var(--line); }
+  .tools .t-name strong { color: var(--ink); }
+  .tools .t-price {
+    color: var(--accent);
+    font-weight: 700;
+    text-align: right;
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--line);
+    font-variant-numeric: tabular-nums;
+  }
+  .tools .t-use { color: var(--muted); font-size: 12px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+  .tools .t-total {
+    grid-column: 1 / -1;
+    background: var(--accent);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* ─── Plan compressed ─── */
+  .plan-rows { display: grid; gap: 6px; }
+  .plan-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 10px 14px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .plan-row .pw {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 12px;
+  }
+  .plan-row .pw .dt {
+    display: block;
+    color: var(--muted);
+    font-size: 10.5px;
+    font-weight: 500;
+    margin-top: 1px;
+  }
+  .plan-row .pd { color: var(--ink-2); line-height: 1.5; }
+  .plan-row .pd strong { color: var(--ink); }
+
+  /* ─── Founder asks ─── */
+  .asks-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .asks-block {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .asks-block h4 { font-size: 13.5px; margin: 0 0 10px 0; }
+  .asks-block ul { margin: 0; padding-left: 16px; font-size: 12.5px; line-height: 1.55; color: var(--ink-2); }
+  .asks-block li { margin: 4px 0; }
+  .asks-block li strong { color: var(--ink); }
+
+  /* ─── Deeper Dive cards ─── */
+  .deeper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .dd-card {
+    display: block;
+    text-decoration: none;
+    background: white;
+    border: 1.5px solid var(--accent);
+    border-radius: 8px;
+    padding: 18px;
+    transition: all 0.15s ease;
+    color: var(--ink);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(30, 64, 175, 0.06);
+  }
+  .dd-card:hover {
+    border-color: var(--accent-2);
+    background: var(--accent-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(30, 64, 175, 0.15);
+  }
+  .dd-card .dd-type {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .dd-card .dd-type.live { color: var(--accent); }
+  .dd-card h4 {
+    font-size: 14.5px;
+    margin: 8px 0 6px 0;
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(30, 64, 175, 0.3);
+    text-underline-offset: 3px;
+  }
+  .dd-card:hover h4 {
+    text-decoration-color: var(--accent);
+  }
+  .dd-card p {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    margin: 0 0 8px 0;
+    line-height: 1.45;
+  }
+  .dd-card .arrow {
+    color: var(--accent);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    background: var(--accent-bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .dd-card:hover .arrow {
+    background: var(--accent);
+    color: white;
+  }
+  .dd-filename {
+    display: block;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 6px;
+    word-break: break-all;
+  }
+
+  /* ─── Misc ─── */
+  .note {
+    background: var(--warn-bg);
+    border-left: 3px solid var(--warn);
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    border-radius: 0 4px 4px 0;
+    margin-top: 14px;
+  }
+  .footer-meta {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 760px) {
+    body { padding: 24px 12px; }
+    .hero { padding: 24px; }
+    .hero h1 { font-size: 28px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    section { padding: 20px; }
+    .months { grid-template-columns: 1fr; }
+    .segments { grid-template-columns: 1fr; }
+    .motions { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .enab-grid { grid-template-columns: 1fr; }
+    .asks-grid { grid-template-columns: 1fr; }
+    .gantt { grid-template-columns: 90px repeat(14, 1fr); font-size: 9px; }
+    .g-bar { font-size: 9px; padding: 4px 2px; }
+    .g-label { font-size: 10px; padding: 4px 6px 4px 0; }
+    .funnel-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header class="hero">
+  <h1>TheStage AI · GTM-роудмап на 3 месяца</h1>
+  <p class="subtitle">Voitech · 1 июня – 30 августа 2026</p>
+</header>
+
+<!-- ═══════════════════ MISSION / SCOPE ═══════════════════ -->
+<div class="mission-panel">
+  <div class="mp-label">🎯 3-Month Mission</div>
+  <div class="mp-body">
+    <strong>Запустить outbound</strong> и понять куда масштабировать (валидировать ICP, narrative, каналы по 3 сегментам). Параллельно — <strong>перенять у фаундера ведение пайплайна</strong> (~15 активных сделок упомянуто в voice notes) и обработку inbound. Цель — закрыть <strong>2 POC-сделки с outbound</strong> и <strong>2 контракта с inbound / текущих</strong> за 13 недель.
+  </div>
+  <div class="mp-scope">
+    <strong>Охват:</strong> Настройка инфраструктуры · GTM-стратегия · Outbound + inbound продажи
+  </div>
+</div>
+
+<!-- ═══════════════════ METRICS ═══════════════════ -->
+<div class="metrics-group">
+  <div class="mg-label">Целевые метрики · outbound</div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="metric-name">Встречи</div>
+      <div class="n">23</div>
+      <div class="l">суммарно за 3 месяца</div>
+    </div>
+    <div class="hero-stat">
+      <div class="metric-name">Активные сделки</div>
+      <div class="n">8</div>
+      <div class="l">sales-qualified · конверсия ~30%</div>
+    </div>
+    <div class="hero-stat">
+      <div class="metric-name">Outbound pipeline</div>
+      <div class="n">€320k</div>
+      <div class="l">8 × $40k · inbound не включён</div>
+    </div>
+    <div class="hero-stat">
+      <div class="metric-name">POC / Pilot agreed</div>
+      <div class="n">2</div>
+      <div class="l">цель с outbound за 13 недель</div>
+    </div>
+  </div>
+</div>
+
+<div class="invest-bar">
+  <div class="ib-label">Инвестиции / мес</div>
+  <div class="ib-num">€6 490 <span class="kpi">+ KPI</span></div>
+  <div class="ib-sub">€6 000 команда Voitech · €490 инструменты · KPI с закрытых сделок</div>
+</div>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav class="toc">
+  <a href="#goals">Цели</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#vision">Видение</a>
+  <a href="#narratives">Нарративы</a>
+  <a href="#segments">Сегменты</a>
+  <a href="#motions">Сценарии</a>
+  <a href="#funnel">Воронка</a>
+  <a href="#enablement">Sales enablement</a>
+  <a href="#automation">Автоматизация</a>
+  <a href="#tools">Инструменты и бюджет</a>
+  <a href="#kpi">KPI и бонус</a>
+  <a href="#plan">13-недельный план</a>
+  <a href="#founder">От фаундера</a>
+  <a href="#deeper">Подробнее ↓</a>
+</nav>
+
+<!-- ═══════════════════ GOALS ═══════════════════ -->
+<section id="goals">
+  <h2><span class="icon">📊</span> Цели по месяцам</h2>
+  <p class="section-sub">Минимальные цели по месяцам с конкретными цифрами. Pipeline считаем как количество активных сделок (sales-qualified) × средний чек $40k ARR.</p>
+
+  <div class="months">
+    <!-- Month 1 -->
+    <div class="month-card">
+      <div class="m-label">Месяц 1</div>
+      <div class="m-date">1 – 28 июня · 4 недели</div>
+      <div class="m-title">Foundation + Connect-тест + перенятие пайплайна</div>
+      <div class="m-metric">
+        <div class="m-num">40%</div>
+        <div class="m-sub">connect rate (метрика валидации)<br>100–150 контактов · 30–40 компаний · без питча</div>
+      </div>
+      <div class="parallel-label">Параллельно · Pipeline + Inbound</div>
+      <div class="m-row" style="border-top: none; margin-top: 8px; padding-top: 0;">
+        <div><div class="m-num">15</div><div class="m-sub">тёплых сделок передано фаундером</div></div>
+        <div><div class="m-num">5+</div><div class="m-sub">discovery-звонков провёл Paul</div></div>
+      </div>
+    </div>
+
+    <!-- Month 2 -->
+    <div class="month-card">
+      <div class="m-label">Месяц 2</div>
+      <div class="m-date">29 июн – 2 авг · 5 недель</div>
+      <div class="m-title">Целевой outreach · 2 сегмента · cold calls стартуют в Week 9</div>
+      <div class="m-metric">
+        <div class="m-num">8</div>
+        <div class="m-sub">встреч забронировано (outbound)</div>
+      </div>
+      <div class="m-row">
+        <div><div class="m-num">2</div><div class="m-sub">активные сделки (sales-qualified)</div></div>
+        <div><div class="m-num pipe">€80k</div><div class="m-sub">outbound пайплайн · 2 × $40k</div></div>
+        <div><div class="m-num">~30%</div><div class="m-sub">встреча → активная сделка</div></div>
+      </div>
+      <div class="month-side-note">+ параллельная работа с pipeline и inbound (ведёт Paul, конверсии идут)</div>
+    </div>
+
+    <!-- Month 3 -->
+    <div class="month-card">
+      <div class="m-label">Месяц 3</div>
+      <div class="m-date">3 – 30 авг · 4 недели</div>
+      <div class="m-title">Тест масштаба + cold calls + поддержка закрытия</div>
+      <div class="m-metric">
+        <div class="m-num">15</div>
+        <div class="m-sub">встреч забронировано (outbound)</div>
+      </div>
+      <div class="m-row">
+        <div><div class="m-num">8</div><div class="m-sub">активных сделок (суммарно, outbound)</div></div>
+        <div><div class="m-num pipe">€320k</div><div class="m-sub">outbound пайплайн · 8 × $40k</div></div>
+        <div><div class="m-num">~30%</div><div class="m-sub">встреча → активная сделка</div></div>
+      </div>
+      <div class="month-side-note">+ поддержка закрытия ранних сделок · скоупинг proof-of-concept для 2–3 возможностей</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TIMELINE ═══════════════════ -->
+<section id="timeline">
+  <h2><span class="icon">🗓️</span> Timeline · 13 недель</h2>
+
+  <div class="gantt">
+    <!-- Header row: week numbers -->
+    <div class="g-label"></div>
+    <div class="g-head">Pre</div>
+    <div class="g-head">W1</div>
+    <div class="g-head">W2</div>
+    <div class="g-head">W3</div>
+    <div class="g-head">W4</div>
+    <div class="g-head">W5</div>
+    <div class="g-head">W6</div>
+    <div class="g-head">W7</div>
+    <div class="g-head">W8</div>
+    <div class="g-head">W9</div>
+    <div class="g-head">W10</div>
+    <div class="g-head">W11</div>
+    <div class="g-head">W12</div>
+    <div class="g-head">W13</div>
+
+    <!-- Foundation row -->
+    <div class="g-label">Foundation</div>
+    <div class="g-spacer"></div>
+    <div class="g-bar m1" style="grid-column: 3 / 7;">Foundation</div>
+    <div class="g-spacer" style="grid-column: 7 / 16;"></div>
+
+    <!-- Outbound row -->
+    <div class="g-label">Outbound</div>
+    <div class="g-spacer"></div>
+    <div class="g-spacer" style="grid-column: 3 / 5;"></div>
+    <div class="g-bar m1" style="grid-column: 5 / 7;">Connect</div>
+    <div class="g-bar m2" style="grid-column: 7 / 12;">Targeted (3 сегмента)</div>
+    <div class="g-bar m3" style="grid-column: 12 / 16;">Тест масштаба + закрытие</div>
+
+    <!-- Cold calls -->
+    <div class="g-label">Cold calls</div>
+    <div class="g-spacer"></div>
+    <div class="g-spacer" style="grid-column: 3 / 11;"></div>
+    <div class="g-bar cold" style="grid-column: 11 / 16;">Cold calls</div>
+
+    <!-- Email -->
+    <div class="g-label">Email</div>
+    <div class="g-bar pre" style="grid-column: 2 / 3;">Домены · сетап почт</div>
+    <div class="g-bar always" style="grid-column: 3 / 7;">Прогрев</div>
+    <div class="g-bar m2" style="grid-column: 7 / 16;">Рассылки</div>
+
+    <!-- LinkedIn -->
+    <div class="g-label">LinkedIn</div>
+    <div class="g-spacer"></div>
+    <div class="g-spacer" style="grid-column: 3 / 5;"></div>
+    <div class="g-bar m1" style="grid-column: 5 / 7;">Connect-тест</div>
+    <div class="g-bar m2" style="grid-column: 7 / 12;">Целевые сообщения</div>
+    <div class="g-bar m3" style="grid-column: 12 / 16;">Масштаб</div>
+
+    <!-- Pipeline -->
+    <div class="g-label">Pipeline</div>
+    <div class="g-spacer"></div>
+    <div class="g-spacer"></div>
+    <div class="g-bar always" style="grid-column: 4 / 16;">Takeover · inbound · закрытие сделок</div>
+
+    <!-- Sales enablement -->
+    <div class="g-label">Enablement</div>
+    <div class="g-spacer"></div>
+    <div class="g-spacer" style="grid-column: 3 / 6;"></div>
+    <div class="g-bar always" style="grid-column: 6 / 7;">Визуалы + cards</div>
+    <div class="g-bar always" style="grid-column: 7 / 9;">Набор готов · POV materials</div>
+    <div class="g-bar always" style="grid-column: 9 / 12;">Business case калькуляторы</div>
+    <div class="g-bar always" style="grid-column: 12 / 16;">v2.0 всех материалов</div>
+
+    <!-- Automation -->
+    <div class="g-label">Автоматизация</div>
+    <div class="g-spacer"></div>
+    <div class="g-spacer"></div>
+    <div class="g-bar always" style="grid-column: 4 / 8;">Research pipeline v0→v1.5</div>
+    <div class="g-bar always" style="grid-column: 8 / 10;">Call analysis · Slack · аналитика</div>
+    <div class="g-bar always" style="grid-column: 10 / 12;">Hermes · сигналы · дашборд сделок</div>
+    <div class="g-bar always" style="grid-column: 12 / 16;">Business case calc · auto roadmap</div>
+  </div>
+
+  <div class="gantt-legend">
+    <span class="lg-pre">До проекта (май)</span>
+    <span class="lg-m1">Месяц 1 · Foundation</span>
+    <span class="lg-m2">Месяц 2 · Целевой outreach</span>
+    <span class="lg-m3">Месяц 3 · Тест масштаба</span>
+    <span class="lg-cold">Cold calls</span>
+    <span class="lg-always">Постоянные треки</span>
+  </div>
+</section>
+
+<!-- ═══════════════════ VISION ═══════════════════ -->
+<section id="vision">
+  <h2><span class="icon">🎯</span> Видение · 5 принципов</h2>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="ic">🔍</div>
+      <h4>Глубокое исследование аккаунта</h4>
+      <p>Продукт · технологии · signals · где AI (☁️/📱/🕶️)</p>
+    </div>
+    <div class="pillar">
+      <div class="ic">💡</div>
+      <h4>Нарратив на аккаунт</h4>
+      <p>Business case + технический кейс · построены на реальных данных компании</p>
+    </div>
+    <div class="pillar">
+      <div class="ic">👥</div>
+      <h4>3 персоны покупателя</h4>
+      <ul style="margin: 6px 0 0; padding-left: 16px; font-size: 13px; color: var(--ink-2); line-height: 2;">
+        <li>Engineering / Machine Learning</li>
+        <li>Product</li>
+        <li>CEO / CFO / Business</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <div class="ic">📡</div>
+      <h4>Multi-channel outreach</h4>
+      <p>LinkedIn → Email → Cold calls (с Week 9)</p>
+    </div>
+    <div class="pillar">
+      <div class="ic">📦</div>
+      <h4>Единое хранилище контекста</h4>
+      <p>Гипотеза · касания · ответы · нарратив · обновление ≤24h</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════ NARRATIVES ═══════════════════ -->
+<section id="narratives">
+  <h2><span class="icon">🗣️</span> Три нарратива — три аудитории</h2>
+  <p class="section-sub">Один продукт · три разных словаря. Не смешиваем в одном питче.</p>
+
+  <div class="narratives">
+    <div class="narr ml">
+      <div class="narr-head"><span class="narr-name">Engineering / Machine Learning</span></div>
+      <p class="narr-quote">«Ручная оптимизация моделей под устройства — 2–6 недель на модель. У нас это дни. Один toolchain для iOS, NVIDIA, Jetson вместо трёх отдельных.»</p>
+      <div class="narr-metrics">Метрики: <strong>weeks to production · accuracy at smaller model size · memory footprint</strong></div>
+    </div>
+    <div class="narr product">
+      <div class="narr-head"><span class="narr-name">Product / Growth</span></div>
+      <p class="narr-quote">«Voice с задержкой 1–2 секунды убивает retention. Локальный inference срезает её до 300ms. Плюс работает офлайн — критично для language-learning и mobile в плохой связи.»</p>
+      <div class="narr-metrics">Метрики: <strong>p95 latency · offline session completion · session drop-off rate</strong></div>
+    </div>
+    <div class="narr cfo">
+      <div class="narr-head"><span class="narr-name">CEO / CFO / Business</span></div>
+      <p class="narr-quote">«Cloud inference растёт быстрее выручки — на 1M+ активных пользователей съедает маржу. Срезаем variable inference cost на 30–50% через оптимизацию на NVIDIA. Прямая экономия в P&amp;L, не demo.»</p>
+      <div class="narr-metrics">Метрики: <strong>monthly cloud bill · cost per active user · % savings vs baseline</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SEGMENTS ═══════════════════ -->
+<section id="segments">
+  <h2><span class="icon">🎯</span> Три сегмента — где срочность реальна</h2>
+
+  <div class="segments">
+    <div class="seg">
+      <span class="seg-num">СЕГМЕНТ 1</span>
+      <h4>Voice + iOS + высокая активность</h4>
+      <div class="label">Signals</div>
+      <div class="v">iOS-приложение · 500k+ monthly active users · cloud inference в себестоимости · оптимизация в machine-learning вакансиях</div>
+      <div class="label">Почему сейчас</div>
+      <div class="v">Inference растёт быстрее выручки · финансы видят проблему</div>
+      <div class="examples"><strong>Примеры:</strong> Praktika-like тьюторы · language apps · voice companions</div>
+    </div>
+
+    <div class="seg">
+      <span class="seg-num">СЕГМЕНТ 2</span>
+      <h4>Smart glasses + iOS-хаб</h4>
+      <div class="label">Signals</div>
+      <div class="v">Hardware-стартап · Bluetooth companion iOS · privacy = маркетинг</div>
+      <div class="label">Почему сейчас</div>
+      <div class="v">Конкуренты пишут «on-device» в пресс-релизах · нужен реальный бенчмарк</div>
+      <div class="examples"><strong>Примеры:</strong> Halliday · Even Realities · Mentra</div>
+    </div>
+
+    <div class="seg">
+      <span class="seg-num">СЕГМЕНТ 3</span>
+      <h4>Публичные производители под давлением инвесторов</h4>
+      <div class="label">Signals</div>
+      <div class="v">Публичная компания · 10-K disclosures · давление инвесторов · заявления на CES</div>
+      <div class="label">Почему сейчас</div>
+      <div class="v">Следующий earnings call · аналитики спросят «сколько AI стоит на устройство»</div>
+      <div class="examples"><strong>Примеры:</strong> Vuzix · RealWear · DigiLens</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MOTIONS ═══════════════════ -->
+<section id="motions">
+  <h2><span class="icon">⚙️</span> Два сценария</h2>
+
+  <div class="motions">
+    <div class="motion m1">
+      <span class="motion-tag">Сценарий 1 · Finance-first</span>
+      <h4>Публичные производители · Enterprise</h4>
+      <p>Публичные компании с устройствами и AI. Под давлением инвесторов. Часто тратят на AI больше чем зарабатывают.</p>
+      <div class="row"><strong>Заход:</strong> финансовый отчёт → earnings call → заявления на CES → разрыв («AI в каждом устройстве» — но реальный inference cost на устройство никто не считал: нет ROI-расчёта, нет защиты перед инвесторами)</div>
+      <div class="row"><strong>Сделка:</strong> крупнее · цикл длиннее · prestige logo для следующего раунда</div>
+    </div>
+
+    <div class="motion m2">
+      <span class="motion-tag">Сценарий 2 · Engineering-led</span>
+      <h4>Series A–D voice / glasses стартапы</h4>
+      <p>AI-тьюторы · компаньоны · голосовые ассистенты · smart glasses с iOS-приложением.</p>
+      <div class="row"><strong>Заход:</strong> технический proof · давление активных пользователей · engineering-led</div>
+      <div class="row"><strong>Сделка:</strong> быстрее · revenue momentum</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FUNNEL ═══════════════════ -->
+<section id="funnel">
+  <h2><span class="icon">📈</span> Математика воронки · 40 / 30 / 30</h2>
+  <p class="section-sub">Целевые коэффициенты конверсии: <strong>40%</strong> — принятие LinkedIn connect-заявок · <strong>30%</strong> — reply rate после входящего сообщения · <strong>~30%</strong> — reply → встреча · <strong>30%</strong> — встреча → активная сделка (sales-qualified).</p>
+
+  <div class="funnel-row">
+    <div class="stage">Месяц 1 · Connect-тест<span class="week">Weeks 3–4 · 15-28 июня</span></div>
+    <div class="funnel-cascade">
+      <span class="step">20 компаний · 65 контактов</span>
+      <span class="arrow">→</span>
+      <span class="step">26 приняли (40%)</span>
+      <span class="arrow">→</span>
+      <span class="step final">0 встреч · без питча</span>
+    </div>
+  </div>
+
+  <div class="funnel-row">
+    <div class="stage">Месяц 2 · Целевой<span class="week">Weeks 5–9 · 29 июня – 2 авг</span></div>
+    <div class="funnel-cascade">
+      <span class="step">30 компаний · ~80 контактов</span>
+      <span class="arrow">→</span>
+      <span class="step">24 ответа (30%)</span>
+      <span class="arrow">→</span>
+      <span class="step">8 встреч (30%)</span>
+      <span class="arrow">→</span>
+      <span class="step final">2 активные сделки · €80k</span>
+    </div>
+  </div>
+
+  <div class="funnel-row">
+    <div class="stage">Месяц 3 · Тест масштаба<span class="week">Weeks 10–13 · 3-30 авг</span></div>
+    <div class="funnel-cascade">
+      <span class="step">100+ компаний · 400 контактов</span>
+      <span class="arrow">→</span>
+      <span class="step">160 приняли (40%)</span>
+      <span class="arrow">→</span>
+      <span class="step">48 ответов (30%)</span>
+      <span class="arrow">→</span>
+      <span class="step">15 встреч</span>
+      <span class="arrow">→</span>
+      <span class="step final">+6 активных → 8 всего · €320k</span>
+    </div>
+  </div>
+
+  <div class="funnel-cum">
+    Суммарно за 13 недель: <span class="big">23 встречи · 8 активных сделок · €320k пайплайн</span> · средний ARR $40k
+  </div>
+</section>
+
+
+<!-- ═══════════════════ ENABLEMENT ═══════════════════ -->
+<section id="enablement">
+  <h2><span class="icon">📐</span> Sales enablement</h2>
+  <p class="section-sub">Визуалы и talking points готовятся до старта outreach по anchor-аккаунтам в Week 5.</p>
+
+  <div class="enab-grid">
+    <div class="enab-block">
+      <h4>Визуальные концепции — для слайдов и звонков</h4>
+      <ul class="enab-list">
+        <li><span class="check">✓</span> Текущий процесс vs TheStage — где недели превращаются в дни</li>
+        <li><span class="check">✓</span> Voice assistant flow — где исчезает задержка</li>
+        <li><span class="plus">+</span> Где AI должен работать (cloud / phone / on-chip)</li>
+        <li><span class="plus">+</span> Продукт целиком за один взгляд (4 слоя)</li>
+        <li><span class="plus">+</span> Стоимость до/после — для разговора с финансами</li>
+        <li><span class="plus">+</span> Сегменты × персоны — кто принимает решение</li>
+        <li><span class="plus">+</span> Как данные по аккаунту собираются в единое место</li>
+      </ul>
+    </div>
+
+    <div class="enab-block">
+      <h4>Talking points — для уверенных звонков</h4>
+      <ul class="enab-list">
+        <li><span class="plus">+</span> Аргументы под каждую персону: Engineering · Product · CEO/CFO</li>
+        <li><span class="plus">+</span> Типичные возражения и как на них отвечать</li>
+        <li><span class="plus">+</span> Сравнение с конкурентами (Mirai · Cactus · native · in-house)</li>
+        <li><span class="plus">+</span> Что мы делаем и чего НЕ делаем (важно — не врать про возможности)</li>
+        <li><span class="plus">+</span> Вопросы для discovery — отдельно под бизнес и технические звонки</li>
+        <li><span class="plus">+</span> Простые объяснения технических терминов для нетехнических собеседников</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════ AUTOMATION ═══════════════════ -->
+<section id="automation">
+  <h2><span class="icon">🤖</span> AI / Автоматизация</h2>
+  <p class="section-sub">Единый контекст на аккаунт = основа всей автоматизации. 5 агентов разворачиваются каскадом.</p>
+
+  <div class="auto-grid">
+    <div class="auto-card">
+      <div class="auto-num">1️⃣</div>
+      <h4>Research Pipeline (n8n)</h4>
+      <p>источники → обогащение → классификация → сегментация → глубокое исследование → signals → черновик point-of-view. Строим TAM с Prospeo · Wiza · Tavily · WhyzerAI · web search.</p>
+      <span class="when">Week 2 v0 · Week 4 v1 · Week 7 v1.5</span>
+    </div>
+
+    <div class="auto-card">
+      <div class="auto-num">2️⃣</div>
+      <h4>Анализ звонков → Slack</h4>
+      <p>Транскрипт звонка → ключевые инсайты → обновление контекста аккаунта → предложения по корректировке стратегии / sequence / нарратива.</p>
+      <span class="when">Week 5</span>
+    </div>
+
+    <div class="auto-card">
+      <div class="auto-num">3️⃣</div>
+      <h4>Ежедневные / еженедельные отчёты в Slack</h4>
+      <p>Ежедневно: connects · ответы · встречи · здоровье sequence. Еженедельно: эффективность когорт · подсказки для итераций · движение пайплайна.</p>
+      <span class="when">Week 3 базовая · Week 6 полная</span>
+    </div>
+
+    <div class="auto-card">
+      <div class="auto-num">4️⃣</div>
+      <h4>Hermes — плановый агент</h4>
+      <p>Регулярный скан target-аккаунтов: новости · 10-K / earnings · найм · запуски продуктов · social signals. Slack-пинг + auto-enrich контекста.</p>
+      <span class="when">Weeks 7–8</span>
+    </div>
+
+    <div class="auto-card">
+      <div class="auto-num">5️⃣</div>
+      <h4>Business case калькуляторы</h4>
+      <p>Поздняя воронка: $/1k сессий · $/устройство/год · окупаемость · unit economics в стиле Vuzix. Под конкретную сделку.</p>
+      <span class="when">Weeks 10–12 (на каждую активную сделку)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TOOLS / BUDGET ═══════════════════ -->
+<section id="tools">
+  <h2><span class="icon">💰</span> Суммарные инвестиции в месяц</h2>
+  <p class="section-sub">Полная стоимость для основателя: команда + инструменты. Все цены в EUR/мес. Домены оплачивает заказчик отдельно.</p>
+
+  <!-- Cost breakdown summary -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+    <div style="background: var(--accent-bg); border-left: 3px solid var(--accent); padding: 16px 18px; border-radius: 4px;">
+      <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px;">Услуги команды</div>
+      <div style="font-size: 28px; font-weight: 700; margin-top: 4px; letter-spacing: -0.5px;">€6 000 <span style="font-size: 16px; font-weight: 600; color: var(--accent);">+ KPI</span></div>
+      <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Voitech · исполнение + стратегия + автоматизация</div>
+    </div>
+    <div style="background: var(--success-bg); border-left: 3px solid var(--success); padding: 16px 18px; border-radius: 4px;">
+      <div style="font-size: 11px; font-weight: 700; color: var(--success); text-transform: uppercase; letter-spacing: 1px;">Стек инструментов</div>
+      <div style="font-size: 28px; font-weight: 700; margin-top: 4px; letter-spacing: -0.5px;">€490</div>
+      <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Все SaaS-подписки и инфраструктура</div>
+    </div>
+    <div style="background: var(--ink); color: white; padding: 16px 18px; border-radius: 4px;">
+      <div style="font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;">Итого / месяц</div>
+      <div style="font-size: 32px; font-weight: 700; margin-top: 4px; letter-spacing: -0.5px;">€6 490</div>
+      <div style="font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px;">Стоимость инструментов корректируется ежемесячно по факту usage — ориентир ~€490</div>
+    </div>
+  </div>
+
+  <h3 style="margin: 12px 0 12px 0; font-size: 14px;">Стек инструментов детально (€490)</h3>
+
+  <div class="tools">
+    <div class="t-name"><strong>GetSales</strong> × 3 места</div>
+    <div class="t-price">€255</div>
+    <div class="t-use">LinkedIn + email sequences · обогащение данных</div>
+
+    <div class="t-name"><strong>Zapmail</strong> (10 mailboxes)</div>
+    <div class="t-price">€39</div>
+    <div class="t-use">Email-инбоксы (готово к масштабированию)</div>
+
+    <div class="t-name"><strong>Prospeo</strong></div>
+    <div class="t-price">€49</div>
+    <div class="t-use">База компаний и контактов</div>
+
+    <div class="t-name"><strong>Wiza</strong></div>
+    <div class="t-price">€49</div>
+    <div class="t-use">Contact API</div>
+
+    <div class="t-name"><strong>WhyzerAI</strong> 🆕</div>
+    <div class="t-price">€30</div>
+    <div class="t-use">Глубокое исследование аккаунта для публичных компаний (Сценарий 1 / Сегмент 3)</div>
+
+    <div class="t-name">Tavily</div>
+    <div class="t-price">€30–50</div>
+    <div class="t-use">Web research API</div>
+
+    <div class="t-name">OpenRouter</div>
+    <div class="t-price">€20–40</div>
+    <div class="t-use">Large language model API (для n8n + скриптов)</div>
+
+    <div class="t-name">Railway</div>
+    <div class="t-price">€20–40</div>
+    <div class="t-use">Хостинг (n8n + воркеры)</div>
+
+    <div class="t-name">Supabase</div>
+    <div class="t-price">€0–20</div>
+    <div class="t-use">Хранилище данных (близко к CRM)</div>
+
+    <div class="t-name">n8n (self-hosted) · Git</div>
+    <div class="t-price">€0</div>
+    <div class="t-use">Воркфлоу · репозиторий</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ KPI ═══════════════════ -->
+<section id="kpi">
+  <h2><span class="icon">🎯</span> KPI и бонусная структура</h2>
+  <p class="section-sub">Базовый ретейнер €6 000 / мес + бонус с закрытых сделок. Атрибуция по источнику: inbound vs outbound.</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+    <div style="background: var(--accent-bg); border-left: 4px solid var(--accent); padding: 20px 22px; border-radius: 6px;">
+      <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Inbound / текущие клиенты</div>
+      <div style="font-size: 44px; font-weight: 700; letter-spacing: -1px; color: var(--ink); line-height: 1;">5%</div>
+      <div style="font-size: 13px; color: var(--ink-2); margin-top: 6px;">от ARR закрытой сделки</div>
+      <div style="font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5;">Сделки из inbound-канала или текущей базы / пайплайна фаундера</div>
+    </div>
+    <div style="background: #fef3c7; border-left: 4px solid var(--warn); padding: 20px 22px; border-radius: 6px;">
+      <div style="font-size: 11px; font-weight: 700; color: var(--warn); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Outbound</div>
+      <div style="font-size: 44px; font-weight: 700; letter-spacing: -1px; color: var(--ink); line-height: 1;">8%</div>
+      <div style="font-size: 13px; color: var(--ink-2); margin-top: 6px;">от ARR закрытой сделки</div>
+      <div style="font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5;">Сделки, атрибутированные outbound-кампаниям Voitech (LinkedIn · Email · Cold calls)</div>
+    </div>
+  </div>
+
+  <div class="note"><strong>TOFU:</strong> метрики верхней части воронки (connects, reply rate, встречи) — ориентиры для валидации ICP и канала.</div>
+</section>
+
+<!-- ═══════════════════ PLAN ═══════════════════ -->
+<section id="plan">
+  <h2><span class="icon">📅</span> 13-недельный план · по неделям</h2>
+  <p class="section-sub">Краткий пробег по неделям. Полная операционка — см. <a href="StageAI%20Roadmap.md">StageAI Roadmap.md</a>.</p>
+
+  <div class="plan-rows">
+    <div class="plan-row"><div class="pw">Pre<span class="dt">май</span></div><div class="pd">Email-инфраструктура: домены + 4–6 inbox + <strong>warmup ≥3 недели</strong> · карта LinkedIn-аккаунтов.</div></div>
+    <div class="plan-row"><div class="pw">Week 1<span class="dt">1–7 июн</span></div><div class="pd">Kickoff · ICP v0.1 · KPI на 90 дней · карта LinkedIn-аккаунтов · <strong>доступ к пайплайну + перенятие тёплых сделок</strong>.</div></div>
+    <div class="plan-row"><div class="pw">Week 2<span class="dt">8–14 июн</span></div><div class="pd"><strong>ICP v0.2 + 3 персоны покупателя</strong> · <strong>Paul забирает 2–3 горячих сделки</strong> от фаундера · рубрика скоринга inbound · research pipeline v0 · визуалы baseline.</div></div>
+    <div class="plan-row"><div class="pw">Week 3<span class="dt">15–21 июн</span></div><div class="pd"><strong>Connect волна 1:</strong> 20 компаний · 25–40 заявок · <em>без питча</em> · черновик battle cards · ежедневный Slack basic · <strong>Paul: discovery-звонки по тёплому пайплайну + inbound</strong>.</div></div>
+    <div class="plan-row"><div class="pw">Week 4<span class="dt">22–28 июн</span></div><div class="pd"><strong>Connect волна 2 → 100–150 контактов · 30–40 компаний</strong> · базовый accept 40% · research pipeline v1 · 2 новых визуала · <strong>Paul: ≥5 discovery-звонков всего в Месяц 1</strong>.</div></div>
+    <div class="plan-row"><div class="pw">Week 5<span class="dt">29 июн – 5 июл</span></div><div class="pd"><strong>Outreach по 20 anchor-аккаунтам:</strong> point-of-view + sequences · battle cards набор готов · агент анализа звонков запущен.</div></div>
+    <div class="plan-row"><div class="pw">Week 6<span class="dt">6–12 июл</span></div><div class="pd">Итерация Сегмента 1 · еженедельный Slack полный · расширение research signals · обновление battle cards новыми возражениями.</div></div>
+    <div class="plan-row"><div class="pw">Week 7<span class="dt">13–19 июл</span></div><div class="pd"><strong>Запуск второго сегмента для сравнения</strong> · research pipeline v1.5 · Hermes черновик.</div></div>
+    <div class="plan-row"><div class="pw">Week 8<span class="dt">20–26 июл</span></div><div class="pd">Playbook v1.0 · Hermes запущен · скрипт звонков v1 · шаблон business case калькулятора v0.</div></div>
+    <div class="plan-row"><div class="pw">Week 9<span class="dt">27 июл – 2 авг</span></div><div class="pd"><strong>Закрытие Месяца 2 · анализ теста + старт cold calls</strong> · дашборд активности продаж запущен.</div></div>
+    <div class="plan-row"><div class="pw">Week 10<span class="dt">3–9 авг</span></div><div class="pd"><strong>Месяц 3 · Неделя масштаба 1:</strong> 20–25 компаний · cold calls в полную силу · business case калькулятор v1 на сделку.</div></div>
+    <div class="plan-row"><div class="pw">Week 11<span class="dt">10–16 авг</span></div><div class="pd"><strong>Неделя масштаба 2:</strong> 20–25 компаний · ревью середины месяца · Hermes анализ signal-to-conversion.</div></div>
+    <div class="plan-row"><div class="pw">Week 12<span class="dt">17–23 авг</span></div><div class="pd"><strong>Неделя масштаба 3 + поддержка закрытия:</strong> предложения proof-of-concept (2–3) · sales deck v0.2.</div></div>
+    <div class="plan-row"><div class="pw">Week 13<span class="dt">24–30 авг</span></div><div class="pd"><strong>Финальная неделя:</strong> матрица масштаб/стоп · роадмап на 30–90 дней v2 · роадмап автоматизации для Q3.</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MARKETING ═══════════════════ -->
+<section>
+  <h2><span class="icon">🔁</span> Синхронизация маркетинга</h2>
+  <p class="section-sub">Маркетинговый трек идёт параллельно. ABM / платная реклама — <strong>не запускаем</strong> первые 2 месяца, до валидации сегментов.</p>
+
+  <div class="plan-rows">
+    <div class="plan-row"><div class="pw">M1</div><div class="pd"><strong>Foundation · нарративы</strong> · согласование ICP и персон · синхронизация messaging</div></div>
+    <div class="plan-row"><div class="pw">M2</div><div class="pd"><strong>Обмен данными в реальтайме</strong> · автоматизация передачи сигналов · что заходит в органике → используем как поддерживающий контент в outreach · маркетинговые материалы в sequences</div></div>
+    <div class="plan-row"><div class="pw">M3</div><div class="pd"><strong>Подготовка к ABM</strong> · коррекция стратегии по накопленным данным · <em>платный ABM только при валидированных сегментах</em></div></div>
+  </div>
+
+  <div class="note"><strong>Опционально:</strong> добрать GTM-инженера для ускорения research / автоматизации.</div>
+</section>
+
+<!-- ═══════════════════ FROM FOUNDER ═══════════════════ -->
+<section id="founder">
+  <h2><span class="icon">✅</span> Что нужно от фаундера · вводные · открытые вопросы</h2>
+
+  <div class="asks-grid">
+    <div class="asks-block">
+      <h4>Что от фаундера</h4>
+      <ul>
+        <li><strong>До запуска (май):</strong> оплата доменов · настройка inbox · warmup ≥3 недели</li>
+        <li><strong>До запуска:</strong> организация доступов (CRM · inbox · инструменты) · передача входящих данных</li>
+        <li><strong>Week 1:</strong> LinkedIn-аккаунты · KPI на 90 дней · доступ к пайплайну</li>
+        <li><strong>Week 2:</strong> согласование 3 персон · реальные чеки текущих 6 клиентов</li>
+        <li><strong>Постоянно:</strong> участие в product demo · звонки с ключевыми аккаунтами · оперативная передача данных по inbound</li>
+        <li><strong>Week 5:</strong> утверждение point-of-view + sequences (20 anchor-аккаунтов)</li>
+        <li><strong>Week 9:</strong> нарратив для cold calls · участие в закрытии Tier 1</li>
+        <li><strong>Weeks 10–12:</strong> champion-встречи по активным сделкам</li>
+      </ul>
+    </div>
+
+    <div class="asks-block">
+      <h4>Входные данные</h4>
+      <ul>
+        <li>Истории сделок / юз-кейсы текущих заказчиков</li>
+        <li>Технические ограничения продукта</li>
+        <li>Записи демо · доступ в CRM</li>
+        <li>Inbound-запросы (история)</li>
+        <li>Сегменты и списки (если есть)</li>
+        <li>Роадмап продукта на 3–6 мес</li>
+      </ul>
+    </div>
+
+    <div class="asks-block">
+      <h4>Стартовые вопросы</h4>
+      <ul>
+        <li><strong>Фандрейзинг:</strong> какой трекшн нужен перед раундом</li>
+        <li><strong>Кирилл:</strong> часов/нед · формат вовлечения</li>
+        <li><strong>Охват:</strong> продажи · маркетинг · контент · PR</li>
+        <li><strong>Успех за 90 дней — в цифрах</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ DEEPER DIVE ═══════════════════ -->
+<section id="deeper">
+  <h2><span class="icon">🔎</span> Подробнее · дополнительные материалы</h2>
+  <p class="section-sub">Расширенные документы и готовые артефакты. <strong>Карточки кликабельны</strong> — открываются в браузере в новой вкладке.</p>
+
+  <div class="deeper">
+    <a class="dd-card" href="WhyzerAI%20POV%20example%20%E2%80%94%20Vuzix%20appendix.html" target="_blank" rel="noopener">
+      <div class="dd-type live">🌐 HTML · открывается в браузере</div>
+      <h4>WhyzerAI POV example — Vuzix (NASDAQ: VUZI)</h4>
+      <p>От 10-K до готового sales narrative за один скан. Реальные цифры, soundbite + MUD, математика воронки.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="StageAI%20Roadmap.html" target="_blank" rel="noopener">
+      <div class="dd-type">📋 Markdown</div>
+      <h4>StageAI Roadmap · Weeks 0–13</h4>
+      <p>Недельный чеклист по 4 параллельным трекам (outbound · pipeline · enablement · автоматизация). Для команды.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="POV%20%E2%80%94%20how%20to%20build%20(Strategic%20POV%20framework).html" target="_blank" rel="noopener">
+      <div class="dd-type">📐 Markdown</div>
+      <h4>POV — how to build (Strategic POV framework)</h4>
+      <p>Методология построения нарратива на аккаунт: от research до разговора с руководителем.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="GTM%20%E2%80%94%20finance-first%20motion%20(strategy%20%26%20prep).html" target="_blank" rel="noopener">
+      <div class="dd-type">💼 Markdown</div>
+      <h4>GTM — finance-first motion (strategy &amp; prep)</h4>
+      <p>Стратегия по публичным компаниям (Сегмент 3): список целевых, метрики давления, скрипты разговоров.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="Vuzix%20%E2%80%94%20POV%20and%20business%20case%20(illustration).html" target="_blank" rel="noopener">
+      <div class="dd-type">📊 Markdown</div>
+      <h4>Vuzix — POV and business case (illustration)</h4>
+      <p>Развёрнутый кейс: контекст аккаунта, нарратив, экономика сделки, расчёт окупаемости.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="POV%20%E2%80%94%20finance-first%20outbound%20(enterprise%20wearables).html" target="_blank" rel="noopener">
+      <div class="dd-type">💰 Markdown</div>
+      <h4>POV — finance-first outbound (enterprise wearables)</h4>
+      <p>Talking points и вопросы для звонков с CEO / CFO.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="Diagram%20%E2%80%94%20ML%20workflow%20classic%20vs%20Stage%20AI.html" target="_blank" rel="noopener">
+      <div class="dd-type">🎨 Markdown + диаграммы</div>
+      <h4>Diagram — ML workflow classic vs TheStage AI</h4>
+      <p>Визуализация: где тратятся недели и где TheStage сокращает до дней. Диаграммы Mermaid.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="ICP%20use%20cases%20%E2%80%94%20Reddit-style%20stories.html" target="_blank" rel="noopener">
+      <div class="dd-type">📖 Markdown</div>
+      <h4>ICP use cases — Reddit-style stories</h4>
+      <p>Реальные истории целевых клиентов: что болит, что пробовали, почему не получилось.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+
+    <a class="dd-card" href="Stage%20AI%20%E2%80%94%20understanding%20brief.html" target="_blank" rel="noopener">
+      <div class="dd-type">📚 Markdown</div>
+      <h4>Stage AI — understanding brief</h4>
+      <p>Полная карта продукта: 4 продуктовых слоя, сегменты клиентов, вопросы для kickoff.</p>
+      <span class="arrow">Открыть →</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer-meta">
+  TheStage AI · GTM-стратегия · 1 июня – 30 августа 2026 · 13 недель ·
+  v.5 · подготовлено Voitech · май 2026
+</footer>
+
+</div>
+
+<script>
+  // Robust anchor navigation that works inside sandboxed preview iframes.
+  // Replaces default hash navigation (which the preview panel may block)
+  // with explicit scrollIntoView calls.
+  document.addEventListener('DOMContentLoaded', function() {
+    var links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        var target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Briefly highlight the target section so the jump is visible
+        target.style.transition = 'box-shadow 0.4s ease';
+        target.style.boxShadow = '0 0 0 3px rgba(30, 64, 175, 0.25)';
+        setTimeout(function() { target.style.boxShadow = ''; }, 900);
+      });
+    });
+  });
+</script>
+</body>
+</html>

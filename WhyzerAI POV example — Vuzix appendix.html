@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhyzerAI in action · POV example: Vuzix (VUZI)</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1e40af;
+    --accent-bg: #eff6ff;
+    --success: #047857;
+    --success-bg: #f0fdf4;
+    --danger: #b91c1c;
+    --warn: #b45309;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+    padding: 48px 20px;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 5px 11px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0;
+  }
+  .ticker {
+    display: inline-block;
+    background: #1a1a1a;
+    color: white;
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+
+  /* Sections */
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 0 0 18px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+  .step-num {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* KPI cards */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 18px 0 12px;
+  }
+  .kpi {
+    background: #fafaf9;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 14px 16px;
+    border-radius: 4px;
+  }
+  .kpi-num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .kpi-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.35;
+  }
+  .kpi.pain { border-left-color: var(--danger); }
+  .kpi.opportunity { border-left-color: var(--success); }
+
+  /* Quote / soundbite */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-bg);
+    padding: 16px 20px;
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.55;
+    border-radius: 0 4px 4px 0;
+  }
+  blockquote.mud {
+    border-left-color: var(--success);
+    background: var(--success-bg);
+  }
+  blockquote .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  blockquote.mud .label { color: var(--success); }
+  blockquote em { font-style: normal; font-weight: 600; }
+
+  /* Flow */
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .flow-step:last-child { border-bottom: none; padding-bottom: 0; }
+  .flow-step:first-child { padding-top: 4px; }
+  .flow-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: white;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .flow-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .pain-tag { color: var(--danger); font-weight: 600; }
+  .gain-tag { color: var(--success); font-weight: 600; }
+
+  /* Timeline */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .tl-item {
+    background: #fafaf9;
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    border-radius: 4px;
+  }
+  .tl-week {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+  .tl-action {
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Outcomes list */
+  .outcomes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .outcomes li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .outcomes li:last-child { border-bottom: none; }
+  .outcomes .tag {
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--accent);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    min-width: 64px;
+    text-align: center;
+  }
+  .outcomes .tag.land { background: var(--accent); }
+  .outcomes .tag.expand { background: var(--success); }
+  .outcomes .tag.upside { background: var(--warn); }
+
+  /* Why box */
+  .why-box {
+    background: #f9fafb;
+    border: 1px solid var(--line);
+  }
+  .why-box p { font-size: 14px; margin: 0 0 12px 0; }
+  .why-box p:last-child { margin-bottom: 0; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Utility */
+  p { margin: 0 0 12px 0; font-size: 14.5px; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    body { padding: 24px 12px; }
+    section { padding: 20px; }
+    h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <span class="badge">Appendix · WhyzerAI in action</span>
+  <h1>From 10-K to POV in one afternoon</h1>
+  <p class="subtitle">Vuzix Corp<span class="ticker">NASDAQ · VUZI</span> · how €30/mo deep research becomes a CFO-ready narrative for the S7 / public OEM motion.</p>
+</header>
+
+<!-- Step 1: Raw signals -->
+<section>
+  <h2><span class="step-num">1</span> Raw signals — what WhyzerAI surfaced</h2>
+  <p>One scan of 18 months of filings, earnings calls, news, and leadership commentary. Five facts that completely change the outreach angle:</p>
+  <div class="kpi-grid">
+    <div class="kpi pain">
+      <div class="kpi-num">$50.1M</div>
+      <div class="kpi-label">2023 net loss · <strong>going-concern flag</strong> in 10-K</div>
+    </div>
+    <div class="kpi pain">
+      <div class="kpi-num">−12%</div>
+      <div class="kpi-label">Q1 2026 revenue YoY → $1.4M · gross loss $0.4M</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-num">$8M</div>
+      <div class="kpi-label">OpEx already cut · 28% YoY drop in quarterly cash opex</div>
+    </div>
+    <div class="kpi opportunity">
+      <div class="kpi-num">$20M</div>
+      <div class="kpi-label">Multi-phase Quanta partnership · 1M waveguides/yr capacity goal</div>
+    </div>
+    <div class="kpi opportunity">
+      <div class="kpi-num">$4–7k</div>
+      <div class="kpi-label">Defense waveguide unit price · 5–10k unit programs in pipeline</div>
+    </div>
+  </div>
+  <p style="font-size: 13px; color: var(--muted); margin-top: 14px;">
+    Without WhyzerAI a generalist SDR sees "AR smart-glasses company" and pitches Layer C orchestration. <strong>With WhyzerAI</strong> we see a CFO under going-concern pressure who's already cut $8M of OpEx, and a CEO betting the company on OEM + defense programs that need a measurable AI line item.
+  </p>
+</section>
+
+<!-- Step 2: Connecting dots -->
+<section>
+  <h2><span class="step-num">2</span> Connecting the dots — business reasoning</h2>
+  <div class="flow-step">
+    <span class="flow-icon">A</span>
+    <div class="flow-text">CFO Grant Russell and CEO Paul Travers are under <span class="pain-tag">going-concern pressure</span>. Blanket OpEx cuts already done — pitching "save money in general" is noise. They need <strong>capital-efficient revenue</strong>, not more cost theatre.</div>
+  </div>
+  <div class="flow-step">
+    <span class="flow-icon">B</span>
+    <div class="flow-text">Real bet: <strong>Quanta partnership + defense programs</strong>. Waveguide units at $4–7k × 5–10k unit volumes = <span class="gain-tag">$20–70M per program opportunity</span>. Every OEM design-win counts.</div>
+  </div>
+  <div class="flow-step">
+    <span class="flow-icon">C</span>
+    <div class="flow-text">But: AI in those reference designs runs <strong>in the cloud</strong> (CES smart-glasses voice demo, Ultralite stack). That's <strong>variable COGS that scales with end-customer usage</strong>. Today there's no <em>$/device/year</em> or <em>$/1k sessions</em> number anywhere in the appendix — and OEM partners increasingly demand it in RFPs.</div>
+  </div>
+  <div class="flow-step">
+    <span class="flow-icon">D</span>
+    <div class="flow-text"><strong>The wedge:</strong> TheStage <strong>Layer A</strong> optimizes cloud inference on NVIDIA — gives Vuzix a defensible <strong>$/1k sessions</strong> number for OEM appendix + IR slides. <span class="gain-tag">Not "replace Snapdragon," not "save the company"</span> — one specific cell in their RFP table that competitors can't fill.</div>
+  </div>
+</section>
+
+<!-- Step 3: POV output -->
+<section>
+  <h2><span class="step-num">3</span> POV draft — what we send to champion</h2>
+
+  <blockquote>
+    <span class="label">Strategic Soundbite — for CEO / VP BD (Paul Travers, Pano Spiliotis)</span>
+    Because every OEM partner now expects "AI inside" with measurable unit economics, Vuzix's next reference designs must ship with a <em>$/1k sessions</em> line in the appendix. Without it, the AI story remains demo-grade. With it, Vuzix becomes the only smart-glasses OEM with <em>priced</em> AI in its spec sheet.
+  </blockquote>
+
+  <blockquote class="mud" style="margin-top: 14px;">
+    <span class="label">MUD — for CFO (Grant Russell)</span>
+    We will <em>reduce variable cloud inference cost per AI session by 30–50%</em> via Elastic + ANNA on NVIDIA, benchmarked on your highest-volume reference-design workload, resulting in a <em>defensible $/1k sessions metric</em> that goes straight into the next Quanta phase deliverable and into IR talking points before the Q3 earnings call.
+  </blockquote>
+
+  <p style="font-size: 13.5px; color: var(--muted); margin-top: 16px;">
+    <strong>Architecture honesty:</strong> we do <em>not</em> compile onto the AR1 chip in the temple — voice on-device stays as-is. Layer A is cloud-side only. Phase 0 PoC = 6 weeks on one model. No promises about replacing existing on-glass capability.
+  </p>
+</section>
+
+<!-- Step 4: Outcomes -->
+<section>
+  <h2><span class="step-num">4</span> Outcomes — pipeline math</h2>
+  <ul class="outcomes">
+    <li>
+      <span class="tag">Phase 0</span>
+      <div><strong>6-week PoC</strong> on one highest-volume model from Vuzix Ultralite cloud stack — measure $/1k sessions before/after on the same workload.</div>
+    </li>
+    <li>
+      <span class="tag land">Land</span>
+      <div><strong>$20–40k PoC fee</strong> — price-anchored to current discretionary budget, not a stretch CapEx ask.</div>
+    </li>
+    <li>
+      <span class="tag expand">Expand</span>
+      <div><strong>~$40k ARR per OEM program × 2–3 active reference designs = €80–120k expected pipeline value</strong> within 9 months. Slots cleanly into the M3 → Q3 funnel.</div>
+    </li>
+    <li>
+      <span class="tag upside">Upside</span>
+      <div>If the appendix metric lands in the next Quanta phase, it becomes <strong>embedded — multi-year</strong>. Vuzix lists it in IR materials; TheStage gets a public reference logo in the S7 segment for the Series A narrative.</div>
+    </li>
+  </ul>
+</section>
+
+<!-- Step 5: How this maps to the 13-week plan -->
+<section>
+  <h2><span class="step-num">5</span> Where this lands in the 13-week roadmap</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-week">W2</div>
+      <div class="tl-action">WhyzerAI scan · Vuzix added to S7 anchor list</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-week">W3–4</div>
+      <div class="tl-action">Connect requests to BD + CFO via founder LinkedIn</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-week">W5</div>
+      <div class="tl-action">POV draft delivered · soundbite + MUD live in sequence</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-week">W7–9</div>
+      <div class="tl-action">Champion meeting · cold call to CFO (cloud COGS angle)</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-week">W10–12</div>
+      <div class="tl-action">Business case calculator · PoC scoping for Phase 0</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-week">W13+</div>
+      <div class="tl-action">PoC kickoff or no-go · IR-quality readout</div>
+    </div>
+  </div>
+</section>
+
+<!-- Why WhyzerAI section -->
+<section class="why-box">
+  <h2 style="margin-bottom: 12px;">Why €30/mo for this single tool</h2>
+  <p>
+    The five facts above took <strong>~15 minutes</strong> with WhyzerAI. The same depth without it = ~half a day across 10-K, earnings transcripts, news, and analyst notes — <em>per account</em>. Multiplied across the 20–40 publicly traded targets in Motion 1 (S7 / public OEM), it's the highest-leverage line item in the entire research stack.
+  </p>
+  <p>
+    <strong>Best-fit segments:</strong> Vuzix · RealWear (if listed) · DigiLens · Kopin · Cerence. For private startups (Halliday · Mentra · Even Realities) — Prospeo + Wiza + Tavily are enough; no WhyzerAI seat needed.
+  </p>
+</section>
+
+<footer>
+  Appendix to <strong>StageAI GTM Roadmap (founder-ready)</strong> · POV example built on real WhyzerAI export · v.1 · May 2026
+</footer>
+
+</div>
+</body>
+</html>

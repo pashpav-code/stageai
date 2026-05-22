@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICP use cases — Reddit-style stories</title>
+<style>
+
+:root {
+  --bg: #fafaf9;
+  --ink: #1a1a1a;
+  --ink-2: #374151;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #1e40af;
+  --accent-bg: #eff6ff;
+  --code-bg: #f3f4f6;
+  --warn: #d97706;
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+.topbar {
+  background: var(--accent);
+  color: white;
+  padding: 11px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.topbar a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.topbar a:hover { color: white; }
+.topbar .sep { color: rgba(255,255,255,0.3); }
+.topbar .doc-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 48px 28px 96px;
+}
+.content h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.content h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 44px 0 12px;
+  color: var(--ink);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+}
+.content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 30px 0 8px;
+  color: var(--ink);
+}
+.content h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 20px 0 6px;
+  color: var(--ink-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.content p { margin: 0 0 14px; color: var(--ink-2); }
+.content ul, .content ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: var(--ink-2);
+}
+.content li { margin: 6px 0; }
+.content strong { color: var(--ink); font-weight: 700; }
+.content em { font-style: italic; color: var(--ink-2); }
+.content a { color: var(--accent); }
+.content hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 36px 0;
+}
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 16px 0;
+  padding: 10px 16px;
+  background: var(--accent-bg);
+  border-radius: 0 6px 6px 0;
+  color: var(--ink-2);
+  font-style: italic;
+}
+.content blockquote p { margin: 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  color: #be185d;
+}
+.content pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 18px 22px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 16px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.content pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13.5px;
+}
+.content th {
+  background: var(--accent);
+  color: white;
+  padding: 9px 13px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.content td {
+  padding: 8px 13px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  vertical-align: top;
+}
+.content tr:nth-child(even) td { background: var(--accent-bg); }
+.content .mermaid {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+  text-align: center;
+  overflow-x: auto;
+}
+@media (max-width: 600px) {
+  .content { padding: 24px 16px 60px; }
+  .topbar { padding: 10px 14px; }
+  .content h1 { font-size: 20px; }
+  .content h2 { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="StageAI GTM Strategy — founder report.html">← Назад</a>
+  <span class="sep">|</span>
+  <span class="doc-title">ICP use cases — Reddit-style stories</span>
+</div>
+
+<div class="content" id="content"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+
+const md = "# ICP use cases \u2014 \u0438\u0441\u0442\u043e\u0440\u0438\u0438 \u0432 \u0441\u0442\u0438\u043b\u0435 Reddit\n\n**\u0417\u0430\u0447\u0435\u043c:** \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u044c TheStage AI, \u0447\u0442\u043e \u043c\u044b \u043f\u043e\u043d\u0438\u043c\u0430\u0435\u043c **\u0436\u0438\u0432\u044b\u0445** \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432, \u043d\u0435 \u0430\u0431\u0441\u0442\u0440\u0430\u043a\u0442\u043d\u044b\u0439 \u00abenterprise AI\u00bb.  \n**\u0424\u043e\u0440\u043c\u0430\u0442:** \u043a\u0430\u043a \u043f\u043e\u0441\u0442 \u043d\u0430 r/LocalLLaMA / r/MachineLearning \u2014 \u043a\u0442\u043e \u043c\u044b, \u0447\u0442\u043e \u0441\u0442\u0440\u043e\u0438\u043c, \u0431\u043e\u043b\u044c, \u0447\u0442\u043e \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438, \u043a\u0443\u0434\u0430 \u0441\u043c\u043e\u0442\u0440\u0438\u043c.  \n**\u0421\u0432\u044f\u0437\u0430\u043d\u043e:** [Stage AI \u2014 understanding brief](Stage%20AI%20%E2%80%94%20understanding%20brief.md) (\u0433\u043b\u0430\u0432\u043d\u044b\u0439 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442; \u0437\u0434\u0435\u0441\u044c \u2014 \u0440\u0430\u0437\u0432\u0451\u0440\u043d\u0443\u0442\u044b\u0435 \u00ab\u0433\u043e\u043b\u043e\u0441\u0430\u00bb ICP)\n\n---\n\n## \u0427\u0442\u043e \u043d\u0430\u0448\u043b\u0438 \u043d\u0430 Reddit \u0438 \u0440\u044f\u0434\u043e\u043c (\u0440\u0435\u043b\u0435\u0432\u0430\u043d\u0442\u043d\u044b\u0435 \u0442\u0440\u0435\u0434\u044b)\n\n\u041f\u0440\u044f\u043c\u043e\u0439 \u043f\u0430\u0440\u0441\u0438\u043d\u0433 Reddit \u0438\u0437 tooling \u0447\u0430\u0441\u0442\u043e \u0431\u044c\u0451\u0442\u0441\u044f \u043e\u0431 403, \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u043d\u0438\u0436\u0435 \u2014 **\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0451\u043d\u043d\u044b\u0435** \u043e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u044f \u0441 \u0442\u0435\u043c \u0436\u0435 \u0432\u0430\u0439\u0431\u043e\u043c \u0438 \u0431\u043e\u043b\u044f\u043c\u0438:\n\n| \u0422\u0435\u043c\u0430 | \u0413\u0434\u0435 \u043e\u0431\u0441\u0443\u0436\u0434\u0430\u044e\u0442 | \u0421\u0441\u044b\u043b\u043a\u0430 |\n|------|----------------|--------|\n| GGUF / quantize / \u0441\u0432\u043e\u0439 \u0441\u0442\u0435\u043a | r/LocalLLaMA | [Quick Start Guide To Converting Your Own GGUFs](https://old.reddit.com/r/LocalLLaMA/comments/18av9aw/quick_start_guide_to_converting_your_own_ggufs/) |\n| Core ML / ONNX export \u2014 \u0431\u043e\u043b\u044c | HN (\u0442\u0435 \u0436\u0435 \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u044b) | [ONNX \u2192 CoreML feasibility](https://news.ycombinator.com/item?id=37082447) |\n| llama.cpp \u043d\u0430 Android \u2014 OOM, battery, OEM | DEV | [P2P inference on Android phones \u2014 what we learned](https://dev.to/vishal_sharma_nataris/we-built-a-p2p-ai-inference-network-that-runs-on-android-phones-heres-what-we-learned-3lhb) |\n| INT8 \u043d\u0430 \u0440\u0430\u0437\u043d\u044b\u0445 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430\u0445 \u2014 quality drift | \u0440\u0430\u0437\u0431\u043e\u0440 Reddit ML | [Same INT8 ONNX, accuracy drift across Snapdragon tiers](https://insights.marvin-42.com/articles/reddit-ml-report-same-int8-onnx-model-showed-major-accuracy-drift-across-snapdragon-tiers) |\n| \u0411\u044e\u0434\u0436\u0435\u0442\u043d\u044b\u0439 Android \u2014 RAM, thermal | \u0431\u043b\u043e\u0433 | [LLM on a $150 Android phone](https://www.runanywhere.ai/blog/on-device-llm-android) |\n| Smart glasses + local inference | \u043d\u043e\u0432\u043e\u0441\u0442\u0438 / OSS | [Brilliant Labs Halo + on-device AI](https://techday.co.nz/story/privacy-first-ai-smart-glasses-run-models-on-device) (\u0443\u043f\u043e\u043c\u0438\u043d\u0430\u044e\u0442 **TheStage AI** \u043a\u0430\u043a \u043f\u0430\u0440\u0442\u043d\u0451\u0440\u0430) |\n\n**\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043c\u043e\u0442\u0438\u0432\u044b \u0438\u0437 \u043a\u043e\u043c\u044c\u044e\u043d\u0438\u0442\u0438:** OOM, thermal throttle, \u00abexport \u0437\u0430\u043d\u044f\u043b \u0432\u0435\u0447\u043d\u043e\u0441\u0442\u044c\u00bb, cloud bill \u0440\u0430\u0441\u0442\u0451\u0442 \u0441 MAU, \u043d\u0430 \u043a\u0430\u0436\u0434\u043e\u043c Snapdragon \u0441\u0432\u043e\u044f accuracy.\n\n---\n\n# ICP 1 \u2014 \u00ab\u041c\u044b language learning app, 2M users, cloud \u0441\u044a\u0435\u043b margin\u00bb\n\n*\u041f\u0440\u043e\u0444\u0438\u043b\u044c: B2C startup, voice-first tutor, \u043f\u043e\u0445\u043e\u0436 \u043d\u0430 \u043a\u0435\u0439\u0441 **Praktika** \u0438\u0437 voice notes.*\n\n---\n\n### \u041a\u0442\u043e \u043c\u044b\n\n\u041d\u0435\u0431\u043e\u043b\u044c\u0448\u0430\u044f \u043a\u043e\u043c\u0430\u043d\u0434\u0430, **~40 \u0447\u0435\u043b\u043e\u0432\u0435\u043a**, 3 ML, 8 mobile. \u0414\u0435\u043b\u0430\u0435\u043c **AI language tutor** \u2014 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c **\u0433\u043e\u0432\u043e\u0440\u0438\u0442**, \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0441\u043b\u0443\u0448\u0430\u0435\u0442, \u043e\u0442\u0432\u0435\u0447\u0430\u0435\u0442 \u0433\u043e\u043b\u043e\u0441\u043e\u043c, \u043f\u043e\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 \u043f\u0440\u043e\u0438\u0437\u043d\u043e\u0448\u0435\u043d\u0438\u0435. **~2M MAU**, \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 \u0440\u044b\u043d\u043e\u043a \u2014 LATAM + EU.\n\n### \u0427\u0442\u043e \u0441\u0442\u0440\u043e\u0438\u043c\n\n\u041f\u043e\u043b\u043d\u043e\u0446\u0435\u043d\u043d\u044b\u0439 **voice loop**:\n\n```\n\u043c\u0438\u043a\u0440\u043e\u0444\u043e\u043d \u2192 STT \u2192 LLM (\u0434\u0438\u0430\u043b\u043e\u0433) \u2192 TTS \u2192 \u043d\u0430\u0443\u0448\u043d\u0438\u043a\u0438\n```\n\n\u0421\u0435\u0439\u0447\u0430\u0441 **\u043f\u043e\u0447\u0442\u0438 \u0432\u0441\u0451 \u0432 \u043e\u0431\u043b\u0430\u043a\u0435**. \u041b\u043e\u043a\u0430\u043b\u044c\u043d\u043e \u0442\u043e\u043b\u044c\u043a\u043e UI \u0438 \u043a\u044d\u0448.\n\n### \u0413\u0434\u0435 \u0431\u043e\u043b\u0438\u0442 (\u0440\u0435\u0430\u043b\u044c\u043d\u043e \u0431\u043e\u043b\u0438\u0442)\n\n1. **\u0421\u0447\u0451\u0442 \u0437\u0430 API** \u2014 \u043a\u0430\u0436\u0434\u044b\u0439 \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0439 \u044e\u0437\u0435\u0440 = \u043c\u0438\u043d\u0443\u0442\u044b STT + \u0442\u043e\u043a\u0435\u043d\u044b LLM + TTS. \u041d\u0430 2M MAU \u0434\u0430\u0436\u0435 \u0441 \u043a\u044d\u0448\u0435\u043c \u0438 \u043b\u0438\u043c\u0438\u0442\u0430\u043c\u0438 **unit economics \u043f\u043b\u0430\u0432\u0430\u0435\u0442**. CFO \u0443\u0436\u0435 \u0434\u0432\u0430 \u043a\u0432\u0430\u0440\u0442\u0430\u043b\u0430 \u0441\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u0442 \u00ab\u043f\u043e\u0447\u0435\u043c\u0443 inference line item \u0440\u0430\u0441\u0442\u0451\u0442 \u0431\u044b\u0441\u0442\u0440\u0435\u0435 revenue\u00bb.\n\n2. **Latency** \u2014 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0437\u0430\u043c\u043e\u043b\u0447\u0430\u043b \u2192 **1\u20132 \u0441\u0435\u043a \u0442\u0438\u0448\u0438\u043d\u044b** \u2192 \u043e\u0442\u0432\u0435\u0442. \u0412 language learning \u044d\u0442\u043e \u043d\u0435 \u00ab\u043d\u0443 \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435\u00bb, \u044d\u0442\u043e \u00ab\u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0442\u0443\u043f\u043e\u0435\u00bb.\n\n3. **\u0421\u0435\u0442\u044c** \u2014 Mexico City metro, rural Spain: \u043b\u044e\u0434\u0438 \u0440\u0435\u0430\u043b\u044c\u043d\u043e \u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442\u0441\u044f \u0432 \u043f\u043b\u043e\u0445\u043e\u043c LTE. Cloud-only = \u043f\u043b\u043e\u0445\u0438\u0435 \u0441\u0435\u0441\u0441\u0438\u0438 = churn.\n\n4. **Privacy narrative** \u2014 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u044b \u043d\u0430\u0447\u0430\u043b\u0438 \u043f\u0438\u0441\u0430\u0442\u044c \u00abyour voice stays on device\u00bb. \u041c\u044b \u043f\u043e\u043a\u0430 \u043d\u0435 \u043c\u043e\u0436\u0435\u043c \u0447\u0435\u0441\u0442\u043d\u043e.\n\n### \u0427\u0442\u043e \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438\n\n| \u041f\u043e\u0434\u0445\u043e\u0434 | \u041f\u043b\u044e\u0441\u044b | \u041c\u0438\u043d\u0443\u0441\u044b |\n|--------|-------|--------|\n| **\u041e\u0441\u0442\u0430\u0432\u0438\u0442\u044c cloud** (OpenAI-class + Deepgram/ElevenLabs) | \u0411\u044b\u0441\u0442\u0440\u043e, \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0442\u043e\u043f | $$$, latency, privacy story \u0441\u043b\u0430\u0431\u0430\u044f |\n| **\u0421\u0432\u043e\u0439 GPU + vLLM** | \u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c, \u0434\u0435\u0448\u0435\u0432\u043b\u0435 \u043d\u0430 token \u043f\u0440\u0438 scale | \u0412\u0441\u0451 \u0440\u0430\u0432\u043d\u043e latency + \u043d\u0443\u0436\u0435\u043d MLOps, \u043d\u0435 \u0440\u0435\u0448\u0430\u0435\u0442 offline |\n| **\u041c\u0430\u043b\u0435\u043d\u044c\u043a\u0430\u044f \u043c\u043e\u0434\u0435\u043b\u044c on-device (llama.cpp)** | \u041a\u0440\u0443\u0442\u043e \u0432 \u0434\u0435\u043c\u043e | 3 ML **5 \u043c\u0435\u0441\u044f\u0446\u0435\u0432** \u0432 export/OOM; \u043d\u0430 Android mid-range \u2014 **thermal hell**; \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0445\u0443\u0436\u0435 cloud |\n| **\u0413\u0438\u0431\u0440\u0438\u0434** \u00ab\u043f\u0440\u043e\u0441\u0442\u044b\u0435 \u0440\u0435\u043f\u043b\u0438\u043a\u0438 local, \u0441\u043b\u043e\u0436\u043d\u043e\u0435 cloud\u00bb | \u0420\u0430\u0437\u0443\u043c\u043d\u043e | \u041d\u0443\u0436\u043d\u0430 **routing logic** + \u0434\u0432\u0435 \u043c\u043e\u0434\u0435\u043b\u0438 \u0432 \u043f\u0440\u043e\u0434\u0435 = \u0435\u0449\u0451 complexity |\n\n\u041c\u044b \u0437\u0430\u0441\u0442\u0440\u044f\u043b\u0438 \u043c\u0435\u0436\u0434\u0443 \u00ab**founder \u0445\u043e\u0447\u0435\u0442 on-device \u043a Q3**\u00bb \u0438 \u00ab**\u043a\u043e\u043c\u0430\u043d\u0434\u0430 \u043d\u0435 \u0443\u0441\u043f\u0435\u0432\u0430\u0435\u0442 \u0432\u0442\u043e\u0440\u043e\u0439 \u0440\u0430\u0437 invent mobile ML**\u00bb.\n\n### \u041a\u0430\u043a Stage AI \u0432\u043f\u0438\u0441\u044b\u0432\u0430\u0435\u0442\u0441\u044f (\u0435\u0441\u043b\u0438 \u0437\u0430\u0439\u0434\u0451\u0442)\n\n\u041d\u0435 \u043c\u0430\u0433\u0438\u044f \u00ab\u0437\u0430\u043c\u0435\u043d\u0438\u0442\u0435 OpenAI \u043e\u0434\u043d\u043e\u0439 \u043a\u043d\u043e\u043f\u043a\u043e\u0439\u00bb. \u0421\u043a\u043e\u0440\u0435\u0435:\n\n- **Elastic Whisper + small LLM tiers** \u2014 baseline \u0437\u0430 **\u0434\u043d\u0438**, \u043d\u0435 \u043c\u0435\u0441\u044f\u0446\u044b (\u043f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c quality \u043d\u0430 *\u043d\u0430\u0448\u0435\u043c* accent mix).\n- **ANNA + compile \u043f\u043e\u0434 Apple** \u2014 iPhone hub (\u0443 \u0431\u043e\u043b\u044c\u0448\u0438\u043d\u0441\u0442\u0432\u0430 users \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u0435\u0441\u0442\u044c) \u2192 \u0441\u0440\u0435\u0437\u0430\u0435\u043c **compress/export/profile** (\u0432 \u043d\u0430\u0448\u0438\u0445 \u043e\u0446\u0435\u043d\u043a\u0430\u0445 **~2\u20133 \u043c\u0435\u0441\u044f\u0446\u0430** \u043d\u0430 \u044d\u0442\u043e\u043c \u044d\u0442\u0430\u043f\u0435).\n- **\u0418\u0437\u043c\u0435\u0440\u0438\u043c\u044b\u0435 \u043c\u0435\u0442\u0440\u0438\u043a\u0438** \u2014 ttft, tps, max_memory \u2192 \u0441\u043f\u043e\u0440\u0438\u043c \u0441 product \u0446\u0438\u0444\u0440\u0430\u043c\u0438, \u043d\u0435 \u043e\u0449\u0443\u0449\u0435\u043d\u0438\u044f\u043c\u0438.\n- **\u041f\u043e\u0441\u0442\u0435\u043f\u0435\u043d\u043d\u044b\u0439 \u0433\u0438\u0431\u0440\u0438\u0434** \u2014 \u0441\u043d\u0430\u0447\u0430\u043b\u0430 STT on-device, LLM \u043f\u043e\u043a\u0430 cloud; \u043f\u043e\u0442\u043e\u043c tier S LLM local.\n\n**Edit:** \u043d\u0430\u043c \u0432\u0441\u0451 \u0435\u0449\u0451 \u043d\u0443\u0436\u0435\u043d \u0441\u0432\u043e\u0439 **orchestration** (\u043a\u043e\u0433\u0434\u0430 \u0433\u043e\u0432\u043e\u0440\u0438\u0442\u044c, barge-in, TTS vendor). Stage \u043d\u0435 \u0437\u0430\u043c\u0435\u043d\u044f\u0435\u0442 mobile team. \u041d\u043e **\u0443\u0431\u0438\u0440\u0430\u0435\u0442 \u0430\u0434\u0441\u043a\u0443\u044e \u0447\u0430\u0441\u0442\u044c** \u00ab\u043f\u043e\u0447\u0435\u043c\u0443 \u043d\u0430 Pixel 6a OOM\u00bb.\n\n---\n\n# ICP 2 \u2014 \u00ab\u041c\u044b \u0434\u0435\u043b\u0430\u0435\u043c smart glasses, \u0436\u0435\u043b\u0435\u0437\u043e \u0441\u043b\u0430\u0431\u043e\u0435, \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u2014 hub\u00bb\n\n*\u041f\u0440\u043e\u0444\u0438\u043b\u044c: wearable startup, **Brilliant Labs**-adjacent; \u0432 \u0438\u043d\u0434\u0443\u0441\u0442\u0440\u0438\u0438 \u0443\u0436\u0435 \u0435\u0441\u0442\u044c \u0441\u0432\u044f\u0437\u043a\u0430 **Brilliant Labs + TheStage** \u0434\u043b\u044f on-device Halo.*\n\n> **\u26a0\ufe0f \u0428\u0430\u0431\u043b\u043e\u043d, \u043d\u0435 verified architecture Brilliant.** \u041f\u0443\u0431\u043b\u0438\u0447\u043d\u043e (TechDay Mar 2026): **\u0433\u0438\u0431\u0440\u0438\u0434** \u2014 vision on glasses + \u0437\u043d\u0430\u0447\u0438\u043c\u044b\u0439 compute \u043d\u0430 **paired smartphone** (TheStage \u043d\u0430 phone); \u043d\u0430 Halo \u0442\u0430\u043a\u0436\u0435 **Alif NPU** on-glass. \u0421\u043c. [understanding brief \u00a73.8\u20135.2](Stage%20AI%20%E2%80%94%20understanding%20brief.md).\n\n---\n\n### \u041a\u0442\u043e \u043c\u044b\n\n**12 \u0447\u0435\u043b\u043e\u0432\u0435\u043a**, hardware + firmware + 2 ML. \u0414\u0435\u043b\u0430\u0435\u043c **AI \u043e\u0447\u043a\u0438** \u2014 \u0433\u043e\u043b\u043e\u0441\u043e\u0432\u043e\u0439 \u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442, contextual hints, \u043f\u043e\u0437\u0436\u0435 camera. Pre-order \u0435\u0441\u0442\u044c, **production Q1\u2013Q2**.\n\n### \u0427\u0442\u043e \u0441\u0442\u0440\u043e\u0438\u043c\n\n**\u0423\u0447\u0435\u0431\u043d\u0430\u044f \u0441\u0445\u0435\u043c\u0430 (\u0443\u043f\u0440\u043e\u0449\u0435\u043d\u0438\u0435):** \u043e\u0447\u043a\u0438: \u043c\u0438\u043a\u0440\u043e\u0444\u043e\u043d, BLE \u2192 **\u0442\u0435\u043b\u0435\u0444\u043e\u043d** (hub) \u2192 STT \u2192 LLM \u2192 TTS \u2192 \u044d\u0430\u0440\u0431\u0430\u0434.  \n\u041d\u0430 \u0441\u0430\u043c\u0438\u0445 \u043e\u0447\u043a\u0430\u0445 **\u043d\u0435\u0442** \u043c\u0435\u0441\u0442\u0430 \u0434\u043b\u044f 7B \u2014 \u0442\u0438\u043f\u0438\u0447\u043d\u044b\u0439 \u0441\u0442\u0430\u0440\u0442\u0430\u043f-\u043f\u0430\u0442\u0442\u0435\u0440\u043d; \u0443 **\u0440\u0435\u0430\u043b\u044c\u043d\u043e\u0433\u043e** Brilliant \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c **\u0434\u043e\u043f. compute \u043d\u0430 \u043e\u0447\u043a\u0430\u0445** (NPU).\n\n### \u0413\u0434\u0435 \u0431\u043e\u043b\u0438\u0442\n\n1. **End-to-end latency budget** \u2014 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438 \u0441\u0440\u0430\u0432\u043d\u0438\u0432\u0430\u044e\u0442 \u0441 **Siri / ChatGPT voice**. \u0423 \u043d\u0430\u0441 **BLE + inference + TTS** \u2014 \u0435\u0441\u043b\u0438 >2\u20133 \u0441\u0435\u043a, \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u00ab\u043b\u043e\u043c\u0430\u043d\u044b\u0439\u00bb.\n\n2. **\u0411\u0430\u0442\u0430\u0440\u0435\u044f** \u2014 \u0435\u0441\u043b\u0438 \u0432\u0441\u0451 \u0433\u043e\u043d\u044f\u0442\u044c \u0432 cloud, \u043e\u0447\u043a\u0438 + phone \u0436\u0440\u0443\u0442 radio. \u0415\u0441\u043b\u0438 local \u2014 phone CPU/GPU \u0433\u0440\u0435\u0435\u0442\u0441\u044f.\n\n3. **Privacy \u043a\u0430\u043a selling point** \u2014 \u00abraw audio never leaves device\u00bb \u2014 \u043d\u043e \u0442\u043e\u043b\u044c\u043a\u043e \u0435\u0441\u043b\u0438 **\u0440\u0435\u0430\u043b\u044c\u043d\u043e** local pipeline.\n\n4. **Mirai / Cactus** \u2014 \u0441\u043c\u043e\u0442\u0440\u0435\u043b\u0438 YC-\u0441\u0442\u0430\u0440\u0442\u0430\u043f\u044b \u0432 on-device hybrid. Founder \u0433\u043e\u0432\u043e\u0440\u0438\u0442 \u00ab\u043d\u0435 \u0432\u043b\u0435\u0437\u0430\u0435\u0442 \u0432 \u043d\u0430\u0448 form factor / toolchain\u00bb \u2014 **\u0434\u0435\u0442\u0430\u043b\u0438 \u043d\u0435 \u0434\u043e\u043a\u043e\u043f\u0430\u043b\u0438**.\n\n### \u0427\u0442\u043e \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438\n\n| \u041f\u043e\u0434\u0445\u043e\u0434 | \u041f\u043b\u044e\u0441\u044b | \u041c\u0438\u043d\u0443\u0441\u044b |\n|--------|-------|--------|\n| **Cloud-only MVP** | \u0411\u044b\u0441\u0442\u0440\u044b\u0439 launch | \u0423\u0431\u0438\u0432\u0430\u0435\u0442 battery + privacy story + latency \u0432 EU |\n| **Whisper.cpp \u043d\u0430 phone** | \u041e\u043a \u0434\u043b\u044f STT | LLM \u0432\u0441\u0451 \u0440\u0430\u0432\u043d\u043e \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u0430\u044f \u0431\u043e\u043b\u044c |\n| **Core ML export \u0432\u0440\u0443\u0447\u043d\u0443\u044e** | Apple-native | **\u041c\u0435\u0441\u044f\u0446\u044b**; transformer support meh; \u043a\u0430\u0436\u0434\u044b\u0439 iOS \u2014 \u0441\u044e\u0440\u043f\u0440\u0438\u0437 |\n| **\u041f\u0430\u0440\u0442\u043d\u0451\u0440 inference** (TheStage \u0438 \u0434\u0440.) | Time-to-market | Vendor risk, pricing, lock-in \u0441\u0442\u0440\u0430\u0445\u0438 |\n\n### Reddit/HN \u0432\u0430\u0439\u0431\n\n\u0422\u043e\u0442 \u0436\u0435 \u043a\u0440\u0443\u0433\u043b\u044f\u0448: \u00ab\u0445\u043e\u0442\u0435\u043b on-device \u2192 **ended up writing inference engine from scratch**\u00bb \u0438\u043b\u0438 \u00ab**llama.cpp OOM** on Android\u00bb.\n\n### \u041a\u0430\u043a Stage AI \u0432\u043f\u0438\u0441\u044b\u0432\u0430\u0435\u0442\u0441\u044f\n\n- **Pre-compiled tiers** \u043f\u043e\u0434 **Apple Silicon** (phone hub) \u2014 \u043d\u0435 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c Core ML graph \u0441 \u043d\u0443\u043b\u044f \u0432 garage.\n- **Whisper tier S** \u0434\u043b\u044f always-listening-adjacent (\u0441 \u043e\u0441\u0442\u043e\u0440\u043e\u0436\u043d\u043e\u0441\u0442\u044c\u044e \u043f\u043e battery).\n- **Jetson / edge-box** \u2014 \u0435\u0441\u043b\u0438 \u0437\u0430\u0432\u0442\u0440\u0430 hub \u043d\u0435 \u0442\u043e\u043b\u044c\u043a\u043e phone (\u0438\u0445 docs \u0443\u043f\u043e\u043c\u0438\u043d\u0430\u044e\u0442 Jetson).\n- **Benchmark pack** \u2014 \u0434\u043e\u043a\u0430\u0437\u0430\u0442\u044c investor'\u0430\u043c \u00ab<2s on iPhone 15\u00bb \u0434\u043e mass manufacturing.\n\n**\u0427\u0435\u0441\u0442\u043d\u043e:** orchestration glasses\u2194phone **\u0432\u0441\u0451 \u0435\u0449\u0451 \u043d\u0430\u0448 \u043a\u043e\u0434**. Stage \u2014 **\u043c\u043e\u0437\u0433\u0438 \u0431\u044b\u0441\u0442\u0440\u0435\u0435**, \u043d\u0435 \u0432\u0435\u0441\u044c \u043f\u0440\u043e\u0434\u0443\u043a\u0442.\n\n---\n\n# ICP 3 \u2014 \u00abGen AI app \u0441\u043e \u0441\u0432\u043e\u0438\u043c\u0438 LoRA \u2014 cloud GPU \u0434\u043e\u0440\u043e\u0433\u043e\u0439, mobile \u0445\u043e\u0442\u0438\u043c \u043f\u043e\u0437\u0436\u0435\u00bb\n\n*\u041f\u0440\u043e\u0444\u0438\u043b\u044c: **Recraft**-like \u2014 creative / gen AI, \u0441\u0432\u043e\u0438 \u043c\u043e\u0434\u0435\u043b\u0438, \u0441\u0442\u0430\u0440\u0442\u0430\u043f.*\n\n---\n\n### \u041a\u0442\u043e \u043c\u044b\n\n**25 \u0447\u0435\u043b\u043e\u0432\u0435\u043a**, \u0441\u0438\u043b\u044c\u043d\u044b\u0439 research, 4 ML. \u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f **images / assets** + \u043d\u0430\u0447\u0430\u043b\u0438 **voice** \u0434\u043b\u044f \u00ab\u043e\u043f\u0438\u0448\u0438 \u0447\u0442\u043e \u0445\u043e\u0447\u0435\u0448\u044c\u00bb. Users \u2014 creators, SMB.\n\n### \u0427\u0442\u043e \u0441\u0442\u0440\u043e\u0438\u043c\n\n\u0421\u0432\u043e\u0438 \u043c\u043e\u0434\u0435\u043b\u0438 + **LoRA** \u043f\u043e\u0434 \u0441\u0442\u0438\u043b\u0438. Inference \u0441\u0435\u0439\u0447\u0430\u0441 **cloud GPU** (\u0441\u0432\u043e\u0439 \u043a\u043b\u0430\u0441\u0442\u0435\u0440 + Nebius-style provider). Mobile app \u0432 roadmap \u2014 \u00abassistant in pocket\u00bb.\n\n### \u0413\u0434\u0435 \u0431\u043e\u043b\u0438\u0442\n\n1. **GPU bill** \u2014 inference \u2014 **\u0433\u043b\u0430\u0432\u043d\u0430\u044f COGS**. \u041a\u0430\u0436\u0434\u044b\u0439 \u043d\u043e\u0432\u044b\u0439 LoRA = \u0435\u0449\u0451 deployment? \u0415\u0449\u0451 VRAM?\n\n2. **Speed \u0434\u043b\u044f pro users** \u2014 \u00ab\u043f\u043e\u0447\u0435\u043c\u0443 4 \u0441\u0435\u043a \u043d\u0430 preview\u00bb \u2014 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u044b \u0431\u044b\u0441\u0442\u0440\u0435\u0435.\n\n3. **Mobile** \u2014 founders \u0432\u0438\u0434\u044f\u0442 **Elastic / on-device** \u0443 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u043e\u0432. ML team: \u00ab\u043c\u044b \u0435\u0449\u0451 **Flux tier optimize** \u0432 cloud \u043d\u0435 \u0434\u043e\u043f\u0438\u043b\u0438\u043b\u0438\u00bb.\n\n### \u0427\u0442\u043e \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438\n\n| \u041f\u043e\u0434\u0445\u043e\u0434 | \u041f\u043b\u044e\u0441\u044b | \u041c\u0438\u043d\u0443\u0441\u044b |\n|--------|-------|--------|\n| **TensorRT / custom CUDA** | Max perf on H100 | \u0414\u043e\u0440\u043e\u0433\u043e \u0432 engineer time |\n| **vLLM / Triton** | Scale serving | \u041d\u0435 \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0438\u0442\u0441\u044f 1:1 \u043d\u0430 phone |\n| **Elastic Models (TheStage)** \u0434\u043b\u044f Flux/LLM | **2x\u20134x** \u0432 \u0431\u0435\u043d\u0447\u043c\u0430\u0440\u043a\u0430\u0445 \u0443 \u043d\u0438\u0445 | \u041d\u0443\u0436\u0435\u043d HF token, Third-party terms, **\u043d\u043e\u0432\u044b\u0439 vendor** |\n| **\u0421\u0432\u043e\u0439 quant team** | \u041f\u043e\u043b\u043d\u044b\u0439 \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044c | 2 senior ML **\u0437\u0430\u043d\u044f\u0442\u044b \u043c\u0435\u0441\u044f\u0446\u0430\u043c\u0438** |\n\n### \u041a\u0430\u043a Stage AI \u0432\u043f\u0438\u0441\u044b\u0432\u0430\u0435\u0442\u0441\u044f\n\n- **Elastic Models** \u2014 \u00abready-to-go + **LoRA support**\u00bb \u043d\u0430 \u0441\u0430\u0439\u0442\u0435 = **\u0431\u044b\u0441\u0442\u0440\u044b\u0439 A/B** \u043d\u043e\u0432\u043e\u0433\u043e \u0441\u0442\u0438\u043b\u044f \u0431\u0435\u0437 \u043f\u043e\u043b\u043d\u043e\u0433\u043e re-export pipeline.\n- **ANNA** \u2014 \u043a\u043e\u0433\u0434\u0430 \u043d\u0443\u0436\u0435\u043d **\u0441\u0432\u043e\u0439** checkpoint, \u043d\u0435 \u043a\u0430\u0442\u0430\u043b\u043e\u0433.\n- **Platform CLI** \u2014 \u043a\u0430\u043b\u0438\u0431\u0440\u043e\u0432\u043a\u0430 \u043d\u0430 **Nebius** (\u0443 \u043d\u0438\u0445 \u0432 CLI \u0435\u0441\u0442\u044c provider) \u0431\u0435\u0437 \u0441\u0432\u043e\u0435\u0433\u043e k8s.\n- **Modal / OpenAI-compatible serving** tutorial \u2014 \u0435\u0441\u043b\u0438 \u043e\u0441\u0442\u0430\u0451\u043c\u0441\u044f cloud-first, \u043d\u043e \u0434\u0435\u0448\u0435\u0432\u043b\u0435.\n\n**\u041c\u0438\u043d\u0443\u0441 \u0434\u043b\u044f \u043d\u0430\u0441:** \u043d\u0435 \u0445\u043e\u0442\u0438\u043c, \u0447\u0442\u043e\u0431\u044b **\u0432\u0435\u0441\u044c** inference stack \u0437\u0430\u0432\u0438\u0441\u0435\u043b \u043e\u0442 \u043e\u0434\u043d\u043e\u0433\u043e startup vendor. \u041d\u0443\u0436\u0435\u043d **exit plan** (artifacts, self-host).\n\n---\n\n# ICP 4 \u2014 \u00abVoice notes / meeting AI \u2014 enterprise \u0441\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u0442 on-prem\u00bb\n\n*\u041f\u0440\u043e\u0444\u0438\u043b\u044c: B2B note-taker, **Phonic**-adjacent, transcription + summary.*\n\n---\n\n### \u041a\u0442\u043e \u043c\u044b\n\n**20 \u0447\u0435\u043b\u043e\u0432\u0435\u043a**, B2B SaaS. \u0417\u0430\u043f\u0438\u0441\u044c \u0437\u0432\u043e\u043d\u043a\u043e\u0432 \u2192 transcript \u2192 summary \u2192 action items. \u041f\u043b\u0430\u0442\u044f\u0442 **teams**, \u043d\u0435 consumers.\n\n### \u0413\u0434\u0435 \u0431\u043e\u043b\u0438\u0442\n\n1. **Enterprise security** \u2014 \u00abaudio \u043d\u0435 \u0443\u0445\u043e\u0434\u0438\u0442 \u0432 OpenAI\u00bb \u2014 deal breaker \u0432 EU bank pilot.\n\n2. **Cost at scale** \u2014 500-seat pilot = **\u043e\u0433\u0440\u043e\u043c\u043d\u044b\u0435** STT minutes.\n\n3. **Real-time** \u2014 live captions during call \u2014 latency matters.\n\n### \u0427\u0442\u043e \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438\n\nSelf-hosted Whisper on GPU; \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438 API; \u0441\u043c\u043e\u0442\u0440\u0438\u043c **on-device** \u0434\u043b\u044f **mobile app** (field sales).\n\n### Stage AI angle\n\n- **Whisper elastic tiers** on-device \u0434\u043b\u044f mobile capture.\n- **SOC2** \u043d\u0430 platform (\u0443 \u043d\u0438\u0445 \u0432 pricing mentions) \u2014 checkbox \u0434\u043b\u044f procurement.\n- Cloud **containers** pre-optimized \u2014 \u0435\u0441\u043b\u0438 on-prem GPU customer.\n\n---\n\n# \u0421\u0432\u043e\u0434\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 ICP \u2192 \u0431\u043e\u043b\u044c \u2192 Stage AI hook\n\n| ICP | \u041c\u044b \u0442\u0430\u043a\u0438\u0435 | \u0413\u043b\u0430\u0432\u043d\u0430\u044f \u0431\u043e\u043b\u044c | \u0427\u0442\u043e \u043f\u0440\u043e\u0431\u043e\u0432\u0430\u043b\u0438 | Stage AI \u0437\u0430\u0445\u043e\u0434\u0438\u0442 \u0447\u0435\u0440\u0435\u0437 |\n|-----|----------|--------------|---------------|------------------------|\n| **Language app** | 2M MAU, voice tutor | API $ + latency + offline | Cloud, llama.cpp fail | Elastic voice + compile + hybrid path |\n| **Wearable** | Smart glasses, 12 FTE | Latency, battery, privacy | Cloud MVP, Core ML pain | Apple compile, Whisper tier, benchmarks |\n| **Gen AI + LoRA** | Creative, own models | GPU COGS, speed | TRT, vLLM | Elastic + LoRA, ANNA, Nebius CLI |\n| **Voice B2B** | Meeting AI | Security, STT minutes | Self-host Whisper | On-device STT + enterprise checkboxes |\n\n---\n\n# \u0428\u0430\u0431\u043b\u043e\u043d \u00ab\u043a\u0430\u043a \u0441\u043f\u0440\u043e\u0441\u0438\u0442\u044c \u043d\u0430 Reddit\u00bb (\u0434\u043b\u044f outreach / community)\n\n> **Title:** Anyone shipped STT \u2192 small LLM \u2192 TTS fully on-device for iOS (phone as hub for wearable)?\n>\n> **Body:** We're a 12-person team, glasses + phone architecture. Cloud bill and latency killing us. Tried llama.cpp but OOM on mid Android and thermal throttling after 90s ([similar thread vibes](https://dev.to/vishal_sharma_nataris/we-built-a-p2p-ai-inference-network-that-runs-on-android-phones-heres-what-we-learned-3lhb)). Looking at pre-compiled stacks (TheStage Elastic, etc.) vs rolling our own Core ML export ([HN pain](https://news.ycombinator.com/item?id=37082447)). For those who shipped: did you tier models S/M/L? How bad was LoRA recompile?\n>\n> *Not asking for vendor ads \u2014 want war stories.*\n\n---\n\n# \u0414\u043b\u044f \u0437\u0432\u043e\u043d\u043a\u0430 \u0441 TheStage\n\n\u0421\u043f\u0440\u043e\u0441\u0438\u0442\u044c \u043f\u043e \u043a\u0430\u0436\u0434\u043e\u043c\u0443 ICP:\n\n1. **\u041a\u0442\u043e \u0438\u0437 \u0442\u0435\u043a\u0443\u0449\u0438\u0445 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432** \u0431\u043b\u0438\u0436\u0435 \u043a \u043a\u0430\u043a\u043e\u0439 \u0438\u0441\u0442\u043e\u0440\u0438\u0438?\n2. **\u0413\u0434\u0435 \u0432\u044b \u0432\u044b\u0438\u0433\u0440\u0430\u043b\u0438** vs \u043f\u0440\u043e\u0438\u0433\u0440\u0430\u043b\u0438 \u043f\u0440\u043e\u0442\u0438\u0432 \u00ab\u043c\u044b \u0441\u0430\u043c\u0438 llama.cpp\u00bb?\n3. **LoRA** \u2014 \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0439 production \u0438\u043b\u0438 roadmap?\n4. **Orchestration** \u2014 \u043a\u043e\u0433\u0434\u0430 \u043c\u043e\u0436\u043d\u043e \u0447\u0435\u0441\u0442\u043d\u043e \u043f\u0440\u043e\u0434\u0430\u0432\u0430\u0442\u044c ICP 1 \u0438 2?\n\n---\n\n*\u0422\u043e\u043d \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043d\u043e \u0440\u0430\u0437\u0433\u043e\u0432\u043e\u0440\u043d\u044b\u0439 \u2014 \u0434\u043b\u044f \u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u0433\u043e GTM / empathy map, \u043d\u0435 \u0434\u043b\u044f \u043a\u043e\u043f\u0438\u043f\u0430\u0441\u0442\u044b \u0432 Reddit \u0431\u0435\u0437 \u0430\u0434\u0430\u043f\u0442\u0430\u0446\u0438\u0438.*\n";
+const renderer = new marked.Renderer();
+let mc = 0;
+renderer.code = function(code, lang) {
+  if (lang === 'mermaid') {
+    return '<div class="mermaid" id="m' + (++mc) + '">' + code + '</div>';
+  }
+  return '<pre><code>' + code.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</code></pre>';
+};
+marked.use({ renderer });
+document.getElementById('content').innerHTML = marked.parse(md);
+
+</script>
+</body>
+</html>
