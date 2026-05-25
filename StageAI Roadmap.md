@@ -9,7 +9,7 @@
 | **Pre-project** | до W1 | май | Email domains + warmup 3–4 нед · LI account map | — |
 | **M1 Foundation** | 1–2 | 1–14 июн | ICP · 3 personas · pipeline takeover · research stack | — |
 | **M1 Connect test** | 3–4 | 15–28 июн | 30–40 co · 100–150 contacts · **no pitch** | ~40–60 connects @ 40% |
-| **M2 Targeted (5w)** | 5–9 | 29 июн – 2 авг | 80–120 co · 400–600 contacts · POV-led · **cold calls W9** | **8 mtgs · 2 SQO · $80k** |
+| **M2 Targeted (5w)** | 5–9 | 29 июн – 2 авг | 80–120 co · 400–600 contacts · POV-led · **ивенты W9** | **8 mtgs · 2 SQO · $80k** |
 | **M3 Scale + close (4w)** | 10–13 | 3 – 30 авг | 200–300 co · 1200–1500 contacts · BC calc · close | **15 mtgs · 8 SQO total · $320k** |
 
 **Параллельно всегда:**
@@ -224,12 +224,12 @@
 
 ---
 
-## W9 · 27 июл – 2 авг · M2 close · test analysis + cold calls start
+## W9 · 27 июл – 2 авг · M2 close · test analysis + старт ивентов
 
-**Конец 4-week теста двух сегментов (W5/W7–W9). Cold calls подключаются.**
+**Конец 4-week теста двух сегментов (W5/W7–W9). Ивенты (конф./вебинары) подключаются.**
 
 - [ ] **Test analysis seg.1 vs seg.2:** connect / reply / meeting / SQO by cohort
-- [ ] **Cold calls live** на business execs Tier 1 / W3 (cloud COGS · vendor independence narrative)
+- [ ] **Ивенты live** — участие в конференциях и вебинарах Tier 1 / W3 (cloud COGS · vendor independence narrative)
 - [ ] LI + email full sequences continue (3–4 messages)
 - [ ] Voitech analytics / CRM: TOFU metrics dashboard live
 - [ ] Pipeline: handoff hot SQO к фаундеру для champion meetings
@@ -239,7 +239,7 @@
 - [ ] Business case calc v0 template готов для активных deals
 
 **AI / automation:**
-- [ ] Call analysis tunes для cold calls (новые insight templates)
+- [ ] Call analysis tunes для ивентов (новые insight templates)
 - [ ] Hermes monitoring: первый pass insights → Slack
 
 **M2 goal:** **8 meetings · 2 SQO · $80k pipeline** (cumulative с W5)
@@ -252,7 +252,7 @@
 **Apply M2 learnings · scale to 20-25 co/нед on winning segment.**
 
 - [ ] **20–25 companies / 100–125 contacts** (winning segment heavy)
-- [ ] Cold calls в полную силу на Tier 1
+- [ ] Участие в ивентах в полную силу — Tier 1 (конференции, вебинары)
 - [ ] Sequences updated на winning copy / hooks из M2
 - [ ] DH sync: newsletter / post под winning hook
 - [ ] Pipeline: champion meetings для активных SQO
@@ -268,7 +268,7 @@
 ## W11 · 10–16 авг · M3 Scale W2
 
 - [ ] **20–25 companies / 100–125 contacts**
-- [ ] Continue cold calls · seg.1/2 nurture
+- [ ] Continue ивенты · seg.1/2 nurture
 - [ ] Mid-month review: meetings vs target (≥7 cumulative M3?)
 - [ ] BC docs for live SQO conversations
 
@@ -391,7 +391,7 @@ ml_signoff, exec_sponsor, notes
 - [ ] Какие **3 LI профиля** разрешены для outbound? Founder time limit?
 - [ ] **Домены + бюджет** на email infra — кто покупает, когда?
 - [ ] **Economic buyer** на OEM/public (CEO/CFO/Eng)?
-- [ ] **Cold call** US/EU compliance · DNC?
+- [ ] **Ивенты** — онлайн/оффлайн форматы · площадки · бюджет?
 - [ ] GetSales / CRM owner · обязательные поля?
 
 **A. Сотрудничество:** фандрейзинг · Кирилл часов/нед · owner GTM · counterpart · success 90d в цифрах.
@@ -413,7 +413,7 @@ ml_signoff, exec_sponsor, notes
 9. Outbound list + ICP criteria
 10. Success 90 дней — в цифрах
 
-**+11–13 (outbound):** LI accounts · email domains budget · cold call policy.
+**+11–13 (outbound):** LI accounts · email domains budget · policy участия в ивентах.
 
 ---
 
